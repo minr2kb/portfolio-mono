@@ -1,0 +1,23 @@
+{
+  "name": "@packages/type-build-util",
+  "version": "1.0.0",
+  "main": "dist/src/index.js",
+  "bin": "dist/src/index.js",
+  "packageManager": "yarn@4.5.0",
+  "scripts": {
+    "build": "tsc -b",
+    "dev": "tsc -w"
+  },
+  "dependencies": {
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.8",
+    "dts-bundle-generator": "^9.5.1",
+    "eslint": "~8.57.0",
+    "eslint-plugin-deprecation": "~2.0.0",
+    "eslint-plugin-import": "~2.29.0",
+    "eslint-plugin-unicorn": "~51.0.1"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "portfolio-mono",
+  "private": true,
+  "author": {
+    "name": "Kyungbae Min",
+    "email": "kbmin1129@gmail.com",
+    "url": "https://github.com/minr2kb"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minr2kb/portfolio.git"
+  },
+  "engines": {
+    "node": ">=18.18.0",
+    "pnpm": ">=9.12.2"
+  },
+  "readme": "README.md",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "turbo run prebuild",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "dev:host": "turbo run @apps/host#dev",
+    "dev:v1": "turbo run @apps/v1#dev",
+    "dev:v2": "turbo run @apps/v2#dev",
+    "dev:v3": "turbo run @apps/v3#dev",
+    "preview": "turbo run preview",
+    "preview:remotes": "turbo run preview --filter=@apps/* --filter=!@apps/host --parallel",
+    "start": "pnpm run dev:host && pnpm run preview:remotes",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json,js,jsx}\"",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "create-app": "node scripts/create-app.js"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.2",
+    "concurrently": "^9.1.0",
+    "fs-extra": "^11.1.1",
+    "inquirer": "^12.1.0",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@9.13.0"
+}

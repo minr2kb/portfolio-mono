@@ -1,0 +1,23 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "dev": {
+      "outputs": [],
+      "dependsOn": [],
+      "persistent": true
+    },
+    "preview": {
+      "outputs": [],
+      "dependsOn": [],
+      "persistent": true
+    },
+    "prebuild": {
+      "outputs": [],
+      "dependsOn": []
+    }
+  }
+}
