@@ -15,6 +15,8 @@
 ├── templates/
 │ ├── react-vite/ # React + Vite 기반 템플릿
 │ └── react-vite-mui/ # React + Vite + MUI 기반 템플릿
+├── packages/
+│ └── type-build-util/ # 리모트앱 타입 추출을 위한 유틸
 ├── scripts/
 │ └── create-app.js # 템플릿 스캐폴딩을 위한 스크립트
 ├── turbo.json # Turborepo 설정
