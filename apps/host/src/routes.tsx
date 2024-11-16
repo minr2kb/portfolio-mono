@@ -1,4 +1,4 @@
-import { RouteObject } from 'react-router-dom';
+import { Navigate, RouteObject } from 'react-router-dom';
 import { routes as v1Routes } from 'v1/routes';
 import { routes as v2Routes } from 'v2/routes';
 import { routes as v3Routes } from 'v3/routes';
@@ -9,7 +9,7 @@ export const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <div>Home</div>,
+        element: <Navigate to="v3" replace />,
       },
       {
         path: 'v1',
