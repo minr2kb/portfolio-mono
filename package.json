@@ -17,8 +17,8 @@
   "readme": "README.md",
   "license": "MIT",
   "scripts": {
-    "prebuild": "turbo run prebuild",
-    "build": "turbo run build",
+    "prebuild": "turbo run prebuild --filter=@apps/*",
+    "build": "turbo run build --filter=@apps/*",
     "dev": "turbo run dev",
     "dev:host": "turbo run @apps/host#dev",
     "dev:v1": "turbo run @apps/v1#dev",

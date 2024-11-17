@@ -1,9 +1,14 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { routes } from './routes';
+import { BrowserRouter, Routes } from 'react-router-dom';
+import { AppRoutes } from './AppRoutes';
 
 function App() {
-  const router = createBrowserRouter(routes);
-  return <RouterProvider router={router} future={{ v7_startTransition: true }} />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <AppRoutes />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

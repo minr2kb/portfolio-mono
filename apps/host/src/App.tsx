@@ -1,13 +1,16 @@
-import { Suspense } from 'react';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { routes } from './routes';
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './AppRoutes';
 
 function App() {
-  const router = createBrowserRouter(routes);
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <RouterProvider router={router} future={{ v7_startTransition: true }} />
-    </Suspense>
+    <BrowserRouter
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }}
+    >
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
 

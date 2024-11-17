@@ -65,8 +65,10 @@ async function createApp() {
 
     console.log(chalk.blue(`Creating new app: ${appName} using ${template} template...`));
 
-    // Copy template
-    await fs.copy(templateDir, targetDir);
+    // Copy template, excluding node_modules
+    await fs.copy(templateDir, targetDir, {
+      filter: (src) => !src.includes('node_modules'),
+    });
 
     // Update package.json
     const packageJson = await fs.readJson(path.join(targetDir, 'package.json'));
