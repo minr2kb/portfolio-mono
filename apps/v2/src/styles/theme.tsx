@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import { FontWeightValues, ThemeModeType, ThemeMode } from '@/types/styles';
+import { FontWeightValues } from '@/types/styles';
 
 export const MOBILE_WIDTH = 700;
 export const TABLET_WIDTH = 960;
@@ -8,11 +8,8 @@ export const mobileMaxWidthMediaQuery = `@media (max-width:${MOBILE_WIDTH}px)`;
 export const tabletMaxWidthMediaQuery = `@media (max-width:${TABLET_WIDTH}px)`;
 
 // A custom theme for this app
-export const getTheme = (themeMode: ThemeModeType = ThemeMode.LIGHT) => {
+export const getTheme = (isMobile: boolean = false) => {
   return createTheme({
-    colorSchemes: {
-      dark: themeMode === ThemeMode.DARK,
-    },
     breakpoints: {
       values: {
         xs: 0,
@@ -24,23 +21,21 @@ export const getTheme = (themeMode: ThemeModeType = ThemeMode.LIGHT) => {
     },
     palette: {
       primary: {
-        main: '#334155',
-        light: '#E7EFF6',
-        contrastText: '#F9F9F9',
+        main: '#5CC792',
+        light: '#c084fc',
+        contrastText: '#FFF',
       },
       secondary: {
-        main: '#44698C',
-        light: '#CBD5E1',
+        main: '#666',
       },
       text: {
-        primary: '#334155',
-        secondary: '#44698C',
-        disabled: '#D7DEE5',
+        primary: '#333',
+        secondary: '#666',
+        disabled: '#CCC',
       },
     },
     typography: {
       fontFamily: [
-        'Pretendard-Regular',
         'Noto Sans KR',
         'AppleSDGothicNeo',
         '-apple-system',
@@ -56,39 +51,39 @@ export const getTheme = (themeMode: ThemeModeType = ThemeMode.LIGHT) => {
       ].join(','),
 
       h1: {
-        fontSize: 32,
+        fontSize: isMobile ? 32 : 50,
         fontWeight: FontWeightValues.BOLD,
         letterSpacing: '0.02em',
         lineHeight: 1.3,
       },
       h2: {
-        fontSize: 30,
+        fontSize: isMobile ? 30 : 44,
         fontWeight: FontWeightValues.BOLD,
         letterSpacing: '0.02em',
         lineHeight: 1.5,
         wordBreak: 'keep-all',
       },
       h3: {
-        fontSize: 24,
+        fontSize: isMobile ? 24 : 30,
         fontWeight: FontWeightValues.BOLD,
         lineHeight: 1.5,
         letterSpacing: '0.015em',
         wordBreak: 'keep-all',
       },
       h4: {
-        fontSize: 18,
+        fontSize: isMobile ? 18 : 20,
         fontWeight: FontWeightValues.BOLD,
         lineHeight: 1.3,
         letterSpacing: '0.015em',
         wordBreak: 'keep-all',
       },
       body1: {
-        fontSize: 16,
+        fontSize: isMobile ? 16 : 18,
         fontWeight: FontWeightValues.REGULAR,
         wordBreak: 'keep-all',
       },
       body2: {
-        fontSize: 15,
+        fontSize: isMobile ? 15 : 17,
         fontWeight: FontWeightValues.REGULAR,
       },
     },
@@ -103,7 +98,6 @@ export const getTheme = (themeMode: ThemeModeType = ThemeMode.LIGHT) => {
             '&:hover': {
               boxShadow: 'none',
             },
-            fontWeight: FontWeightValues.SEMI_BOLD,
           },
         },
       },

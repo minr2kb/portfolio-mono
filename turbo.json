@@ -8,12 +8,14 @@
     "dev": {
       "outputs": [],
       "dependsOn": [],
-      "persistent": true
+      "persistent": true,
+      "inputs": ["apps/**"]
     },
     "preview": {
       "outputs": [],
       "dependsOn": [],
-      "persistent": true
+      "persistent": true,
+      "inputs": ["apps/**"]
     },
     "prebuild": {
       "outputs": [],

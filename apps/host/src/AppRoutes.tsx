@@ -35,9 +35,9 @@ export const AppRoutes = () => {
   return (
     <Routes>
       <Route index element={<Navigate to="v3" replace />} />
-      <Route path="/v1" element={LazyRouteLoader(() => import('v1/AppRoutes'))} />
-      <Route path="/v2" element={LazyRouteLoader(() => import('v2/AppRoutes'))} />
-      <Route path="/v3" element={LazyRouteLoader(() => import('v3/AppRoutes'))} />
+      <Route path="/v1/*" element={LazyRouteLoader(() => import('v1/AppRoutes'))} />
+      <Route path="/v2/*" element={LazyRouteLoader(() => import('v2/AppRoutes'))} />
+      <Route path="/v3/*" element={LazyRouteLoader(() => import('v3/AppRoutes'))} />
     </Routes>
   );
 };

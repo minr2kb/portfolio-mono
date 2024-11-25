@@ -19,7 +19,7 @@
   "scripts": {
     "prebuild": "turbo run prebuild --filter=@apps/*",
     "build": "turbo run build --filter=@apps/*",
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --filter=@apps/*",
     "dev:host": "turbo run @apps/host#dev",
     "dev:v1": "turbo run @apps/v1#dev",
     "dev:v2": "turbo run @apps/v2#dev",

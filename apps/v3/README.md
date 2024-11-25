@@ -1,1 +1,1 @@
-# React + Vite 템플릿
+# React + Vite + MUI 템플릿
