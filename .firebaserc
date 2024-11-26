@@ -1,0 +1,24 @@
+{
+  "projects": {
+    "default": "portfolio-kbmin"
+  },
+  "targets": {
+    "portfolio-kbmin": {
+      "hosting": {
+        "host": [
+          "portfolio-kbmin-host"
+        ],
+        "v1": [
+          "portfolio-kbmin-v1"
+        ],
+        "v2": [
+          "portfolio-kbmin-v2"
+        ],
+        "v3": [
+          "portfolio-kbmin-v3"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

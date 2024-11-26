@@ -31,7 +31,12 @@
     "lint:fix": "turbo run lint:fix",
     "format": "prettier --write \"**/*.{ts,tsx,md,json,js,jsx}\"",
     "clean": "turbo run clean && rm -rf node_modules",
-    "create-app": "node scripts/create-app.js"
+    "create-app": "node scripts/create-app.js",
+    "deploy": "firebase deploy",
+    "deploy:host": "firebase deploy --only hosting:host",
+    "deploy:v1": "firebase deploy --only hosting:v1",
+    "deploy:v2": "firebase deploy --only hosting:v2",
+    "deploy:v3": "firebase deploy --only hosting:v3"
   },
   "devDependencies": {
     "chalk": "^4.1.2",
