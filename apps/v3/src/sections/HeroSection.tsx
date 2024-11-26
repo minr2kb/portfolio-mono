@@ -6,7 +6,7 @@ import { Box, BoxProps, Grid, SxProps, Theme, Typography, Zoom } from '@mui/mate
 import { useCallback, useMemo } from 'react';
 import HelloAnimation from '@/components/HelloAnimation';
 import { skillsData } from '@/data/sectionData';
-
+import { getAssetsUrl } from '@/utils';
 type WidgetCardProps = {
   bgImage?: string;
   bgcolor?: string;
@@ -140,7 +140,7 @@ const SkillWidgets = () => {
                 px: 5,
               }}
             >
-              <img src={skill.image} width={40} />
+              <img src={getAssetsUrl(skill.image)} width={40} />
             </WidgetCard>
           </Box>
         ))}
@@ -213,7 +213,11 @@ function HeroSection() {
         {/* SECTION: 상단 */}
         <Grid container item spacing={2} xs={12}>
           <Grid item xs={isMobile ? 12 : 4}>
-            <WidgetCard index={0} bgImage="images/me_back.webp" onClick={() => onClickNavigator(Sections.ABOUT)}>
+            <WidgetCard
+              index={0}
+              bgImage={getAssetsUrl('images/me_back.webp')}
+              onClick={() => onClickNavigator(Sections.ABOUT)}
+            >
               <Box
                 sx={{
                   height: '100%',
@@ -247,7 +251,7 @@ function HeroSection() {
                     프로젝트
                   </Typography>
                   <img
-                    src="/images/widget_projects.webp"
+                    src={getAssetsUrl('images/widget_projects.webp')}
                     style={{ width: '60%', position: 'absolute', top: 20, left: 0 }}
                   />
                 </WidgetCard>
@@ -255,11 +259,12 @@ function HeroSection() {
               <Grid item xs={6}>
                 <WidgetCard
                   index={2}
-                  bgImage="images/me_grad.webp"
+                  bgImage={getAssetsUrl('images/me_grad.webp')}
                   sx={{
                     display: 'flex',
-                    backgroundImage:
-                      'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) , url(images/me_grad.webp)',
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) , url(${getAssetsUrl(
+                      'images/me_grad.webp',
+                    )})`,
                   }}
                   onClick={() => onClickNavigator(Sections.EDUCATION)}
                 >
@@ -277,7 +282,7 @@ function HeroSection() {
             <Grid item xs={12}>
               <WidgetCard index={3} sx={{ px: 0 }}>
                 <img
-                  src="/images/memoji-lg.webp"
+                  src={getAssetsUrl('images/memoji-lg.webp')}
                   style={{
                     height: isMobile ? '70%' : '90%',
                     position: 'absolute',
@@ -332,7 +337,7 @@ function HeroSection() {
                 </Typography>
               </Box>
               <img
-                src="/images/widget_career.webp"
+                src={getAssetsUrl('images/widget_career.webp')}
                 style={{ width: '90%', position: 'absolute', bottom: 0, right: 0 }}
               />
             </WidgetCard>

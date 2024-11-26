@@ -2,6 +2,7 @@ import { Box } from '@mui/material';
 import GradientBackground from '@/components/GradientBackground';
 import HoverChangingText from '@/components/HoverChangingText';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
+import { getAssetsUrl } from '@/utils';
 
 function IntroSection() {
   const { isMobile } = useDeviceQuery();
@@ -81,7 +82,7 @@ function IntroSection() {
             text="민경배입니다"
             alt={
               <Box display="flex">
-                <img src="/images/memoji.png" alt="미모지" height={isMobile ? '60px' : '65px'} />
+                <img src={getAssetsUrl('/images/memoji.png')} alt="미모지" height={isMobile ? '60px' : '65px'} />
                 입니다
               </Box>
             }

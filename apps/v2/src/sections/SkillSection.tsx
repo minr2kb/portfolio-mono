@@ -5,6 +5,7 @@ import CodeEditor from '@uiw/react-textarea-code-editor';
 import React, { useRef, useState } from 'react';
 import { skillsData } from '@/data/sectionData';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
+import { getAssetsUrl } from '@/utils';
 
 function SkillItem({
   skill,
@@ -51,7 +52,7 @@ function SkillItem({
       onClick={onClick}
     >
       <img
-        src={skill.image}
+        src={getAssetsUrl(skill.image)}
         alt={skill.name}
         width={isMobile ? 50 : 60}
         style={{

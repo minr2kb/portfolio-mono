@@ -21,6 +21,12 @@
     "prebuild": {
       "outputs": [],
       "dependsOn": []
+    },
+    "build:dev": {
+      "outputs": [],
+      "dependsOn": [],
+      "inputs": ["apps/**"],
+      "cache": false
     }
   }
 }

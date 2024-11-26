@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
   const env = { ...rootEnv, ...localEnv };
 
   return {
-    base: env.YOUR_APP_URL,
+    base: env.VITE_V3_URL,
     plugins: [
       react(),
       tsconfigPaths(),

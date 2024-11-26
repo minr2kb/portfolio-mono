@@ -31,9 +31,6 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       port: 5001,
-      fs: {
-        allow: ['./public'],
-      },
     },
     preview: { port: 5001 },
   };

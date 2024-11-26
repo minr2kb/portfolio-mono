@@ -19,6 +19,7 @@
   "scripts": {
     "prebuild": "turbo run prebuild --filter=@apps/*",
     "build": "turbo run build --filter=@apps/*",
+    "build:dev": "turbo run build:dev --filter=@apps/*",
     "dev": "turbo run dev --filter=@apps/*",
     "dev:host": "turbo run @apps/host#dev",
     "dev:v1": "turbo run @apps/v1#dev",
@@ -26,7 +27,7 @@
     "dev:v3": "turbo run @apps/v3#dev",
     "preview": "turbo run preview",
     "preview:remotes": "turbo run preview --filter=@apps/* --filter=!@apps/host --parallel",
-    "start": "pnpm build && concurrently \"pnpm run dev:host\" \"pnpm run preview:remotes\"",
+    "start": "pnpm build:dev && concurrently \"pnpm run dev:host\" \"pnpm run preview:remotes\"",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "format": "prettier --write \"**/*.{ts,tsx,md,json,js,jsx}\"",
