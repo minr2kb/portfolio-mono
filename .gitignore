@@ -53,7 +53,10 @@ dist-ssr
 .vercel
 
 # turbo
-.turbo/*
+.turbo
+
+# firebase
+.firebase
 
 # typescript
 *.tsbuildinfo

@@ -9,9 +9,7 @@
     "skipLibCheck": true,
     "moduleResolution": "node",
 
-    "types": ["node"], // node 타입 정의 추가
-    // "lib": ["es2020", "DOM"],
-    // "module": "ESNext",
+    "types": ["node"],
     "newLine": "LF",
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
