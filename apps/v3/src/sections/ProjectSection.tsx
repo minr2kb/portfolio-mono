@@ -1,7 +1,8 @@
+import RatioBox from '@/components/RatioBox';
 import TextWithDot from '@/components/TextWithDot';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
-import { FontWeightValues } from '@/types/styles';
 import { Sections, type ProjectItemType } from '@/types';
+import { FontWeightValues } from '@/types/styles';
 import { ArrowOutward, Link } from '@mui/icons-material';
 import { Box, Chip, Collapse, Divider, Grid, IconButton, Tooltip, Typography, Zoom } from '@mui/material';
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -78,33 +79,33 @@ function ExpandedProjectItem({
               }),
         }}
       >
-        <Box
-          sx={{
-            width: '100%',
-            height: '100%',
-            borderRadius: '10px',
-            cursor: 'pointer',
-            transform: 'scale(1.005)',
-            boxShadow: '0 0 10px 4px rgba(0,0,0,0.1)',
-            aspectRatio: '12 / 5',
-          }}
-          onClick={onClose}
-        >
-          <img
-            src={image}
-            alt="project"
-            loading="lazy"
-            style={{
-              transition: 'all 0.2s ease-in-out',
+        <RatioBox ratio={12 / 5}>
+          <Box
+            sx={{
               width: '100%',
               height: '100%',
               borderRadius: '10px',
-              objectFit: 'cover',
-              objectPosition: 'center center',
+              cursor: 'pointer',
+              transform: 'scale(1.005)',
+              boxShadow: '0 0 10px 4px rgba(0,0,0,0.1)',
             }}
-          />
-        </Box>
-
+            onClick={onClose}
+          >
+            <img
+              src={image}
+              alt="project"
+              loading="lazy"
+              style={{
+                transition: 'all 0.2s ease-in-out',
+                width: '100%',
+                height: '100%',
+                borderRadius: '10px',
+                objectFit: 'cover',
+                objectPosition: 'center center',
+              }}
+            />
+          </Box>
+        </RatioBox>
         <Collapse in={openInfo}>
           <Box sx={{ py: 2 }}>
             <Box>
@@ -217,56 +218,57 @@ function ProjectItem(props: ProjectItemType) {
     <Grid item sm={6} xs={12} width="100%">
       <ExpandedProjectItem item={props} clientRect={clientRect} open={open} onClose={handleDismiss} />
       <Box ref={itemRef}>
-        <Box
-          sx={{
-            width: '100%',
-            height: '100%',
-            borderRadius: '10px',
-            cursor: 'pointer',
-            '&:hover img': {
-              boxShadow: '0 0 10px 4px rgba(0,0,0,0.1)',
-              filter: 'blur(2px)',
-              opacity: 0.2,
-            },
-            '&:hover .overlay': {
-              opacity: 1,
-            },
-            aspectRatio: '12 / 5',
-          }}
-          onClick={handleSelect}
-        >
-          <img
-            src={image}
-            alt="project"
-            loading="lazy"
-            style={{
-              transition: 'all 0.2s ease-in-out',
+        <RatioBox ratio={12 / 5}>
+          <Box
+            sx={{
               width: '100%',
               height: '100%',
               borderRadius: '10px',
-              objectFit: 'cover',
-              objectPosition: 'center center',
+              cursor: 'pointer',
+              '&:hover img': {
+                boxShadow: '0 0 10px 4px rgba(0,0,0,0.1)',
+                filter: 'blur(2px)',
+                opacity: 0.2,
+              },
+              '&:hover .overlay': {
+                opacity: 1,
+              },
             }}
-          />
-          <Box
-            className="overlay"
-            sx={{
-              transition: 'opacity 0.2s ease-in-out',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              opacity: 0,
-            }}
+            onClick={handleSelect}
           >
-            <Typography variant="h3">{title}</Typography>
-            <ArrowOutward fontSize="large" />
+            <img
+              src={image}
+              alt="project"
+              loading="lazy"
+              style={{
+                transition: 'all 0.2s ease-in-out',
+                width: '100%',
+                height: '100%',
+                borderRadius: '10px',
+                objectFit: 'cover',
+                objectPosition: 'center center',
+              }}
+            />
+            <Box
+              className="overlay"
+              sx={{
+                transition: 'opacity 0.2s ease-in-out',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                opacity: 0,
+              }}
+            >
+              <Typography variant="h3">{title}</Typography>
+              <ArrowOutward fontSize="large" />
+            </Box>
           </Box>
-        </Box>
+        </RatioBox>
       </Box>
     </Grid>
   );
