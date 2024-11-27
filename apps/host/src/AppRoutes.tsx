@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import LoadingPage from '@/pages/LoadingPage';
+import ErrorPage from '@/pages/ErrorPage';
 
 const LazyRouteLoader = (remoteImport: () => Promise<{ default: React.FC }>) => {
   const [Component, setComponent] = useState<React.FC | null>(null);
@@ -38,6 +39,7 @@ export const AppRoutes = () => {
       <Route path="/v1/*" element={LazyRouteLoader(() => import('v1/AppRoutes'))} />
       <Route path="/v2/*" element={LazyRouteLoader(() => import('v2/AppRoutes'))} />
       <Route path="/v3/*" element={LazyRouteLoader(() => import('v3/AppRoutes'))} />
+      <Route path="*" element={<ErrorPage error={new Error('404 | Page Not Found')} />} />
     </Routes>
   );
 };

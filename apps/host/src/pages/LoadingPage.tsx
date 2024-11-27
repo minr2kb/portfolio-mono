@@ -1,3 +1,5 @@
+import { BarLoader } from 'react-spinners';
+
 const LoadingPage = () => {
   return (
     <div
@@ -7,15 +9,10 @@ const LoadingPage = () => {
         justifyContent: 'center',
         alignItems: 'center',
         height: '100vh',
-        backgroundColor: '#f0f0f0',
-        color: '#333',
-        fontFamily: 'Pretendard-Regular',
-        padding: '20px',
-        textAlign: 'center',
+        backgroundColor: '#E7EFF6',
       }}
     >
-      <h1>🔄 Loading...</h1>
-      {/* <p>Please wait while we load the content.</p> */}
+      <BarLoader color="#44698C" />
     </div>
   );
 };
