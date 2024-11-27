@@ -17,7 +17,7 @@ function HoverChangingText(props: Props) {
     <Box sx={{ height: fontSize * lineHeight, width: 'fit-content', overflow: 'hidden' }}>
       <Box
         sx={{
-          transition: 'all ease-in-out 150ms',
+          transition: 'all ease-in-out 200ms',
           ':hover': {
             transform: 'translateY(-50%)',
           },
@@ -27,7 +27,7 @@ function HoverChangingText(props: Props) {
           variant="h1"
           sx={{
             fontSize,
-            whiteSpace: 'pre-wrap',
+            whiteSpace: 'nowrap',
             ...sx,
           }}
         >
@@ -37,7 +37,7 @@ function HoverChangingText(props: Props) {
           variant="h1"
           sx={{
             fontSize,
-            whiteSpace: 'pre-wrap',
+            whiteSpace: 'nowrap',
             ...(altSx ?? sx),
           }}
         >
