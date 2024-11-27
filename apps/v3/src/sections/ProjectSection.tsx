@@ -7,7 +7,6 @@ import { ArrowOutward, Link } from '@mui/icons-material';
 import { Box, Chip, Collapse, Divider, Grid, IconButton, Tooltip, Typography, Zoom } from '@mui/material';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { projectsData } from '@/data/sectionData';
-import { getAssetsUrl } from '@/utils';
 
 function ExpandedProjectItem({
   item,
@@ -93,7 +92,7 @@ function ExpandedProjectItem({
             onClick={onClose}
           >
             <img
-              src={getAssetsUrl(image)}
+              src={image}
               alt="project"
               loading="lazy"
               style={{
@@ -238,7 +237,7 @@ function ProjectItem(props: ProjectItemType) {
             onClick={handleSelect}
           >
             <img
-              src={getAssetsUrl(image)}
+              src={image}
               alt="project"
               loading="lazy"
               style={{

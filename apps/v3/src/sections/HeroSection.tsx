@@ -6,7 +6,7 @@ import { Box, BoxProps, Grid, SxProps, Theme, Typography, Zoom } from '@mui/mate
 import { useCallback, useMemo } from 'react';
 import HelloAnimation from '@/components/HelloAnimation';
 import { skillsData } from '@/data/sectionData';
-import { getAssetsUrl } from '@/utils';
+import { getAssetsUrl } from '@packages/shared';
 type WidgetCardProps = {
   bgImage?: string;
   bgcolor?: string;
@@ -140,7 +140,7 @@ const SkillWidgets = () => {
                 px: 5,
               }}
             >
-              <img src={getAssetsUrl(skill.image)} width={40} />
+              <img src={skill.image} width={40} />
             </WidgetCard>
           </Box>
         ))}

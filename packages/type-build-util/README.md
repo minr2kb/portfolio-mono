@@ -1,4 +1,4 @@
-# type-build-util
+# @packages/type-build-util
 
 `type-build-util`은 TypeScript 모듈의 타입을 자동으로 생성하고 관리하는 내부 유틸리티입니다. 이 패키지는 Module Federation 환경에서 타입 정의를 쉽게 생성하고 사용할 수 있도록 도와줍니다.
 

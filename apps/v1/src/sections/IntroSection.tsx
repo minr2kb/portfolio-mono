@@ -1,7 +1,6 @@
 import RotatingText from '@/components/RotatingText';
 import { Grid, Typography } from '@mui/material';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
-import { getAssetsUrl } from '@/utils';
 
 function IntroSection() {
   const { isMobile } = useDeviceQuery();
@@ -14,7 +13,7 @@ function IntroSection() {
       justifyContent={isMobile ? 'center' : 'start'}
       alignItems={isMobile ? 'start' : 'center'}
     >
-      <img src={getAssetsUrl('/images/memoji.png')} alt="미모지" height={isMobile ? '200px' : '250px'} />
+      <img src={'/images/memoji.png'} alt="미모지" height={isMobile ? '200px' : '250px'} />
       <Grid>
         <Typography variant="h1">안녕하세요</Typography>
         <Typography variant="h1">

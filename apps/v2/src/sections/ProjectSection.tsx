@@ -6,7 +6,6 @@ import { Box, Chip, Collapse, Divider, Grid, IconButton, Tooltip, Typography, Zo
 import { useRef, useState } from 'react';
 import { projectsData } from '@/data/sectionData';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
-import { getAssetsUrl } from '@/utils';
 
 function ProjectItem({
   title,
@@ -80,7 +79,7 @@ function ProjectItem({
                 onClick={handleDismiss}
               >
                 <img
-                  src={getAssetsUrl(image)}
+                  src={image}
                   alt="project"
                   loading="lazy"
                   style={{
@@ -188,7 +187,7 @@ function ProjectItem({
             onClick={handleSelect}
           >
             <img
-              src={getAssetsUrl(image)}
+              src={image}
               alt="project"
               loading="lazy"
               style={{

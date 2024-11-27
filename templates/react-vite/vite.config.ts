@@ -31,12 +31,7 @@ export default defineConfig(({ mode }) => {
       minify: false,
       cssCodeSplit: false,
     },
-    server: {
-      port: 5000,
-      fs: {
-        allow: ['./public'],
-      },
-    },
+    server: { port: 5000 },
     preview: { port: 5000 },
   };
 });

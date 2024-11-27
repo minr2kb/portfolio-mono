@@ -17,7 +17,6 @@ import {
 import React, { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
 import useStartedScroll from '@/hooks/useStartedScroll';
-import { getAssetsUrl } from '@/utils';
 
 type NavBarProps = {
   openNavigator?: () => void;
@@ -117,7 +116,7 @@ const NavBarContent: React.FC<NavBarContentProps> = React.memo(
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Typography sx={typographyStyles}>by.</Typography>
           <img
-            src={getAssetsUrl('images/memoji.png')}
+            src={'images/memoji.png'}
             alt="미모지"
             style={{ width: '40px', marginTop: '2px', marginRight: '-8px' }}
           />

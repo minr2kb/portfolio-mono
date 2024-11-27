@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { projectsData } from '@/data/sectionData';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
 import { type ProjectItemType } from '@/types';
-import { getAssetsUrl } from '@/utils';
 
 function ProjectBlock({
   title,
@@ -33,7 +32,7 @@ function ProjectBlock({
           }}
         >
           <img
-            src={getAssetsUrl(image)}
+            src={image}
             alt="project"
             loading="lazy"
             style={{
