@@ -1,7 +1,7 @@
 import RatioBox from '@/components/RatioBox';
 import { FontWeightValues } from '@/types/styles';
 import { KeyboardArrowDown, KeyboardArrowUp, Link } from '@mui/icons-material';
-import { Box, Button, Chip, Collapse, Divider, Grid, IconButton, Tooltip, Typography } from '@mui/material';
+import { Box, Button, Chip, Collapse, Divider, Grid, IconButton, Typography } from '@mui/material';
 import { useState } from 'react';
 import { projectsData } from '@/data/sectionData';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
@@ -51,11 +51,11 @@ function ProjectBlock({
         <Box display="flex" alignItems="center">
           <Typography variant="h3">{title}</Typography>
           {link !== '' && (
-            <Tooltip arrow title={link}>
-              <IconButton size="small" href={link} target="_blank">
-                <Link htmlColor="#999" fontSize={isMobile ? 'small' : 'medium'} />
-              </IconButton>
-            </Tooltip>
+            // <Tooltip arrow title={link}>
+            <IconButton size="small" href={link} target="_blank">
+              <Link htmlColor="#999" fontSize={isMobile ? 'small' : 'medium'} />
+            </IconButton>
+            // </Tooltip>
           )}
         </Box>
       </Grid>
