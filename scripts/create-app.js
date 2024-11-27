@@ -51,6 +51,10 @@ async function promptUser() {
   return answers;
 }
 
+function toSnakeCase(str) {
+  return str.replace(/[\s-]+/g, '_').toUpperCase();
+}
+
 async function createApp() {
   try {
     const { appName, template, port } = await promptUser();
@@ -65,6 +69,8 @@ async function createApp() {
 
     console.log(chalk.blue(`Creating new app: ${appName} using ${template} template...`));
 
+    const envName = `VITE_${toSnakeCase(appName)}_URL`;
+
     // Copy template, excluding node_modules
     await fs.copy(templateDir, targetDir, {
       filter: (src) => !src.includes('node_modules'),
@@ -78,9 +84,21 @@ async function createApp() {
     // Update vite.config.ts base path and port
     const viteConfigPath = path.join(targetDir, 'vite.config.ts');
     let viteConfig = await fs.readFile(viteConfigPath, 'utf8');
+    viteConfig = viteConfig.replace(/base:\s*['"][^'"]*['"]/, `base: env.${envName}`);
     viteConfig = viteConfig.replace(/server:\s*{[^}]*}/, `server: { port: ${port} }`);
     viteConfig = viteConfig.replace(/preview:\s*{[^}]*}/, `preview: { port: ${port} }`);
     await fs.writeFile(viteConfigPath, viteConfig);
+
+    // Update .env
+    const envDevPath = path.join(targetDir, '../.env.development');
+    const envProdPath = path.join(targetDir, '../.env.production');
+
+    let envDev = await fs.readFile(envDevPath, 'utf8');
+    let envProd = await fs.readFile(envProdPath, 'utf8');
+    envDev = envDev + `${envName}=http://localhost:${port}\n`;
+    envProd = envProd + `${envName}=ENTER_PRODUCTION_URL\n`;
+    await fs.writeFile(envDevPath, envDev);
+    await fs.writeFile(envProdPath, envProd);
 
     // Update dts.config.json
     const dtsConfigPath = path.join(targetDir, 'dts.config.json');
@@ -97,6 +115,8 @@ async function createApp() {
     console.log(chalk.yellow('  pnpm dev'));
   } catch (err) {
     console.error(chalk.red('Error creating app:'), err);
+    // delete targetDir
+    fs.removeSync(targetDir);
     process.exit(1);
   }
 }

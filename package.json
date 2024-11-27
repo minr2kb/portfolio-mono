@@ -25,6 +25,7 @@
     "dev:v1": "turbo run @apps/v1#dev",
     "dev:v2": "turbo run @apps/v2#dev",
     "dev:v3": "turbo run @apps/v3#dev",
+    "dev:v4": "turbo run @apps/v4#dev",
     "preview": "turbo run preview",
     "preview:remotes": "turbo run preview --filter=@apps/* --filter=!@apps/host --parallel",
     "start": "pnpm build:dev && concurrently \"pnpm run dev:host\" \"pnpm run preview:remotes\"",
@@ -37,7 +38,8 @@
     "deploy:host": "firebase deploy --only hosting:host",
     "deploy:v1": "firebase deploy --only hosting:v1",
     "deploy:v2": "firebase deploy --only hosting:v2",
-    "deploy:v3": "firebase deploy --only hosting:v3"
+    "deploy:v3": "firebase deploy --only hosting:v3",
+    "deploy:v4": "firebase deploy --only hosting:v4"
   },
   "devDependencies": {
     "chalk": "^4.1.2",

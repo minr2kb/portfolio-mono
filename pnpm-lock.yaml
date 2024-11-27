@@ -331,6 +331,9 @@ importers:
       '@originjs/vite-plugin-federation':
         specifier: ^1.3.6
         version: 1.3.6
+      '@packages/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
       '@packages/type-build-util':
         specifier: workspace:*
         version: link:../../packages/type-build-util
@@ -448,6 +451,9 @@ importers:
       '@originjs/vite-plugin-federation':
         specifier: ^1.3.6
         version: 1.3.6
+      '@packages/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
       '@packages/type-build-util':
         specifier: workspace:*
         version: link:../../packages/type-build-util
@@ -518,6 +524,9 @@ importers:
       '@originjs/vite-plugin-federation':
         specifier: ^1.3.6
         version: 1.3.6
+      '@packages/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
       '@packages/type-build-util':
         specifier: workspace:*
         version: link:../../packages/type-build-util

@@ -1,41 +1,37 @@
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import federation from '@originjs/vite-plugin-federation';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import exposes from './exposes.json';
+import dtsConfig from './dts.config.json';
 import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   const rootEnv = loadEnv(mode, path.resolve(__dirname, '../'), '');
   const localEnv = loadEnv(mode, process.cwd(), '');
-
   const env = { ...rootEnv, ...localEnv };
+
   return {
-    base: env.VITE_HOST_URL,
+    base: env.YOUR_APP_URL,
     plugins: [
       react(),
+      tsconfigPaths(),
       federation({
-        name: 'host-app',
-        remotes: {
-          v1: `${env.VITE_V1_URL}/assets/remoteEntry.js`,
-          v2: `${env.VITE_V2_URL}/assets/remoteEntry.js`,
-          v3: `${env.VITE_V3_URL}/assets/remoteEntry.js`,
-          v4: `${env.VITE_V4_URL}/assets/remoteEntry.js`,
-        },
+        name: dtsConfig.name,
+        filename: 'remoteEntry.js',
+        exposes,
         shared: ['react', 'react-dom', 'react-router-dom'],
       }),
     ],
-    server: {
-      port: 1129,
-      open: true,
-    },
+    cacheDir: './.vite',
     build: {
       modulePreload: false,
       target: 'esnext',
       minify: false,
       cssCodeSplit: false,
     },
-    resolve: {
-      alias: [{ find: '@', replacement: __dirname + '/src' }],
-    },
+    server: { port: 5004 },
+    preview: { port: 5004 },
   };
 });
