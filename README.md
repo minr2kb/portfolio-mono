@@ -1,4 +1,6 @@
 # Portfolio - Micro Frontend Monorepo
+![portfolio-mono](https://github.com/user-attachments/assets/a228aa0a-bdbf-47d1-94fb-60f7b883a435)
+
 
 - 이 프로젝트는 버전별 포트폴리오를 독립적으로 관리하기 위해 제작되었습니다.
 - Turborepo와 Module Federation을 활용한 마이크로 프론트엔드 모노레포 구조입니다.
