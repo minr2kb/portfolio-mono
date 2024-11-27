@@ -1,7 +1,8 @@
 # Portfolio - Micro Frontend Monorepo
 
-- 이 프로젝트는 버전별 포트폴리오를 관리하기 위해 제작되었습니다.
+- 이 프로젝트는 버전별 포트폴리오를 독립적으로 관리하기 위해 제작되었습니다.
 - Turborepo와 Module Federation을 활용한 마이크로 프론트엔드 모노레포 구조입니다.
+- Firebase Hosting을 통해 4개의 CDN 서버를 사용중입니다.
 
 ## 프로젝트 구조
 
@@ -20,6 +21,7 @@
 ├── scripts/
 │ └── create-app.js # 템플릿 스캐폴딩을 위한 스크립트
 ├── turbo.json # Turborepo 설정
+├── firebase.json # firebase 호스팅 설정
 ├── package.json # 루트 패키지 설정
 └── pnpm-workspace.yaml # PNPM 워크스페이스 설정
 ```
@@ -39,13 +41,16 @@
 
 ```bash
 pnpm install
-
 ```
 
 ### 2. 빌드
 
 ```bash
+# 프로덕션 빌드
 pnpm build
+
+# 개발 빌드
+pnpm build:dev
 ```
 
 ### 3. 개발 서버 실행
@@ -59,7 +64,19 @@ pnpm dev:v3
 
 # 동시 구동
 pnpm start
+```
 
+### 배포
+
+```bash
+# 따로 배포
+pnpm run deploy:host
+pnpm run deploy:v1
+pnpm run deploy:v2
+pnpm run deploy:v3
+
+# 동시 배포
+pnpm run deploy
 ```
 
 ## 앱 구조
@@ -70,11 +87,11 @@ pnpm start
 - 역할: 다른 마이크로 프론트엔드 앱들을 통합하는 컨테이너 애플리케이션
 - 포트: 1129
 
-### V1 / V2 / V3 App
+### Remote App
 
-- 경로: `apps/v1` `apps/v2` `apps/v3`
+- 경로: `apps/v1` `apps/v2` `apps/v3`, ...
 - 역할: 각 버전별 리모트 애플리케이션
-- 포트: 5001, 5002, 5003
+- 포트: 5001, 5002, 5003, ...
 
 ## 템플릿
 
@@ -91,21 +108,30 @@ pnpm start
 
 ## 개발 가이드
 
-### 새로운 마이크로 프론트엔드 앱 추가하기
+### 새로운 버전 리모트 앱 추가하기
 
 ```bash
 pnpm create-app
 ```
 
-1. create-app 스크립트 실행
-2. host 앱의 Module Federation 설정(vite.config.js)에 새 앱 추가
-3. src/remotes.tsx 내에 중첩 라우터 추가
+1. `create-app` 스크립트 실행(이름, 포트 설정)
+2. host 앱의 `vite.config.js`에 remoteEntry 추가
+3. `host/src/AppRoutes.tsx` 내에 중첩 라우터 추가
+4. `.env` 내 base_url 작성
+5. 생성된 remote앱의 `vite.config.js` 내 base 환경변수 작성
+
+### 주의사항
+
+1. asset은 각 앱의 public 내부에 위치시키되, 상대 경로의 경우 반드시 빌드타임 경로 변환을 위해 `@/utils` 내의 `getAssetsUrl()`로 감싸서 작성한다
+2. host앱 구동시에는 각 remote앱의 빌드 결과물(`dist/assets/remoteEntry.js`)이 필요하기에 preview를 통해 구동된다. 이 때, 로컬 절대 주소 사용을 위해 `pnpm build:dev`로 빌드가 되며, HMR작동이 안된다.
+3. 각 remote앱은 독립적으로 작동 가능하며 `dev` 스크립트를 사용해 개발 가능하다.
+4. 배포는 매뉴얼 로컬 배포로 돌아가기에 반드시 프로덕션 빌드가 선행되어야 한다.
 
 ## TO-DO
 
-- firebase 배포 파이프라인 -> 기존 도메인 유지
-- asset 로드 파이프라인 구상
 - 공통 로직(데이터,타입,에셋 등) 패키지 구성하기
+- 패키지 중복로드 방지
+- 배포 자동화
 
 ## 작성자
 
