@@ -21,7 +21,7 @@
           "headers": [
             {
               "key": "Access-Control-Allow-Origin",
-              "value": "https://portfolio-kbmin-host.web.app"
+              "value": "https://portfolio-kbmin.web.app"
             },
             {
               "key": "Access-Control-Allow-Methods",
@@ -37,7 +37,7 @@
       "redirects": [
         {
           "source": "/",
-          "destination": "https://portfolio-kbmin-host.web.app/v1",
+          "destination": "https://portfolio-kbmin.web.app/v1",
           "type": 302
         }
       ]
@@ -52,7 +52,7 @@
           "headers": [
             {
               "key": "Access-Control-Allow-Origin",
-              "value": "https://portfolio-kbmin-host.web.app"
+              "value": "https://portfolio-kbmin.web.app"
             },
             {
               "key": "Access-Control-Allow-Methods",
@@ -68,7 +68,7 @@
       "redirects": [
         {
           "source": "/",
-          "destination": "https://portfolio-kbmin-host.web.app/v2",
+          "destination": "https://portfolio-kbmin.web.app/v2",
           "type": 302
         }
       ]
@@ -83,7 +83,7 @@
           "headers": [
             {
               "key": "Access-Control-Allow-Origin",
-              "value": "https://portfolio-kbmin-host.web.app"
+              "value": "https://portfolio-kbmin.web.app"
             },
             {
               "key": "Access-Control-Allow-Methods",
@@ -99,7 +99,7 @@
       "redirects": [
         {
           "source": "/",
-          "destination": "https://portfolio-kbmin-host.web.app/v3",
+          "destination": "https://portfolio-kbmin.web.app/v3",
           "type": 302
         }
       ]

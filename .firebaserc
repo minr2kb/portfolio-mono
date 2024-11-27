@@ -6,7 +6,7 @@
     "portfolio-kbmin": {
       "hosting": {
         "host": [
-          "portfolio-kbmin-host"
+          "portfolio-kbmin"
         ],
         "v1": [
           "portfolio-kbmin-v1"
