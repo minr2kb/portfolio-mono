@@ -30,7 +30,6 @@ function EduExpItem(
             style={{
               transition: 'all 0.3s ease-in-out',
               width: open ? '30px' : 0,
-
               marginRight: open ? '8px' : 0,
             }}
           />

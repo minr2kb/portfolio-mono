@@ -420,6 +420,33 @@ export const projectsData: ProjectItemType[] = [
     cateTag: '사이드',
   },
   {
+    title: '포트폴리오 MFE',
+    description: `포트폴리오 버전관리를 위한 MFE 모노레포`,
+    details: [
+      {
+        content: 'PNPM + Turborepo를 통해 모노레포 환경을 구축하였습니다.',
+        type: 'text',
+      },
+      {
+        content: '템플릿 및 스크립트를 통해 프로젝트 스캐폴딩을 구현하였습니다.',
+        type: 'text',
+      },
+      {
+        content: 'module-federation을 통해 각 버전의 앱이 독립적으로 배포될 수 있도록 구성하였습니다.',
+        type: 'text',
+      },
+      {
+        content:
+          'type-build-utils 패키지를 구현하여 host앱에서 remote 모듈의 타입 정의를 사용할 수 있도록 구성하였습니다.',
+        type: 'text',
+      },
+    ],
+    image: '/images/projects/portfolio-mono.webp',
+    link: 'https://github.com/minr2kb/portfolio-mono',
+    skills: ['ReactJS', 'TypeScript', 'Vite', 'MUI', 'ChakraUI', 'PNPM', 'Turborepo', 'Firebase'],
+    cateTag: '사이드',
+  },
+  {
     title: '3D 모의창업',
     description: `3D 인테리어 시안 제작 서비스`,
     details: [
