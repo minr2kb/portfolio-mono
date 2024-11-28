@@ -17,6 +17,15 @@
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "headers": [
         {
+          "source": "/assets/remoteEntry.js",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, must-revalidate"
+            }
+          ]
+        },
+        {
           "source": "**",
           "headers": [
             {
@@ -48,6 +57,15 @@
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "headers": [
         {
+          "source": "/assets/remoteEntry.js",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, must-revalidate"
+            }
+          ]
+        },
+        {
           "source": "**",
           "headers": [
             {
@@ -78,6 +96,15 @@
       "public": "apps/v3/dist",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "headers": [
+        {
+          "source": "/assets/remoteEntry.js",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, must-revalidate"
+            }
+          ]
+        },
         {
           "source": "**",
           "headers": [
