@@ -4,7 +4,7 @@ import useDeviceQuery from '@/hooks/useDeviceQuery';
 import { Sections, type ProjectItemType } from '@/types';
 import { FontWeightValues } from '@/types/styles';
 import { ArrowOutward, Link } from '@mui/icons-material';
-import { Box, Chip, Collapse, Divider, Grid, IconButton, Tooltip, Typography, Zoom } from '@mui/material';
+import { Box, Chip, Collapse, Divider, Grid, IconButton, Typography, Zoom } from '@mui/material';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { projectsData } from '@/data/sectionData';
 
@@ -108,25 +108,13 @@ function ExpandedProjectItem({
         </RatioBox>
         <Collapse in={openInfo}>
           <Box sx={{ py: 2 }}>
-            <Box>
-              <Typography variant="h3">
-                {title}
-
-                {link !== '' && (
-                  <Tooltip arrow title={link}>
-                    <Grid
-                      sx={{
-                        display: 'inline-flex',
-                        ml: 0.5,
-                      }}
-                    >
-                      <IconButton size="small" href={link} target="_blank">
-                        <Link htmlColor="#999" fontSize={isMobile ? 'small' : 'medium'} />
-                      </IconButton>
-                    </Grid>
-                  </Tooltip>
-                )}
-              </Typography>
+            <Box display="flex" alignItems="center">
+              <Typography variant="h3">{title}</Typography>
+              {link !== '' && (
+                <IconButton size="small" href={link} target="_blank">
+                  <Link htmlColor="#999" fontSize={isMobile ? 'small' : 'medium'} />
+                </IconButton>
+              )}
             </Box>
             <Typography
               variant="body1"

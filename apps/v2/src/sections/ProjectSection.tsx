@@ -2,7 +2,7 @@ import RatioBox from '@/components/RatioBox';
 import { FontWeightValues } from '@/types/styles';
 import { type ProjectItemType } from '@/types';
 import { Link } from '@mui/icons-material';
-import { Box, Chip, Collapse, Divider, Grid, IconButton, Tooltip, Typography, Zoom } from '@mui/material';
+import { Box, Chip, Collapse, Divider, Grid, IconButton, Typography, Zoom } from '@mui/material';
 import { useRef, useState } from 'react';
 import { projectsData } from '@/data/sectionData';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
@@ -95,25 +95,13 @@ function ProjectItem({
             </RatioBox>
             <Collapse in={open}>
               <Box sx={{ py: 2 }}>
-                <Box>
-                  <Typography variant="h3">
-                    {title}
-
-                    {link !== '' && (
-                      <Tooltip arrow title={link}>
-                        <Grid
-                          sx={{
-                            display: 'inline-flex',
-                            ml: 0.5,
-                          }}
-                        >
-                          <IconButton size="small" href={link} target="_blank">
-                            <Link htmlColor="#999" fontSize={isMobile ? 'small' : 'medium'} />
-                          </IconButton>
-                        </Grid>
-                      </Tooltip>
-                    )}
-                  </Typography>
+                <Box display="flex" alignItems="center">
+                  <Typography variant="h3">{title}</Typography>
+                  {link !== '' && (
+                    <IconButton size="small" href={link} target="_blank">
+                      <Link htmlColor="#999" fontSize={isMobile ? 'small' : 'medium'} />
+                    </IconButton>
+                  )}
                 </Box>
                 <Box display="flex" flexWrap="wrap">
                   {cateTag !== '' && (
