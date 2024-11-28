@@ -1,7 +1,8 @@
 {
   "name": "@packages/type-build-util",
   "version": "1.0.0",
-  "main": "dist/src/index.js",
+  "main": "dist/index.js",
+  "bin": "dist/index.js",
   "scripts": {
     "build": "tsup",
     "dev": "tsup -w"

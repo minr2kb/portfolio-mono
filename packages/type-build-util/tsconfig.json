@@ -16,8 +16,6 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "stripInternal": true,
-    "composite": true,
-    "incremental": true,
     "outDir": "dist"
   },
   "include": ["src"]
