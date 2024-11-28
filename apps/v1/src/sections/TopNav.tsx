@@ -1,5 +1,5 @@
 import { FontWeightValues } from '@/types/styles';
-import { Grid, Typography } from '@mui/material';
+import { Badge, Box, Grid, Typography } from '@mui/material';
 
 import { animated, type SpringValue } from '@react-spring/web';
 import { Link } from 'react-router-dom';
@@ -40,14 +40,37 @@ function TopNav({ startedScroll, scrollY, pageHeight }: Props) {
           mx: 'auto',
         }}
       >
-        <Typography
-          sx={{
-            fontSize: isMobile ? 18 : 22,
-            fontWeight: FontWeightValues.BOLD,
+        <Link
+          to="/v2"
+          style={{
+            textDecoration: 'none',
+            color: 'inherit',
           }}
         >
-          포트폴리오
-        </Typography>
+          <Badge
+            badgeContent={
+              <Typography
+                sx={{
+                  fontSize: isMobile ? 10 : 11,
+                  fontWeight: FontWeightValues.BOLD,
+                  mb: -2,
+                  ml: 2,
+                }}
+              >
+                V1
+              </Typography>
+            }
+          >
+            <Typography
+              sx={{
+                fontSize: isMobile ? 18 : 22,
+                fontWeight: FontWeightValues.BOLD,
+              }}
+            >
+              포트폴리오
+            </Typography>
+          </Badge>
+        </Link>
         <Grid
           container
           sx={{
@@ -74,14 +97,10 @@ function TopNav({ startedScroll, scrollY, pageHeight }: Props) {
           />
         </Grid>
 
-        <Link
-          to="/v2"
-          replace
+        <Box
           style={{
             display: 'flex',
             alignItems: 'center',
-            textDecoration: 'none',
-            color: 'inherit',
           }}
         >
           <Typography
@@ -102,7 +121,7 @@ function TopNav({ startedScroll, scrollY, pageHeight }: Props) {
               marginTop: '2px',
             }}
           />
-        </Link>
+        </Box>
       </Grid>
     </Grid>
   );

@@ -15,6 +15,7 @@ import {
 } from '@mui/material';
 import React, { forwardRef, useEffect, useState } from 'react';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
+import { Link } from 'react-router-dom';
 
 interface Props {
   startedScroll?: boolean;
@@ -61,29 +62,37 @@ const NavBar = forwardRef<
           px: 3,
         }}
       >
-        <Badge
-          badgeContent={
+        <Link
+          to="/v3"
+          style={{
+            textDecoration: 'none',
+            color: 'inherit',
+          }}
+        >
+          <Badge
+            badgeContent={
+              <Typography
+                sx={{
+                  fontSize: isMobile ? 10 : 11,
+                  fontWeight: FontWeightValues.BOLD,
+                  mb: -2,
+                  ml: 2,
+                }}
+              >
+                {version}
+              </Typography>
+            }
+          >
             <Typography
               sx={{
-                fontSize: isMobile ? 10 : 11,
+                fontSize: isMobile ? 18 : 22,
                 fontWeight: FontWeightValues.BOLD,
-                mb: -2,
-                ml: 2,
               }}
             >
-              {version}
+              Portfolio
             </Typography>
-          }
-        >
-          <Typography
-            sx={{
-              fontSize: isMobile ? 18 : 22,
-              fontWeight: FontWeightValues.BOLD,
-            }}
-          >
-            Portfolio
-          </Typography>
-        </Badge>
+          </Badge>
+        </Link>
 
         <IconButton onClick={openNavigator} disabled={!startedScroll}>
           <MoreHoriz sx={{ opacity: startedScroll ? 1 : 0.7 }} />
