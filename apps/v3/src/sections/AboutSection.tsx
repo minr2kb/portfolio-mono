@@ -14,7 +14,9 @@ function AboutSection() {
           <Typography variant="body1" fontWeight={FontWeightValues.BOLD} color={'text.secondary'}>
             {about.subtitle}
           </Typography>
-          <Typography variant="body2">{about.content}</Typography>
+          <Typography variant="body2" whiteSpace={'pre-wrap'}>
+            {about.content}
+          </Typography>
         </Box>
       ))}
     </Box>

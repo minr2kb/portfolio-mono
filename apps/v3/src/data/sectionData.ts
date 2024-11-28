@@ -3,22 +3,21 @@ import { type EduExpItemType, type ProjectItemType, type SkillItemType } from '@
 export const aboutData = [
   {
     title: '빠른 개발과 실험에 자신있습니다',
-    subtitle: '단 6개월의 개발로 현재 MAU 10만을 넘기는 웹 프로덕트의 기반을 만들었습니다.',
+    subtitle: '단 6개월의 개발로 현재 MAU 20만을 넘기는 웹 프로덕트의 기반을 만들었습니다.',
     content:
-      '빠른 프로토타이핑을 통해 PMF를 확보하고, 1년만에 2개의 프로덕트를 성공적으로 런칭, 운영해본 경험이 있습니다. 성숙한 프로덕트팀의 경험으로 데이터 기반의 애자일한 실험 방식에도 익숙하며, 주도적으로 참여하여 새로운 피처를 논의하고, UX적인 개선점 찾기를 즐깁니다. 필요할 경우 3D, NFC, 시리얼 통신 등 도메인을 가리지 않는 다양한 기능 개발을 통해 엔지니어링적 문제를 해결합니다.',
+      '- 빠른 프로토타이핑을 통해 PMF를 확보하고, 1년만에 2개의 프로덕트를 성공적으로 런칭, 운영해본 경험이 있습니다.\n- 성숙한 프로덕트팀의 경험으로 데이터 기반의 애자일한 실험 방식에도 익숙하며, 주도적으로 참여하여 새로운 피처를 논의하고, UX적인 개선점 찾기를 즐깁니다.\n- 비즈니스 요구 사항에 맞추어 3D, NFC, 시리얼 통신 등 도메인을 가리지 않는 다양한 기능 개발을 통해 엔지니어링적 문제를 해결합니다.',
   },
   {
-    title: '필요를 채우는 개발을 합니다',
-    subtitle:
-      '내가 이 기술을 왜 쓰는지, 왜 이런 문화가 중요한지를 경험하고 배우는 사람과, 그저 받아들이기만 하는 사람은 다르다고 생각합니다.',
+    title: '효율적이고 자동화된 개발 환경을 추구합니다',
+    subtitle: '디자인시스템 파이프라인 작업을 통해 개발자의 개입이 필요없는 완전 자동화 프로세스를 구축했습니다.',
     content:
-      '초기 스타트업에서 경험한 기술, 문화적 시행착오들을 기반으로 스스로 더 나은 방법을 고민하고 배워나가고 있습니다. 기획에 따라 빠른 확장성을 요구하는 프로젝트를 다루며 떨어진 컴포넌트 재사용성을 높이기 위해 위해 아토믹 디자인 패턴을 적극 검토, 도입하여 모듈 수를 56% 가량 감소시켰습니다. 개발 공수가 많이 들어 유지보수가 어렵던 디자인시스템에는 자동화 파이프라인, 웹/앱 컨벤션 통일을 위한 유틸 개발을 통해 디자이너가 직접 사용 가능할 정도로 효율을 높이기도 했습니다.',
+      '- 초기 스타트업에서 경험한 기술, 문화적 시행착오들을 기반으로 스스로 더 나은 방법을 고민하고 배워나가고 있습니다.\n- 기획에 따라 빠른 확장성을 요구하는 프로젝트를 다루며 떨어진 컴포넌트 재사용성을 높이기 위해 위해 아토믹 디자인 패턴을 적극 검토, 도입하여 모듈 수를 56% 가량 감소시켰습니다.\n- 디자인시스템에 아이콘 자동화 파이프라인, 웹/앱 컨벤션 통일을 위한 유틸 개발을 통해 개발자의 개입없이, 디자이너가 직접 코드 추가가 가능할 정도로 작업 효율을 높이기도 했습니다.',
   },
   {
     title: '개발을 제대로 즐기는 사람입니다',
     subtitle: '팀에 민경배가 있다는 것, 심심할 일이 없다는 것.',
     content:
-      '가끔 토이프로젝트 만들어 공유하는 것을 좋아합니다. 슬랙봇 부터 사내 명함을 3D로 구현한 프로젝트, 회식 장소를 정하기 위한 월드컵 사이트 등, 사소하지만 재미있는 아이디어를 직접 구현하기를 즐깁니다. 동시에 토이 프로젝트를 통해 새로운 UI 혹은 프레임워크 등, 평소 관심있던 새로운 기술을 시도해보기도 하여 그 기술을 실제 손 끝으로 느껴보고자 노력합니다. 새로운 지식 습득하기를 즐겨 악기, 디자인, 스케이트 보드 등 다양한 취미를 만들어 내고 있는 만큼, 새로운 도전에도 언제나 열려있습니다.',
+      '- 슬랙봇부터 사내 명함을 3D로 구현한 프로젝트, 회식 장소를 정하기 위한 월드컵 사이트 등, 사소하지만 재미있는 아이디어를 직접 구현하기를 즐깁니다.\n- 때로는 컨퍼런스, 커뮤니티 등에서 공유된 기술을 그 위에 녹여내며 새로운 지식을 빠르게 습득하고, 이를 바탕으로 업무에 적용점을 찾아갑니다.\n- 새로운 지식 습득 자체를 즐겨 악기, 디자인, 스케이트보드 등 다양한 취미를 가지고 있으며, 적절한 컨텍스트 스위칭을 통해 번아웃 없이 지속적으로 도전 가능한 환경을 만들어 내고 있습니다.\n- 현재는 포트폴리오 프로젝트를 모노레포로 마이그레이션 하며 module-federation기반 마이크로 프론트엔드에 대한 다양한 고민들을 시도해보고 있습니다.',
   },
 ];
 
@@ -200,54 +199,49 @@ export const projectsData: ProjectItemType[] = [
     title: '커리어리',
     description: `개발자 커뮤니티-채용 플랫폼`,
     details: [
-      { content: '디자인 시스템을 주도적으로 개발했습니다', type: 'subtitle' },
+      { content: '주도적 디자인 시스템 개발', type: 'subtitle' },
       {
-        content:
-          '기존 디자인 시스템이 웹/앱 각각 분리되어 있어 유지보수 비용 문제로 사용성이 떨어지는 문제를 발견했습니다.',
+        content: '웹과 앱의 디자인 시스템이 분리되어 높아진 유지보수 비용에 대한 문제를 제기, 자동화를 제안',
         type: 'text',
       },
       {
         content:
-          '아이콘과 디자인 토큰을 위한 파이프라인을 구축하고, 피그마에서 디자이너들이 직접 추가한 내용이 코드에 즉시 반영 가능하도록 만들었습니다.',
+          '피그마 플러그인, Bitbucket Pipelines를 사용하여 피그마 내의 아이콘 및 디자인 토큰이 코드에 자동 반영 가능하도록 파이프라인을 구축',
         type: 'text',
       },
       {
         content:
-          '웹과 앱의 컨벤션을 통일하기 위해 ThemeProvider를 비롯한 내부 유틸을 개발하여 컴포넌트 스타일링을 템플릿화했습니다. 이는 작업 속도를 크게 향상시켜, 기존 두 명이 수행하던 작업을 혼자서도 가능하게 만들었습니다.',
+          '웹과 앱 컴포넌트 컨벤션 통일을 위해 ThemeProvider와 유틸을 개발하고, 스타일링 템플릿화를 통해 개발 시간을 30% 단축',
         type: 'text',
       },
-      {
-        content: '추가적으로 모노레포 구축 혹은 스크립트를 통한 통합 환경 구축에 대한 로드맵을 공유하기도 했습니다.',
-        type: 'text',
-      },
-      { content: '지속적인 서비스 개선에 관심을 두고 작업했습니다', type: 'subtitle' },
+      { content: '다양한 접근법을 통한 프로덕트 개선', type: 'subtitle' },
       {
         content:
-          '안드로이드 플랫폼에서 마이페이지의 SectionList에서 성능 문제가 발생했고, lazy load와 순차적 렌더링 적용을 통해 블로킹 타임을 최대 4초 가량 개선시켰습니다.',
+          '앱 마이페이지 SectionList 성능을 개선하기 위해 lazy load와 useTransition을 모방한 timeout 적용으로 탭 컴포넌트의 블로킹 타임을 최대 4초 가량 개선',
         type: 'text',
       },
       {
         content:
-          '채팅 서비스에서 기능 중심 설계로 인해 상태, 역할별 20개가 넘는 중복 컴포넌트가 존재했고, 이를 UI와 비즈니스 로직을 분리시켜 6개의 공통 로직으로 묶어냈습니다. 이를 통해 유지보수성을 향상시켰습니다.',
+          '채팅 서비스의 기능 중심 설계된 컴포넌트를 UI와 비즈니스 로직으로 분리해 20개 컴포넌트를 6개 공통 로직으로 축소',
         type: 'text',
       },
       {
         content:
-          '광고 로드 에러로 인해 서비스 성과 측정이 불확실한 문제 해결을 위해 이미지를 매뉴얼하게 prefetch하여 로드 우선 순위를 주었고, onLoad 핸들러를 주어 더 정확한 성과 측정을 가능하도록 만들었습니다.',
+          '광고 성과 측정을 개선하기 위해 이미지 prefetch, onLoad 핸들러, 스크롤 디바운싱을 적용해 20%의 비정상 이벤트를 제거.',
         type: 'text',
       },
-      { content: '스쿼드 단위의 협업을 경험했습니다', type: 'subtitle' },
-      {
-        content: '스쿼드 단위로 3주 스프린트 작업을 진행했으며, 이벤트 데이터에 기반한 유저 실험을 구현했습니다.',
-        type: 'text',
-      },
+      { content: '스쿼드 단위의 협업 경험', type: 'subtitle' },
       {
         content:
-          'Jira, 컨플루언스를 비롯한 다양한 Saas를 적극 활용해 태스크 관리, 협업을 했으며, tl;dv와 같은 도구를 직접 제안/도입하여 생산성에 기여하기도 했습니다. ',
+          '엔지니어링 문서를 통해 스프린트 작업 컨텍스트와 범위를 사전 논의하고, 이벤트 데이터 기반 유저 실험을 구현',
         type: 'text',
       },
       {
-        content: '필요에 따라 MSA-gateway로 구성된 백엔드 작업을 함께 수행했습니다.',
+        content: 'tl;dv와 같은 Saas 도구를 직접 제안, 도입하여 회의록 작성 시간 75% 단축 ',
+        type: 'text',
+      },
+      {
+        content: 'MSA-gateway 아키텍쳐의 백엔드 작업을 함께 수행',
         type: 'text',
       },
     ],
@@ -260,46 +254,43 @@ export const projectsData: ProjectItemType[] = [
     title: '태그히어',
     description: `NFC를 활용한 스마트 테이블 오더 서비스`,
     details: [
-      { content: '프로젝트의 셋팅과 개선에 대한 지속적인 고민을 했습니다', type: 'subtitle' },
+      { content: '프로젝트 개선에 대한 지속적 고민', type: 'subtitle' },
       {
         content:
-          '적은 인원간의 빠른 개발을 위해 NX 모노레포로 함께 구성된 Nest 백엔드와 TypeScript를 활용하여 인터페이스를 공유하고 타이핑을 진행했습니다.',
+          '적은 인원간의 빠른 개발을 위해 NX 모노레포에 Nest 백엔드와 프론트 코드를 함께 구성 후 내부 유틸 패키지를 통해 타입 인터페이스를 공유',
         type: 'text',
       },
       {
         content:
-          '초기 로드 속도 향상을 위해 내부 라이프사이클 개선, 코드 스플리팅과 이미지 로더 개선 작업 등을 진행하였으며, TBT를 400ms 대에서 40ms대까지 감소시켰습니다.',
+          '초기 로드 속도 개선을 위한 라이프사이클 최적화, 코드 스플리팅, 이미지 로더 작업으로 TBT 400ms에서 40ms로 감소',
         type: 'text',
       },
+      {
+        content: '불필요한 useEffect를 비즈니스 로직 기반 핸들러로 및 훅으로 분리시켜 유지보수성, 생산성을 향상',
+        type: 'text',
+      },
+      { content: '다양한 웹 기술 적용 경험', type: 'subtitle' },
       {
         content:
-          '메인 기능 모듈에서 useEffect의 남용으로 인해 라이프사이클 관리가 어려워졌고, 이를 비즈니스 로직 기반 핸들러로 분리하여 로직을 정리한적이 있습니다.',
+          '소켓을 통한 공유 장바구니 기능을 구현하였으며, 재연결 및 장바구니 동기화 로직을 통해 연결 안정성 확보',
         type: 'text',
       },
-      { content: '웹과 관련된 다양한 기술을 시도해보았습니다', type: 'subtitle' },
+      {
+        content: '주문 워크 보안을 위한 위치 검증, NFC 태그의 토큰 기반 접근 제어 방식 고안',
+        type: 'text',
+      },
+      {
+        content: 'Serial API를 활용하여 프린터 웹 출력 기능을 일주일 개발 끝에 출시하여 실제 고객 20% 추가 전환',
+        type: 'text',
+      },
+      { content: '비즈니스 협력 적극 참여', type: 'subtitle' },
       {
         content:
-          '대부분 네이티브로 구현하는 기능들을 웹으로 풀어내며 로컬 스토리지 보안, 소켓 세션 끊김, 토큰 유지 문제 등 수많은 트러블 슈팅을 경험했고, 웹과 브라우저에 대한 이해도를 크게 높였습니다.',
+          '메뉴 및 주문 관리를 위한 대시보드를 개발하여 컴퓨터에 익숙치 않은 유저들을 위한 DnD, 포스기를 고려한 터치 인터페이스 등, 피드백 기반 UI 실험 진행',
         type: 'text',
       },
       {
-        content:
-          '기존 QR의 단점을 대신하여, NFC보안을 위한 장치가 필요했고, 위치 검증 및 상태 관리를 통한 접근 제어 방식을 직접 고안하였습니다.',
-        type: 'text',
-      },
-      {
-        content: 'Serial API를 활용하여 브라우저 위에서도 프린터 등의 하드웨어가 제어가능하도록 기능을 개발했습니다.',
-        type: 'text',
-      },
-      { content: '비즈니스적 실험에 적극 참여했습니다.', type: 'subtitle' },
-      {
-        content:
-          '메뉴 및 주문 관리를 위한 대시보드를 개발했으며, 컴퓨터에 익숙치 못한 유저(사장님)들이 사용하기 편하도록 다양한 UX적 실험을 진행했습니다. 직관성을 위한 UI 개선과 DnD 도입, 포스기를 고려한 터치 인터페이스 등, 피드백을 받아 주도적으로 개선했습니다.',
-        type: 'text',
-      },
-      {
-        content:
-          '직접 하루 종일 서비스 사용 가게에서 사용패턴을 관찰하러 나간 적이 있습니다. 이를 통해 주방측에서는 하드웨어적 지원이 필요할 수 있다는 논의를 하여, 직접 프린터 연동 공부를 통해 기능을 출시시켰습니다.',
+        content: '프린터 연동, 후불 결제 프로세스 프로토타입의 제작 및 비즈니스 우선순위 논의에 적극 기여',
         type: 'text',
       },
     ],
@@ -310,26 +301,30 @@ export const projectsData: ProjectItemType[] = [
   },
   {
     title: '내일의창업',
-    description: `사이드 자영업자 원스톱 창업 플랫폼`,
+    description: `개인 자영업자 원스톱 창업 플랫폼`,
     details: [
       {
         content:
-          '전반적인 프로젝트 환경 셋팅에 참여하였으며, 패키지 환경 통합을 위해 yarn3 모노레포 환경을 구축하여 작업했습니다.',
+          '전반적인 프로젝트 환경 셋팅에 참여하였으며, 서비스가 늘어나는 시점에 yarn3 모노레포 환경을 설정하여 적은 인원이 유지 가능하도록 구성',
         type: 'text',
       },
       {
         content:
-          'NextJS의 SSR환경 배포를 위해 AWS와 Vercel에 관한 논의를 하였고, Github Action을 이용하여 배포 파이프라인을 구축하였습니다. ',
+          'NextJS(SSR) 서버 배포를 위해 AWS와 Vercel에 관한 비교 분석, Github Action을 이용하여 배포 파이프라인을 구축',
         type: 'text',
       },
       {
         content:
-          '모듈 디펜던시를 모니터링하며 컴포넌트의 재활용성이 떨어지는 것을 확인하였고, 아키텍처로 아토믹 디자인을 채택하여 모듈의 갯수를 56% 가량 감소시킬 수 있었습니다.',
+          'Madge를 통해 모듈 디펜던시를 점검하여 컴포넌트의 재활용성이 떨어지는 것을 확인 후, 아토믹 디자인을 채택하여 모듈의 갯수 56% 가량 감소',
         type: 'text',
       },
       {
         content:
-          'Material UI를 커스터마이징하여 디자인시스템으로 사용했고, 주요 라이브러리를 npm에 배포하여 사용했습니다. 이를 통해 디자인시스템에 대한 이해도를 크게 높였습니다.',
+          'Material UI를 채택하여 디자인시스템으로 사용했으며, 디자이너와 협업하여 자주 사용하는 스타일을 템플릿화하여 개발 속도를 크게 향상',
+        type: 'text',
+      },
+      {
+        content: 'MUI의 클래스 단위의 커스터마이징을 통해 디자인 가이드에 대한 이해도를 크게 높임',
         type: 'text',
       },
     ],
@@ -346,44 +341,48 @@ export const projectsData: ProjectItemType[] = [
       'EC2',
       'Vercel',
       'Github Action',
+      'SWR',
     ],
     cateTag: 'TMR Founders',
   },
   {
-    title: 'ZCL 어드민 대시보드',
-    description: `컴퓨터 비전 기반 자동 물류 관리 시스템의 관리자 대시보드`,
+    title: '포트폴리오 MFE',
+    description: `포트폴리오 버전관리를 위한 MFE 모노레포`,
     details: [
       {
-        content:
-          'React와 CoreUI를 활용하여 프론트를 기획 및 개발하였고, Flask와 MySQL을 활용하여 백엔드를 구축하였습니다.',
+        content: 'PNPM + Turborepo를 통해 모노레포 환경 구축 및 템플릿+스크립트를 통해 프로젝트 스캐폴딩 구현',
         type: 'text',
       },
       {
-        content:
-          '실시간으로 DB에 들어오는 물류 현황과 수요 예측 모델 데이터를 차트를 활용하여 시각화하는 기능에 중점을 두었습니다.',
+        content: 'module-federation을 통해 각 버전의 앱을 독립적으로 배포',
+        type: 'text',
+      },
+      {
+        content: 'type-build-utils 패키지를 제작하여 host앱에서 remote 모듈의 타입 정의를 사용할 수 있도록 구성',
         type: 'text',
       },
     ],
-    image: '/images/projects/zcl-admin-dashboard.webp',
-    skills: ['ReactJS', 'JavaScript', 'Redux', 'CoreUI', 'Flask', 'MySQL', 'Heroku'],
-    cateTag: 'ZeroClassLab',
+    image: '/images/projects/portfolio-mono.webp',
+    link: 'https://github.com/minr2kb/portfolio-mono',
+    skills: ['ReactJS', 'TypeScript', 'Vite', 'MUI', 'ChakraUI', 'PNPM', 'Turborepo', 'Firebase'],
+    cateTag: '사이드',
   },
+
   {
     title: '트레이드포스',
     description: `수출입 전문가 매칭 플랫폼, ‘트레이드포스’ 외주 개발`,
     details: [
       {
-        content:
-          '서비스 의뢰 페이지 부터, 의뢰를 관리하는 어드민 페이지 내부 퍼널을 구성하기 위한 고민들을 경험했습니다.',
+        content: '서비스 의뢰 페이지 부터, 의뢰를 관리하는 어드민 페이지 내부 퍼널을 구성하기 위한 고민들을 경험',
         type: 'text',
       },
       {
         content:
-          '소수의 인원과 초기 프로젝트 구축부터 단기간의 빠른 개발을 위한 효율적인 스택 디자인을 구상하고 백엔드와의 긴밀한 협업을 통해 작업했습니다.',
+          '소수의 인원과 초기 프로젝트 구축부터 단기간의 빠른 개발을 위한 효율적인 스택 디자인을 구상하고 백엔드와의 긴밀한 협업을 통해 작업',
         type: 'text',
       },
       {
-        content: '디자이너와 Figma로 협력하여 MUI를 활용한 타이포 위계 및 컴포넌트 디자인 시스템을 구축했습니다.',
+        content: '디자이너와 Figma로 협력하여 MUI를 활용한 간단한 타이포 위계 및 컴포넌트 디자인 시스템을 구축',
         type: 'text',
       },
     ],
@@ -397,20 +396,19 @@ export const projectsData: ProjectItemType[] = [
     description: `구직 웹사이트 채용공고들을 한번에 모아보기 위한 데스크톱 스크래핑 앱`,
     details: [
       {
-        content:
-          'Koa로 구성된 크롤링 서버(https://github.com/minr2kb/recruit-crawler-back)를 CloudType 서비스를 활용하여 배포했습니다.',
+        content: 'Koa로 구성된 크롤링 서버를 CloudType 서비스를 활용하여 배포',
         type: 'text',
       },
       {
-        content: 'request 갯수에 상한선을 두어, 동기/비동기 요청을 별개로 주도록 만들어 서버 부하를 방지시켰습니다.',
+        content: 'request 갯수에 상한선을 두어, 동기/비동기 요청을 별개로 주도록 만들어 서버 부하를 방지',
         type: 'text',
       },
       {
-        content: 'github에 release를 배포하여 자동 업데이트가 가능하도록 구현했습니다.',
+        content: 'github에 release를 배포하여 자동 업데이트가 가능하도록 구현',
         type: 'text',
       },
       {
-        content: '간단한 ipc통신으로 로컬 api를 구현했고, AbortController를 활용하여 요청 취소를 구현했습니다.',
+        content: '간단한 ipc통신으로 로컬 api를 제작하였으며, AbortController를 활용하여 알맞 요청 취소를 구현',
         type: 'text',
       },
     ],
@@ -420,64 +418,15 @@ export const projectsData: ProjectItemType[] = [
     cateTag: '사이드',
   },
   {
-    title: '포트폴리오 MFE',
-    description: `포트폴리오 버전관리를 위한 MFE 모노레포`,
-    details: [
-      {
-        content: 'PNPM + Turborepo를 통해 모노레포 환경을 구축하였습니다.',
-        type: 'text',
-      },
-      {
-        content: '템플릿 및 스크립트를 통해 프로젝트 스캐폴딩을 구현하였습니다.',
-        type: 'text',
-      },
-      {
-        content: 'module-federation을 통해 각 버전의 앱이 독립적으로 배포될 수 있도록 구성하였습니다.',
-        type: 'text',
-      },
-      {
-        content:
-          'type-build-utils 패키지를 구현하여 host앱에서 remote 모듈의 타입 정의를 사용할 수 있도록 구성하였습니다.',
-        type: 'text',
-      },
-    ],
-    image: '/images/projects/portfolio-mono.webp',
-    link: 'https://github.com/minr2kb/portfolio-mono',
-    skills: ['ReactJS', 'TypeScript', 'Vite', 'MUI', 'ChakraUI', 'PNPM', 'Turborepo', 'Firebase'],
-    cateTag: '사이드',
-  },
-  {
-    title: '3D 모의창업',
-    description: `3D 인테리어 시안 제작 서비스`,
-    details: [
-      {
-        content:
-          '그리드 시스템을 직접 구현하여 인터렉션 환경을 구축했고, 사용자가 쉽고 빠르게 시안을 제작할 수 있도록 최소화된 UI를 직접 설계/제작하였습니다.',
-        type: 'text',
-      },
-      {
-        content:
-          'Polygon으로 구성된 평면에 대한 충돌시스템을 구현했으며, Suspense를 사용한 렌더링 로드 화면과 유저 액션 history를 구현하여 UX를 향상시켰습니다.',
-        type: 'text',
-      },
-    ],
-    image: '/images/projects/3d-virtual-store.webp',
-    link: 'https://virtual-store-3d.web.app/',
-    skills: ['ReactJS', 'TypeScript', 'ThreeJS', 'Recoil', 'MUI'],
-    cateTag: 'TMR Founders',
-  },
-  {
     title: '찬양팀 라이브',
     description: `악기 연주자를 위한 라이브 소통 대시보드 서비스`,
     details: [
-      { content: '직접 Figma를 활용하여 UI를 기획 및 디자인했습니다.', type: 'text' },
       {
-        content:
-          '미리 저장해둔 단축어를 활용하여 소통하는 방식으로, 최소한의 인증과 범용성을 위해 구글 OAuth를 활용했습니다.',
+        content: '미리 저장해둔 단축어를 활용하여 소통하는 방식으로, 최소한의 인증과 범용성을 위해 구글 OAuth를 활용',
         type: 'text',
       },
       {
-        content: 'Firebase Realtime DB를 활용하여 실시간 요청 데이터를 관리하였습니다.',
+        content: 'Firebase Realtime DB를 활용하여 실시간 요청 기능 구현',
         type: 'text',
       },
     ],
@@ -487,17 +436,54 @@ export const projectsData: ProjectItemType[] = [
     cateTag: '사이드',
   },
   {
+    title: '3D 모의창업',
+    description: `3D 인테리어 시안 제작 서비스`,
+    details: [
+      {
+        content:
+          '그리드 시스템을 직접 구현하여 인터렉션 환경을 구축했으며, 사용자가 쉽고 빠르게 시안을 제작할 수 있도록 최소화된 UI를 직접 설계/제작',
+        type: 'text',
+      },
+      {
+        content:
+          'Polygon으로 구성된 평면에 대한 충돌시스템을 구현했으며, Suspense를 사용한 렌더링 로드 화면과 유저 액션 history를 구현하여 UX를 향상',
+        type: 'text',
+      },
+    ],
+    image: '/images/projects/3d-virtual-store.webp',
+    skills: ['React.js', 'TypeScript', 'R3F', 'Three.js', 'MUI', 'Recoil'],
+    cateTag: 'TMR Founders',
+  },
+  {
+    title: 'ZCL 어드민 대시보드',
+    description: `컴퓨터 비전 기반 자동 물류 관리 시스템의 관리자 대시보드`,
+    details: [
+      {
+        content: 'React와 CoreUI를 활용하여 프론트를 기획 및 개발하였고, Flask와 MySQL을 활용하여 백엔드를 구축',
+        type: 'text',
+      },
+      {
+        content:
+          '실시간으로 DB에 들어오는 물류 현황과 수요 예측 모델 데이터를 차트를 활용하여 시각화하는 기능에 중점을 두고 개발',
+        type: 'text',
+      },
+    ],
+    image: '/images/projects/zcl-admin-dashboard.webp',
+    skills: ['ReactJS', 'JavaScript', 'Redux', 'CoreUI', 'Flask', 'MySQL', 'Heroku'],
+    cateTag: 'ZeroClassLab',
+  },
+  {
     title: 'Playground',
     description: `MacOS의 데스크탑 화면을 모티브로 하여 제작한 디자인 프로젝트`,
     details: [
       {
-        content: '각 앱들은 소형 사이드 프로젝트들로 구성되어있습니다.',
+        content: '각 앱들은 소형 사이드 프로젝트들로 구성',
         type: 'text',
       },
 
       {
         content:
-          'Webpack을 활용하여 NextJS처럼 개발환경의 컴포넌트 디렉토리 구조가 그대로 브라우저에 렌더링 되도록 환경을 구축하였습니다.',
+          'Webpack의 require.context를 활용하여 NextJS처럼 개발환경의 컴포넌트 디렉토리 구조가 그대로 브라우저에 렌더링 되도록 환경을 구축',
         type: 'text',
       },
     ],
@@ -506,94 +492,6 @@ export const projectsData: ProjectItemType[] = [
     link: 'https://playground-adade.web.app',
     cateTag: '사이드',
   },
-
-  //   {
-  //     title: 'Plog-In',
-  //     description: `Plog-In은 플로깅을 통해 환경을 보호하고, 기록을 관리하는 플랫폼입니다.`,
-  //     details: [
-  //       //   '72시간 동안 진행된 해커톤에서 개발한 프로젝트입니다. 빠른 개발을 위해 JavaScript로 프로젝트를 구성하였으며 구글맵 API를 활용하여 위치를 트래킹 할 수 있도록 구현하였습니다.',
-  //       //   '플로깅을 시작하면 실시간으로 시간과 위치를 기록하고, 자바스크립트로 구현한 거리 계산 알고리즘을 기반으로 거리와 경로를 기록합니다.',
-  //       //   'Cleanest UI/UX분야에서 수상을 하였습니다.',
-  //     ],
-  //     image: '/images/projects/plog-in.webp',
-  //     skills: ['ReactJS', 'JavaScript', 'FastAPI', 'GCP', 'MongoDB'],
-  //     link: 'https://github.com/minr2kb/2022-sbu-hackathon',
-  //     cateTag: 'Hackathon',
-  //   },
-
-  //   {
-  //     title: 'E4E - Email for Earth',
-  //     description: `삭제되지 않은 이메일들이 서버에 쌓이며 큰 전력을 소비하고 있다는 환경적 이슈에 착안하여 기획한 웹 캠페인으로, 유저가 쉽게 이메일을 삭제할 수 있도록 도와주는 서비스입니다.`,
-  //     details: [
-  //       //   '24시간 동안 진행된 해커톤에서 개발한 프로젝트입니다.',
-  //       //   'Gmail API를 활용하여 사용자의 이메일에 접근했으며, 자체적으로 제공한 UI를 통해 유저가 부여한 조건에 맞추어 이메일을 삭제합니다.',
-  //       //   '캠페인적인 요소를 위해 감소된 CO2 배출량 계산등의 UI가 추가되었습니다.',
-  //       //   '최우수상을 수상하였습니다.',
-  //     ],
-  //     image: '/images/projects/e4e.webp',
-  //     skills: ['ReactJS', 'JavaScript', 'GitHub Pages', 'FastAPI'],
-  //     link: 'https://github.com/minr2kb/22S-hackathon-team5',
-  //     cateTag: 'Hackathon',
-  //   },
-  //   {
-  //     title: '버키',
-  //     description: `무인 쇼핑 결제 플랫폼 앱, "버키" 개발에 참여했습니다.`,
-  //     details: [
-  //       //   'ReactNative를 활용하여 크로스 플랫폼 환경에서 개발하였으며, Figma를 활용하여 UI를 직접 리팩토링하여 상품 구매내역 관리페이지를 크게 개선할 수 있었습니다.',
-  //     ],
-  //     image: '/images/projects/buckey.webp',
-  //     skills: ['ReactNative', 'JavaScript', 'Figma'],
-  //     cateTag: 'ZeroClassLab',
-  //   },
-  //   {
-  //     title: '종강 카운터',
-  //     description: `학기 중 사이드 프로젝트로 제작한 종강까지 남은 일수를 알려주는 웹 앱입니다.`,
-  //     details: [
-  //       //   '날짜를 직접 지정할 수 있으며, 실시간 채팅과 좋아요 기능을 통해 익명의 대학생들이 소통할 수 있는 오픈된 공간을 제공했습니다.',
-  //       //   'ReactJS와 Firebase를 활용하여 개발하였으며, Firebase의 Realtime DB를 활용하여 실시간 채팅 데이터를 관리하였습니다.',
-  //     ],
-  //     image: '/images/projects/jongang-counter.webp',
-  //     skills: ['ReactJS', 'JavaScript', 'Firebase'],
-  //     link: 'https://jongang-counter.web.app',
-  //     cateTag: '사이드',
-  //   },
-  //   {
-  //     title: 'RC 이벤트 - Mental Health',
-  //     description: `대학교 교내 이벤트를 위하여 제작한 고민 게시판 프로젝트입니다.`,
-  //     details: [
-  //       //   '학교 구글 계정 로그인을 통하여 사이드의 고민을 게시글로 업로드, 수정 및 댓글을 달 수 있도록 구성되어있습니다.',
-  //       //   'ReactJS와 Firebase를 활용하여 개발하였으며, Firebase의 Firestore를 활용하여 게시글 데이터를 관리하였습니다.',
-  //     ],
-  //     image: '/images/projects/mental-health.webp',
-  //     skills: ['ReactJS', 'JavaScript', 'Firebase'],
-  //     link: 'https://mental-health-rc2021f.web.app',
-  //     cateTag: '사이드',
-  //   },
-  //   {
-  //     title: 'RC 이벤트 - Entertainment Recommendation',
-  //     description: `대학교 교내 이벤트를 위하여 제작한 폼 프로젝트입니다. 음악, 영화 등의 엔터테인먼트를 학생들로부터 추천받기 위해 제작되었습니다.`,
-  //     details: [
-  //       //   '받아야하는 정보 특성상 구글폼 활용시 데이터 입력 및 취합이 번거로워 질 것을 고려하여 자체적으로 폼을 제작했습니다.',
-  //       //   'Youtube API를 활용하여 폼 추가시에 자동으로 영상을 쿼리하여 링크를 연결시키도록 구현했습니다.',
-  //       //   '추천 결과를 장르별, 사람별 구분하여 볼 수 있도록 뷰를 구성하였으며, 관리자를 위한 랜덤 추첨 기능도 구현하였습니다.',
-  //     ],
-  //     image: '/images/projects/entertainment-recommend.webp',
-  //     skills: ['ReactJS', 'JavaScript', 'Firebase'],
-  //     link: 'https://entertainment-recommend-form.web.app',
-  //     cateTag: '사이드',
-  //   },
-  //   {
-  //     title: '청남교회 앱',
-  //     description: `출석하고 있는 교회를 위한 공지 앱을 제작하였습니다.`,
-  //     details: [
-  //       //   '교인 인증과 관리자 등의 권한을 분리하여 공지 게시판 및 대시보드를 제공하도록 구현하였습니다.',
-  //       //   '주 사용층의 연령대가 높을 것을 고려하여 직관성에 중점을 두어 기능 및 UI를 기획했습니다.',
-  //       //   'Flutter와 Dart를 활용하여 개발하였으며, Firebase의 FCM을 통해 푸시알림을 구현하였습니다.',
-  //     ],
-  //     image: '/images/projects/cheongnam.webp',
-  //     skills: ['Flutter', 'Dart', 'Firebase', 'FCM'],
-  //     cateTag: '사이드',
-  //   },
 ];
 
 export const contactsData = {
