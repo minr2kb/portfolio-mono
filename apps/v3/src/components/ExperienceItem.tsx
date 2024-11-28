@@ -1,5 +1,6 @@
 import TextWithDot from '@/components/TextWithDot';
 import { Box, Grid, Typography } from '@mui/material';
+import { getAssetsUrl } from '@packages/shared';
 
 export interface EduExpItemType {
   title: string;
@@ -30,7 +31,7 @@ function EduExpItem(
           }}
         >
           <img
-            src={logoSrc}
+            src={getAssetsUrl(logoSrc)}
             alt={title}
             style={{
               transition: 'all 0.3s ease-in-out',

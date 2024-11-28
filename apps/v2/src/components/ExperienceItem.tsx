@@ -1,6 +1,7 @@
 import TextWithDot from '@/components/TextWithDot';
 import { EduExpItemType } from '@/types';
 import { Box, Grid, Typography } from '@mui/material';
+import { getAssetsUrl } from '@packages/shared';
 
 function EduExpItem(
   props: EduExpItemType & {
@@ -24,7 +25,7 @@ function EduExpItem(
           }}
         >
           <img
-            src={logoSrc}
+            src={getAssetsUrl(logoSrc)}
             alt={title}
             style={{
               transition: 'all 0.3s ease-in-out',

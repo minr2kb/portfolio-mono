@@ -4,6 +4,7 @@ import { Grid, Typography } from '@mui/material';
 import { animated, type SpringValue } from '@react-spring/web';
 import { Link } from 'react-router-dom';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
+import { getAssetsUrl } from '@packages/shared';
 
 export interface Props {
   startedScroll?: boolean;
@@ -93,7 +94,7 @@ function TopNav({ startedScroll, scrollY, pageHeight }: Props) {
           </Typography>
 
           <img
-            src={'/images/memoji.png'}
+            src={getAssetsUrl('/images/memoji.png')}
             alt="미모지"
             style={{
               transition: 'all 0.2s ease-in-out',

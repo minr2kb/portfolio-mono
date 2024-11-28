@@ -2,6 +2,7 @@ import { Box } from '@mui/material';
 import TagCloud, { type TagCloudOptions } from 'TagCloud';
 import { useEffect, useRef } from 'react';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
+import { getAssetsUrl } from '@packages/shared';
 
 function TagSphere() {
   const { isMobile } = useDeviceQuery();
@@ -50,9 +51,10 @@ function TagSphere() {
     if (items.length > 0) {
       for (let i = 0; i < items.length; i++) {
         if (!items[i].innerHTML.includes('img')) {
-          items[i].innerHTML = `<img src="/images/stackIcon/${items[i].innerHTML}.webp" style="width: ${
-            isMobile ? '40px' : '50px'
-          };"/>`;
+          items[i].innerHTML =
+            `<img src="${getAssetsUrl(`/images/stackIcon/${items[i].innerHTML}.webp`)}" style="width: ${
+              isMobile ? '40px' : '50px'
+            };"/>`;
         }
       }
     }
