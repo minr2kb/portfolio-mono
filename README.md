@@ -2,7 +2,7 @@
 
 ![portfolio-mono](https://github.com/user-attachments/assets/a228aa0a-bdbf-47d1-94fb-60f7b883a435)
 
-- 이 프로젝트는 버전별 포트폴리오를 독립적으로 관리하기 위해 제작되었습니다.
+- 이 프로젝트는 버전별 포트폴리오를 독립적 환경에서 관리하기 위해 제작되었습니다.
 - Turborepo와 Module Federation을 활용한 마이크로 프론트엔드 모노레포 구조입니다.
 - Firebase Hosting을 통해 4개의 CDN 서버를 사용중입니다.
 
@@ -121,6 +121,7 @@ pnpm create-app
 3. `host/src/AppRoutes.tsx` 내에 중첩 라우터 추가
 4. `.env` 내 base_url 작성
 5. 생성된 remote앱의 `vite.config.js` 내 base 환경변수 작성
+6. `firebase.json`, `.firebaserc` 내에 배포 config 추가
 
 ### 주의사항
 
@@ -134,7 +135,6 @@ pnpm create-app
 - 공통 로직(데이터,타입,에셋 등) 패키지 분리
 - 패키지 중복로드 방지 & lazy load
 - 배포 자동화
-- 모듈 버저닝 -> 캐싱 방지 시키기
 
 ## 작성자
 
