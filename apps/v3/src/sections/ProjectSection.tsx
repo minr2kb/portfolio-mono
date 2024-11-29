@@ -153,14 +153,18 @@ function ExpandedProjectItem({
             </Box>
 
             <Box
+              id={`${title}-details`}
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 maxHeight: '40vh',
-                overflow: 'auto',
+                overflowY: 'auto',
                 mt: 2,
                 gap: 1,
                 pb: 10,
+                position: 'relative',
+                maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)',
               }}
             >
               {details.map((detail, idx) => {
