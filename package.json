@@ -34,12 +34,12 @@
     "format": "prettier --write \"**/*.{ts,tsx,md,json,js,jsx}\"",
     "clean": "turbo run clean && rm -rf node_modules",
     "create-app": "node scripts/create-app.js",
-    "deploy": "firebase deploy",
-    "deploy:host": "firebase deploy --only hosting:host",
-    "deploy:v1": "firebase deploy --only hosting:v1",
-    "deploy:v2": "firebase deploy --only hosting:v2",
-    "deploy:v3": "firebase deploy --only hosting:v3",
-    "deploy:v4": "firebase deploy --only hosting:v4"
+    "deploy": "pnpm build && firebase deploy",
+    "deploy:host": "turbo run @apps/host#build && firebase deploy --only hosting:host",
+    "deploy:v1": "turbo run @apps/v1#build && firebase deploy --only hosting:v1",
+    "deploy:v2": "turbo run @apps/v2#build && firebase deploy --only hosting:v2",
+    "deploy:v3": "turbo run @apps/v3#build && firebase deploy --only hosting:v3",
+    "deploy:v4": "turbo run @apps/v4#build && firebase deploy --only hosting:v4"
   },
   "devDependencies": {
     "chalk": "^4.1.2",

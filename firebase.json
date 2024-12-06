@@ -130,6 +130,46 @@
           "type": 302
         }
       ]
+    },
+    {
+      "target": "v4",
+      "public": "apps/v4/dist",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "/assets/remoteEntry.js",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, must-revalidate"
+            }
+          ]
+        },
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "https://portfolio-kbmin.web.app"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "GET,PUT,POST,DELETE,OPTIONS"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "Content-Type, Authorization"
+            }
+          ]
+        }
+      ],
+      "redirects": [
+        {
+          "source": "/",
+          "destination": "https://portfolio-kbmin.web.app/v4",
+          "type": 302
+        }
+      ]
     }
   ]
 }
