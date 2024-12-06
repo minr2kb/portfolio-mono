@@ -1,21 +1,10 @@
-import {
-  experiencesGridItems,
-  introductionGridItems,
-  skillsGridItems,
-  defaultGridItems,
-  educationsGridItems,
-  projectsGridItems,
-} from '@/consts/grid-items';
+import { useEffect, useState } from 'react';
 
-import { useEffect } from 'react';
-
-import { useState } from 'react';
-
-import { GridItem } from '@/consts/grid-items';
 import { layoutsAtom } from '@/store/atoms';
 import { useParams } from 'react-router-dom';
 import { useSetAtom } from 'jotai';
 import {
+  contactLayouts,
   defaultLayouts,
   educationsLayouts,
   experiencesLayouts,
@@ -23,6 +12,17 @@ import {
   projectsLayouts,
   skillsLayouts,
 } from '@/consts/layouts';
+
+import {
+  experiencesGridItems,
+  introductionGridItems,
+  skillsGridItems,
+  defaultGridItems,
+  educationsGridItems,
+  projectsGridItems,
+  contactGridItems,
+} from '@/consts/grid-items';
+import { GridItem } from '@/types';
 
 const useGridByRoute = () => {
   const { categoryId } = useParams();
@@ -50,6 +50,10 @@ const useGridByRoute = () => {
       case 'skills':
         setGridItems(skillsGridItems);
         setLayouts(skillsLayouts);
+        break;
+      case 'contact':
+        setGridItems(contactGridItems);
+        setLayouts(contactLayouts);
         break;
       default:
         setGridItems(defaultGridItems);

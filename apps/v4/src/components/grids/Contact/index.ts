@@ -1,3 +1,7 @@
-import Contact from './Contact';
+import Main from './Contact';
+import Item from './ContactItem';
 
-export default Contact;
+export default {
+  Main,
+  Item,
+};

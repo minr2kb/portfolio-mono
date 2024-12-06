@@ -1,5 +1,5 @@
 import { Layout } from 'react-grid-layout';
-import { experiencesData, introData, projectsData, skillsData } from './sectionData';
+import { contactsData, experiencesData, introData, projectsData, skillsData } from './sectionData';
 
 export const defaultLayouts: Record<string, Layout[]> = {
   sm: [
@@ -203,6 +203,42 @@ export const projectsLayouts: Record<string, Layout[]> = {
       x: ((index + 1) % 2) * 2,
       y: Math.ceil(index / 2),
       w: 2,
+      h: 1,
+    })),
+  ],
+};
+
+export const contactLayouts: Record<string, Layout[]> = {
+  sm: [
+    { i: 'contact', x: 0, y: 0, w: 1, h: 1 },
+    { i: 'navigator', x: 1, y: 0, w: 1, h: 1 },
+    ...contactsData.map((_, index) => ({
+      i: `contact-item-${index}`,
+      x: index % 2,
+      y: 1 + Math.floor(index / 2),
+      w: 1,
+      h: 1,
+    })),
+  ],
+  md: [
+    { i: 'contact', x: 0, y: 0, w: 1, h: 1 },
+    { i: 'navigator', x: 0, y: 1, w: 1, h: 1 },
+    ...contactsData.map((_, index) => ({
+      i: `contact-item-${index}`,
+      x: 1 + (index % 2),
+      y: Math.floor(index / 2),
+      w: 1,
+      h: 1,
+    })),
+  ],
+  lg: [
+    { i: 'contact', x: 0, y: 0, w: 1, h: 1 },
+    { i: 'navigator', x: 0, y: 1, w: 1, h: 1 },
+    ...contactsData.map((_, index) => ({
+      i: `contact-item-${index}`,
+      x: 1 + (index % 3),
+      y: Math.floor(index / 3),
+      w: 1,
       h: 1,
     })),
   ],

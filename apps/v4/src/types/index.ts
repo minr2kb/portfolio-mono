@@ -1,13 +1,8 @@
-export const Sections = {
-  INTRO: 'Intro',
-  ABOUT: 'About',
-  EDUCATION: 'Education',
-  EXPERIENCE: 'Experience',
-  PROJECTS: 'Projects',
-  CONTACTS: 'Contacts',
-} as const;
-
-export type SectionsType = (typeof Sections)[keyof typeof Sections];
+import { IconType } from 'react-icons';
+export interface GridItem {
+  i: string;
+  component: React.ReactElement;
+}
 
 export type SkillItemType = {
   name: string;
@@ -32,24 +27,31 @@ export type ProjectItemType = {
   isMobile?: boolean;
 };
 
-export interface ExperienceItemType {
+export type ExperienceItemType = {
   title: string;
   subtitle: string;
   logoSrc: string;
   descs: string[];
-}
+};
 
-export interface EducationItemType {
+export type EducationItemType = {
   title: string;
   subtitle: string;
   logoSrc: string;
   major: string;
   minor: string;
   gpa: string;
-}
+};
 
 export type IntroductionItemType = {
   title: string;
   subtitle: string;
   content: string;
+};
+
+export type ContactItemType = {
+  label: string;
+  value: string;
+  link: string;
+  icon: IconType;
 };

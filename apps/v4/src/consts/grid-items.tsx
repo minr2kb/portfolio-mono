@@ -8,12 +8,8 @@ import {
   Skills,
   Contact,
 } from '@/components/grids';
-import { educationData, experiencesData, introData, projectsData, skillsData } from './sectionData';
-
-export interface GridItem {
-  i: string;
-  component: React.ReactElement;
-}
+import { contactsData, educationData, experiencesData, introData, projectsData, skillsData } from './sectionData';
+import { GridItem } from '@/types';
 
 export const defaultGridItems: GridItem[] = [
   { i: 'introduction', component: <Introduction.Main /> },
@@ -23,7 +19,7 @@ export const defaultGridItems: GridItem[] = [
   { i: 'experiences', component: <Experiences.Main /> },
   { i: 'navigator', component: <Navigator /> },
   { i: 'skills', component: <Skills.Main /> },
-  { i: 'contact', component: <Contact /> },
+  { i: 'contact', component: <Contact.Main /> },
 ];
 
 export const introductionGridItems: GridItem[] = [
@@ -84,5 +80,14 @@ export const skillsGridItems: GridItem[] = [
   ...skillsData.map((item, index) => ({
     i: `skill-item-${index}`,
     component: <Skills.Item skill={item} />,
+  })),
+];
+
+export const contactGridItems: GridItem[] = [
+  { i: 'contact', component: <Contact.Main /> },
+  { i: 'navigator', component: <Navigator /> },
+  ...contactsData.map((item, index) => ({
+    i: `contact-item-${index}`,
+    component: <Contact.Item {...item} />,
   })),
 ];
