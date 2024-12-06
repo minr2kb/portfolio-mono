@@ -101,7 +101,7 @@ const Skills = () => {
       <Text position="absolute" bottom={0} left={0} w="full" p={4} fontSize="2xl" fontWeight="bold" color="slate.700">
         기술 스택
       </Text>
-      {!categoryId && <CheckoutButton position={'absolute'} bottom={0} right={0} m={4} to="/skills" />}
+      {!categoryId && <CheckoutButton position={'absolute'} bottom={0} right={0} m={4} to="skills" />}
     </Box>
   );
 };

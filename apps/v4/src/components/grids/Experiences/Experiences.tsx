@@ -21,7 +21,7 @@ const Experiences = () => {
         right={0}
         w="90%"
       />
-      {!categoryId && <CheckoutButton position={'absolute'} top={0} right={0} m={4} to="/experiences" />}
+      {!categoryId && <CheckoutButton position={'absolute'} top={0} right={0} m={4} to="experiences" />}
     </Box>
   );
 };

@@ -21,7 +21,7 @@ const Educations = () => {
       <Text fontSize={'sm'} fontWeight={'medium'} color="white">
         응용수학통계학 / 컴퓨터과학
       </Text>
-      {!categoryId && <CheckoutButton position={'absolute'} bottom={0} left={0} m={4} to="/educations" />}
+      {!categoryId && <CheckoutButton position={'absolute'} bottom={0} left={0} m={4} to="educations" />}
     </Box>
   );
 };

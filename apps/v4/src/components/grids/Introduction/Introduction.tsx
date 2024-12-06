@@ -23,7 +23,7 @@ const Introduction = () => {
 
   return (
     <Box w="full" h="full" bgImage={`url(${getAssetsUrl('/images/me_back.webp')})`} bgSize="cover" bgPos="center">
-      {!categoryId && <CheckoutButton position={'absolute'} top={0} right={0} m={4} to="/introduction" />}
+      {!categoryId && <CheckoutButton position={'absolute'} top={0} right={0} m={4} to="introduction" />}
 
       <Box position={'absolute'} top={0} left={0} p={4}>
         <Text fontSize="2xl" fontWeight="bold" color="white">

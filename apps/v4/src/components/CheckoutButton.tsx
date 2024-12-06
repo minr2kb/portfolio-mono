@@ -1,22 +1,15 @@
-import { BASE_ROUTE } from '@/consts/path';
 import { Flex, FlexProps, IconButton, Text } from '@chakra-ui/react';
 import { FaArrowRight } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 type CheckoutButtonProps = FlexProps & {
-  to: string;
+  to?: string;
   title?: string;
+  onClick?: () => void;
 };
 
-const CheckoutButton = ({ to, title, ...props }: CheckoutButtonProps) => {
+const CheckoutButton = ({ to, title, onClick, ...props }: CheckoutButtonProps) => {
   const navigate = useNavigate();
-
-  const joinPaths = (...paths: string[]) => {
-    return paths
-      .map((path) => path.replace(/^\/+|\/+$/g, ''))
-      .filter(Boolean)
-      .join('/');
-  };
 
   return (
     <Flex
@@ -34,6 +27,7 @@ const CheckoutButton = ({ to, title, ...props }: CheckoutButtonProps) => {
         _groupHover: {
           w: 'full',
         },
+        ...props.css,
       }}
     >
       <IconButton
@@ -48,7 +42,7 @@ const CheckoutButton = ({ to, title, ...props }: CheckoutButtonProps) => {
         _groupHover={{
           transform: 'rotate(0deg)',
         }}
-        onClick={() => navigate(`/${joinPaths(BASE_ROUTE, to)}`)}
+        onClick={onClick || (() => navigate(to ?? ''))}
       >
         <FaArrowRight />
       </IconButton>

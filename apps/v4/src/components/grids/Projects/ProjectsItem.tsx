@@ -32,6 +32,10 @@ const ProjectsItem = ({ project }: { project: ProjectItemType }) => {
     [setLayouts],
   );
 
+  const onClick = () => {
+    setSearchParams({ pid: id });
+  };
+
   const onClose = () => {
     setSearchParams(undefined);
   };
@@ -71,7 +75,7 @@ const ProjectsItem = ({ project }: { project: ProjectItemType }) => {
         </IconButton>
       ) : (
         <Box position={'absolute'} bottom={0} left={0} m={4}>
-          <CheckoutButton to={`/projects?pid=${id}`} title={title} />
+          <CheckoutButton onClick={onClick} title={title} />
         </Box>
       )}
 

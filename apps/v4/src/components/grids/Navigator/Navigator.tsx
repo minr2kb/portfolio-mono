@@ -5,7 +5,6 @@ import { useResetAtom } from 'jotai/utils';
 import { BiReset } from 'react-icons/bi';
 import { useParams, useNavigate } from 'react-router-dom';
 import { MdOutlineArrowBack } from 'react-icons/md';
-import { BASE_ROUTE } from '@/consts/path';
 
 const Navigator = () => {
   const { categoryId } = useParams();
@@ -19,7 +18,7 @@ const Navigator = () => {
           <IconButton
             className="no-drag"
             aria-label="Reset layout"
-            onClick={categoryId ? () => navigate(BASE_ROUTE) : resetLayouts}
+            onClick={categoryId ? () => navigate('../') : resetLayouts}
             variant="ghost"
             h="fit-content"
             _hover={{ bgColor: 'slate.700' }}
