@@ -2,7 +2,7 @@ export const breakpointsNum = {
   xs: 360,
   sm: 380,
   md: 768,
-  lg: 1024,
+  lg: 1200,
 };
 
 export const breakpoints = Object.fromEntries(
