@@ -2,7 +2,7 @@ import { Box, IconButton, Image } from '@chakra-ui/react';
 import { getAssetsUrl } from '@packages/shared';
 import CheckoutButton from '../../CheckoutButton';
 import { ProjectItemType } from '@/types';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useCallback, useEffect } from 'react';
 import { layoutsAtom } from '@/store/atoms';
 import { useSetAtom } from 'jotai';
@@ -13,6 +13,7 @@ import { CgClose } from 'react-icons/cg';
 const ProjectsItem = ({ project }: { project: ProjectItemType }) => {
   const { id, title, image } = project;
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
   const pid = searchParams.get('pid');
   const setLayouts = useSetAtom(layoutsAtom);
   const isSelected = pid === id;
@@ -37,7 +38,7 @@ const ProjectsItem = ({ project }: { project: ProjectItemType }) => {
   };
 
   const onClose = () => {
-    setSearchParams(undefined);
+    navigate(-1);
   };
 
   useEffect(() => {
