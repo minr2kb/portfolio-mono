@@ -35,7 +35,7 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
             <Heading size={'2xl'}>{title}</Heading>
             {link && (
               <Tooltip content="Link">
-                <Link to={link} target="_blank" className="no-drag">
+                <Link to={link} target="_blank" rel="noopener noreferrer" className="no-drag">
                   <IconButton variant="ghost" size="sm" rounded="full">
                     <IoLink />
                   </IconButton>

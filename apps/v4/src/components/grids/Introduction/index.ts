@@ -1,5 +1,5 @@
-import { default as Main } from './Introduction';
-import { default as Item } from './IntroductionItem';
+import Main from './Introduction';
+import Item from './IntroductionItem';
 
 export default {
   Main,
