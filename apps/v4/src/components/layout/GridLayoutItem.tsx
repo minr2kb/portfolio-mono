@@ -9,13 +9,12 @@ const GridLayoutItem = forwardRef<HTMLDivElement, GridLayoutItemProps>(({ childr
   return (
     <Card.Root
       css={{
-        p: 4,
         border: 'none',
         borderRadius: '2xl',
-        bgColor: 'bg.panel',
         pointerEvents: 'auto',
         cursor: 'grab',
         userSelect: 'none',
+        overflow: 'hidden',
         _hover: {
           shadow: 'md',
         },

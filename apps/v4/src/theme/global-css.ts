@@ -33,7 +33,7 @@ export const globalCss = defineGlobalStyles({
   },
   html: {
     color: 'fg',
-    bg: 'bg',
+    bg: 'bg.subtle',
     lineHeight: '1.5',
     colorPalette: 'gray',
   },

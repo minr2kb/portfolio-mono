@@ -361,6 +361,10 @@ export const projectsData: ProjectItemType[] = [
         content: 'type-build-utils 패키지를 제작하여 host앱에서 remote 모듈의 타입 정의를 사용할 수 있도록 구성',
         type: 'text',
       },
+      {
+        content: 'Cache-control을 통해 리모트 변경 사항이 바로 반영되도록 구성',
+        type: 'text',
+      },
     ],
     image: '/images/projects/portfolio-mono.webp',
     link: 'https://github.com/minr2kb/portfolio-mono',

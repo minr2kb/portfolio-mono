@@ -1,15 +1,15 @@
+import useBreakPoint from '@/hooks/useBreakPoint';
+import { layoutsAtom } from '@/store/atoms';
 import { breakpointsNum as breakpoints } from '@/theme/breakpoints';
-import { Box, useBreakpoint } from '@chakra-ui/react';
-import { Layout, Responsive, WidthProvider } from 'react-grid-layout';
+import { Box } from '@chakra-ui/react';
+import { useAtom } from 'jotai';
+import { Responsive, WidthProvider } from 'react-grid-layout';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 type ResponsiveGridLayoutProps = React.ComponentProps<typeof ResponsiveGridLayout>;
 type BreakpointKeys = keyof typeof breakpoints;
 
 interface GridLayoutProps extends ResponsiveGridLayoutProps {
-  lgLayout: Layout[];
-  mdLayout: Layout[];
-  smLayout: Layout[];
   /**
    * 그리드 간격
    * @default 16
@@ -30,26 +30,23 @@ interface GridLayoutProps extends ResponsiveGridLayoutProps {
 const cols: Record<BreakpointKeys, number> = {
   xs: 2,
   sm: 2,
-  md: 4,
+  md: 3,
   lg: 4,
 };
 
 export default function GridLayout({
-  lgLayout,
-  mdLayout,
-  smLayout,
   children,
   gap = 16,
   padding = 16,
   itemRatio = 1 / 1,
   ...props
 }: Readonly<GridLayoutProps>) {
-  const bp = useBreakpoint({
-    breakpoints: Object.keys(breakpoints),
-  }) as BreakpointKeys;
+  const [layouts, setLayouts] = useAtom(layoutsAtom);
+
+  const { breakpoint: bp } = useBreakPoint();
 
   // 비율에 따른 행 높이
-  const rowHeight = Math.ceil((breakpoints[bp] - gap * (cols[bp] - 1)) / (cols[bp] * itemRatio));
+  const rowHeight = Math.ceil((breakpoints[bp] - padding * 2 - gap * (cols[bp] - 1)) / (cols[bp] * itemRatio));
 
   // 패딩을 고려한 브레이크포인트
   const paddingBps = Object.entries(breakpoints).reduce<Record<BreakpointKeys, number>>(
@@ -63,7 +60,7 @@ export default function GridLayout({
   return (
     <Box maxW={breakpoints} mx={'auto'} p={`${padding}px`}>
       <ResponsiveGridLayout
-        layouts={{ lg: lgLayout, md: mdLayout, sm: smLayout }}
+        layouts={layouts}
         breakpoints={paddingBps}
         cols={cols}
         rowHeight={rowHeight}
@@ -72,6 +69,10 @@ export default function GridLayout({
         isBounded
         useCSSTransforms
         isDraggable={bp !== 'xs'}
+        draggableCancel=".no-drag"
+        onLayoutChange={(layout) => {
+          setLayouts((prev) => ({ ...prev, [bp]: layout }));
+        }}
         {...props}
       >
         {children}

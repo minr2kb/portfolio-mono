@@ -14,7 +14,7 @@ export const gridLayoutCss: GlobalStyleObject = {
   '.react-grid-item': {
     transform: 'translate3d(0, 0, 0)',
     willChange: 'transform',
-    transition: `transform ${transitionDurations.item} {easings.ease-in-out}, box-shadow ${transitionDurations.shadow} {easings.ease-in-out}`,
+    transition: `transform ${transitionDurations.item} {easings.ease-in-out}, box-shadow ${transitionDurations.shadow} {easings.ease-in-out}, width 0.2s ease-in-out, height 0.2s ease-in-out`,
   },
   '.react-grid-item img': {
     pointerEvents: 'none',

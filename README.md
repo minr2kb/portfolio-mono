@@ -136,6 +136,10 @@ pnpm create-app
 - 패키지 중복로드 방지 & lazy load
 - 배포 자동화
 
+## 고민하던 부분
+
+- 각 앱 라우트별 글로벌 스타일이 간섭 -> 앱을 완전 lazy로드로 전환
+
 ## 작성자
 
 - Kyungbae Min
