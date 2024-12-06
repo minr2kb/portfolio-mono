@@ -2,6 +2,7 @@ import GridLayoutItem from '@/components/layout/GridLayoutItem';
 import GridLayout from '@/components/layout/GridLayout';
 import { Container } from '@chakra-ui/react';
 import useGridByRoute from '@/hooks/useGridByRoute';
+import Footer from '@/components/Footer';
 
 const MainPage = () => {
   const { gridItems } = useGridByRoute();
@@ -12,6 +13,7 @@ const MainPage = () => {
           <GridLayoutItem key={item.i}>{item.component}</GridLayoutItem>
         ))}
       </GridLayout>
+      <Footer />
     </Container>
   );
 };
