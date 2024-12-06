@@ -18,6 +18,7 @@ import React, { forwardRef, useCallback, useEffect, useMemo, useState } from 're
 import useDeviceQuery from '@/hooks/useDeviceQuery';
 import useStartedScroll from '@/hooks/useStartedScroll';
 import { getAssetsUrl } from '@packages/shared';
+import { Link } from 'react-router-dom';
 
 type NavBarProps = {
   openNavigator?: () => void;
@@ -108,9 +109,17 @@ const NavBarContent: React.FC<NavBarContentProps> = React.memo(
           px: 3,
         }}
       >
-        <Badge badgeContent={<Typography sx={badgeContentStyles}>{version}</Typography>}>
-          <Typography sx={typographyStyles}>Portfolio</Typography>
-        </Badge>
+        <Link
+          to="/v4"
+          style={{
+            textDecoration: 'none',
+            color: 'inherit',
+          }}
+        >
+          <Badge badgeContent={<Typography sx={badgeContentStyles}>{version}</Typography>}>
+            <Typography sx={typographyStyles}>Portfolio</Typography>
+          </Badge>
+        </Link>
         <IconButton onClick={openNavigator} disabled={!startedScroll}>
           <MoreHoriz sx={iconButtonStyles} />
         </IconButton>
