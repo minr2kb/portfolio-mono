@@ -1,9 +1,11 @@
+import { defaultLayouts } from '@/consts/layouts';
 import useBreakPoint from '@/hooks/useBreakPoint';
 import { layoutsAtom } from '@/store/atoms';
 import { breakpointsNum as breakpoints } from '@/theme/breakpoints';
 import { Box } from '@chakra-ui/react';
 import { useAtom } from 'jotai';
-import { Responsive, WidthProvider } from 'react-grid-layout';
+import { useEffect } from 'react';
+import { Layout, Responsive, WidthProvider } from 'react-grid-layout';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 type ResponsiveGridLayoutProps = React.ComponentProps<typeof ResponsiveGridLayout>;
@@ -25,6 +27,11 @@ interface GridLayoutProps extends ResponsiveGridLayoutProps {
    * @default 1 / 1
    */
   itemRatio?: number;
+  /**
+   * 초기 레이아웃
+   * @default defaultLayouts
+   */
+  initialLayouts?: Record<BreakpointKeys, Layout[]>;
 }
 
 const cols: Record<BreakpointKeys, number> = {
@@ -39,6 +46,7 @@ export default function GridLayout({
   gap = 16,
   padding = 16,
   itemRatio = 1 / 1,
+  initialLayouts = defaultLayouts,
   ...props
 }: Readonly<GridLayoutProps>) {
   const [layouts, setLayouts] = useAtom(layoutsAtom);
@@ -56,6 +64,10 @@ export default function GridLayout({
     },
     {} as Record<BreakpointKeys, number>,
   );
+
+  useEffect(() => {
+    setLayouts(initialLayouts);
+  }, []);
 
   return (
     <Box maxW={breakpoints} mx={'auto'} p={`${padding}px`}>
