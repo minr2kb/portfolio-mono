@@ -43,7 +43,7 @@ export default function GridLayout({
 }: Readonly<GridLayoutProps>) {
   const [layouts, setLayouts] = useAtom(layoutsAtom);
 
-  const { breakpoint: bp } = useBreakPoint();
+  const { breakpoint: bp, isMobile } = useBreakPoint();
 
   // 비율에 따른 행 높이
   const rowHeight = Math.ceil((breakpoints[bp] - padding * 2 - gap * (cols[bp] - 1)) / (cols[bp] * itemRatio));
@@ -68,7 +68,7 @@ export default function GridLayout({
         containerPadding={[0, 0]}
         isBounded
         useCSSTransforms
-        isDraggable={bp !== 'xs'}
+        isDraggable={!isMobile}
         draggableCancel=".no-drag"
         onLayoutChange={(layout) => {
           setLayouts((prev) => ({ ...prev, [bp]: layout }));

@@ -458,6 +458,9 @@ export const projectsData: ProjectItemType[] = [
         content: 'Supabase를 통해 실시간 장식에 대한 데이터 저장 및 실시간 업데이트 기능 구현',
       },
       {
+        content: '로그인 없는 익명 접속을 위해 RLS를 통한 접근 제어 및 클라이언트 단 비속어 필터링 구현',
+      },
+      {
         content: 'QR 다운로드, 디버깅 단축키 등 편의성 기능 구현',
       },
     ],
