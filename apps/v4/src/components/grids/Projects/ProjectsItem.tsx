@@ -34,7 +34,7 @@ const ProjectsItem = ({ project }: { project: ProjectItemType }) => {
   );
 
   const onClick = () => {
-    setSearchParams({ pid: id });
+    setSearchParams({ pid: id }, { replace: !!pid });
   };
 
   const onClose = () => {
