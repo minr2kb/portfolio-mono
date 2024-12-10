@@ -34,9 +34,9 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
           <Flex alignItems={'center'}>
             <Heading size={'2xl'}>{title}</Heading>
             {link && (
-              <Tooltip content="Link">
+              <Tooltip content={link}>
                 <Link to={link} target="_blank" rel="noopener noreferrer" className="no-drag">
-                  <IconButton variant="ghost" size="sm" rounded="full">
+                  <IconButton variant="ghost" rounded="full">
                     <IoLink />
                   </IconButton>
                 </Link>
@@ -71,7 +71,7 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
                 key={content}
                 fontSize={'sm'}
                 css={{
-                  fontWeight: children ? 'medium' : 'normal',
+                  fontWeight: children ? 'semibold' : 'normal',
                   color: children ? 'slate.800' : 'slate.600',
                 }}
               >
@@ -79,7 +79,7 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
                 {children && (
                   <List.Root ps={5} gap={1}>
                     {children.map(({ content }) => (
-                      <List.Item key={content} fontSize={'sm'} color={'slate.600'}>
+                      <List.Item key={content} fontSize={'sm'} fontWeight={'normal'} color={'slate.600'}>
                         {content}
                       </List.Item>
                     ))}

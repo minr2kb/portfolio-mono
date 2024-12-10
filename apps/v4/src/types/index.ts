@@ -24,7 +24,6 @@ export type ProjectItemType = {
   link?: string;
   skills: string[];
   cateTag?: string;
-  isMobile?: boolean;
 };
 
 export type ExperienceItemType = {
