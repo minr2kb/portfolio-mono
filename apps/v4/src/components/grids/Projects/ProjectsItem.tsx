@@ -1,5 +1,5 @@
 import { Box, IconButton, Image } from '@chakra-ui/react';
-import { getAssetsUrl } from '@packages/shared';
+import { getAssetsUrl, logger } from '@packages/shared';
 import CheckoutButton from '../../CheckoutButton';
 import { ProjectItemType } from '@/types';
 import { useNavigate, useSearchParams } from 'react-router-dom';
@@ -35,6 +35,12 @@ const ProjectsItem = ({ project }: { project: ProjectItemType }) => {
 
   const onClick = () => {
     setSearchParams({ pid: id }, { replace: !!pid });
+    logger.info('ProjectsItem clicked', {
+      version: 'v4',
+      environment: import.meta.env.MODE,
+      timestamp: new Date().toISOString(),
+      pid: id,
+    });
   };
 
   const onClose = () => {

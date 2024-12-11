@@ -61,7 +61,7 @@ const useGridByRoute = () => {
     }
   }, [categoryId]);
 
-  return { gridItems };
+  return { gridItems, categoryId };
 };
 
 export default useGridByRoute;

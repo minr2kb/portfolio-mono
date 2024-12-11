@@ -2,12 +2,17 @@ import React, { Suspense } from 'react';
 import { Navigate, Route, Routes, BrowserRouter } from 'react-router-dom';
 import LoadingPage from '@/pages/LoadingPage';
 import ErrorPage from '@/pages/ErrorPage';
-
+import { logger } from '@packages/shared';
 const LazyRouteLoader = (remoteImport: () => Promise<{ default: React.FC }>) => {
   const LazyComponent = React.lazy(() =>
-    remoteImport().catch((err) => ({
-      default: () => <ErrorPage error={err} />,
-    })),
+    remoteImport().catch((err) => {
+      logger.error('Remote app loading failed', err, {
+        remoteUrl: remoteImport.toString(),
+      });
+      return {
+        default: () => <ErrorPage error={err} />,
+      };
+    }),
   );
 
   return (
