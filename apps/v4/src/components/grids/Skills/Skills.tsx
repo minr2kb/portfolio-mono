@@ -1,6 +1,6 @@
 import { Box, BoxProps, Image, Text } from '@chakra-ui/react';
 import { getAssetsUrl } from '@packages/shared';
-import { skillsData } from '@/consts/sectionData';
+import { skillsData } from '@/consts/sections';
 import { keyframes } from '@emotion/react';
 import CheckoutButton from '../../CheckoutButton';
 import { useParams } from 'react-router-dom';
@@ -75,7 +75,7 @@ const Skills = () => {
       />
       <SkillCircle
         radius={200}
-        logoSize={12}
+        logoSize={10}
         position="absolute"
         top={0}
         left={'80%'}
@@ -98,7 +98,16 @@ const Skills = () => {
         h={20}
         bg="linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent)"
       />
-      <Text position="absolute" bottom={0} left={0} w="full" p={4} fontSize="2xl" fontWeight="bold" color="slate.700">
+      <Text
+        position="absolute"
+        bottom={0}
+        left={0}
+        w="full"
+        p={4}
+        fontSize={['xl', '2xl', '2xl', '3xl']}
+        fontWeight="bold"
+        color="slate.700"
+      >
         기술 스택
       </Text>
       {!categoryId && <CheckoutButton position={'absolute'} bottom={0} right={0} m={4} to="skills" />}

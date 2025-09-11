@@ -15,7 +15,15 @@ const Projects = () => {
         alt="projects"
         w="75%"
       />
-      <Text position={'absolute'} bottom={0} right={0} fontSize={'2xl'} fontWeight={'bold'} color="slate.900" p={4}>
+      <Text
+        position={'absolute'}
+        bottom={0}
+        right={0}
+        fontSize={['xl', '2xl', '2xl', '3xl']}
+        fontWeight={'bold'}
+        color="slate.900"
+        p={4}
+      >
         프로젝트
       </Text>
       {!categoryId && <CheckoutButton position={'absolute'} bottom={0} left={0} m={4} to="projects" />}

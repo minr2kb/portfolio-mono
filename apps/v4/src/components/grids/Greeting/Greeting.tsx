@@ -21,13 +21,13 @@ const Greeting = () => {
         bottom={0}
         right={0}
         p={4}
-        fontSize={'2xl'}
+        fontSize={['xl', '2xl', '2xl', '3xl']}
         fontWeight={'bold'}
         color="slate.900"
         whiteSpace={'pre-wrap'}
         textAlign={'right'}
       >
-        {'팀플레이어로 성장중인\nFE 개발자 민경배 입니다'}
+        {'팀과 함께 성장하는\nFE 개발자, 민경배입니다.'}
       </Text>
     </Box>
   );

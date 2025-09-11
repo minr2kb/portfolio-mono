@@ -1,0 +1,134 @@
+import { SkillItemType } from '@/types';
+
+export const skillsData: SkillItemType[] = [
+  {
+    name: 'ReactJS',
+    rating: 5,
+    image: '/images/stackIcon/ReactJS.webp',
+  },
+  {
+    name: 'NextJS',
+    rating: 4,
+    image: '/images/stackIcon/NextJS.webp',
+  },
+  {
+    name: 'TypeScript',
+    rating: 4,
+    image: '/images/stackIcon/TypeScript.webp',
+  },
+  {
+    name: 'JavaScript',
+    rating: 5,
+    image: '/images/stackIcon/JavaScript.webp',
+  },
+  {
+    name: 'ReactNative',
+    rating: 3,
+    image: '/images/stackIcon/ReactNative.webp',
+  },
+  {
+    name: 'Tanstack-Query',
+    rating: 4,
+    image: '/images/stackIcon/ReactQuery.webp',
+  },
+  {
+    name: 'Material UI',
+    rating: 5,
+    image: '/images/stackIcon/MUI.webp',
+  },
+  {
+    name: 'Tailwind CSS',
+    rating: 4,
+    image: '/images/stackIcon/Tailwind.webp',
+  },
+  {
+    name: 'Panda CSS',
+    rating: 5,
+    image: '/images/stackIcon/PandaCSS.webp',
+  },
+  {
+    name: 'ThreeJS',
+    rating: 3,
+    image: '/images/stackIcon/ThreeJS.webp',
+  },
+  {
+    name: 'Yarn Berry',
+    rating: 3,
+    image: '/images/stackIcon/Yarn.webp',
+  },
+  {
+    name: 'Nx',
+    rating: 3,
+    image: '/images/stackIcon/NX.webp',
+  },
+  {
+    name: 'Recoil',
+    rating: 4,
+    image: '/images/stackIcon/Recoil.webp',
+  },
+  {
+    name: 'Jotai',
+    rating: 5,
+    image: '/images/stackIcon/Jotai.webp',
+  },
+  {
+    name: 'Zustand',
+    rating: 4,
+    image: '/images/stackIcon/Zustand.webp',
+  },
+  {
+    name: 'Redux',
+    rating: 3,
+    image: '/images/stackIcon/Redux.webp',
+  },
+  {
+    name: 'Github Action',
+    rating: 3,
+    image: '/images/stackIcon/Github.webp',
+  },
+  {
+    name: 'Vite',
+    rating: 4,
+    image: '/images/stackIcon/Vite.webp',
+  },
+  {
+    name: 'Webpack',
+    rating: 3,
+    image: '/images/stackIcon/Webpack.webp',
+  },
+  {
+    name: 'NodeJS',
+    rating: 4,
+    image: '/images/stackIcon/NodeJS.webp',
+  },
+  {
+    name: 'Firebase',
+    rating: 4,
+    image: '/images/stackIcon/Firebase.webp',
+  },
+  {
+    name: 'Pnpm',
+    rating: 3,
+    image: '/images/stackIcon/Pnpm.webp',
+  },
+  {
+    name: 'Chakra UI',
+    rating: 4,
+    image: '/images/stackIcon/ChakraUI.webp',
+  },
+  {
+    name: 'Turborepo',
+    rating: 3,
+    image: '/images/stackIcon/Turborepo.webp',
+  },
+  {
+    name: 'Supabase',
+    rating: 3,
+    image: '/images/stackIcon/Supabase.webp',
+  },
+  {
+    name: 'Storybook',
+    rating: 3,
+    image: '/images/stackIcon/Storybook.webp',
+  },
+];

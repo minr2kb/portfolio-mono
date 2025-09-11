@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { Navigate, Route, Routes, BrowserRouter } from 'react-router-dom';
 import LoadingPage from '@/pages/LoadingPage';
 import ErrorPage from '@/pages/ErrorPage';
@@ -27,6 +27,15 @@ function App() {
   const v2Routes = LazyRouteLoader(() => import('v2/AppRoutes'));
   const v3Routes = LazyRouteLoader(() => import('v3/AppRoutes'));
   const v4Routes = LazyRouteLoader(() => import('v4/AppRoutes'));
+
+  useEffect(() => {
+    logger.info('App initialized', {
+      version: 'host',
+      environment: import.meta.env.MODE,
+      timestamp: new Date().toISOString(),
+    });
+  }, []);
+
   return (
     <BrowserRouter
       future={{

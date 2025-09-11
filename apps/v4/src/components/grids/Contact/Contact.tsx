@@ -7,7 +7,7 @@ const Contact = () => {
   const { categoryId } = useParams();
   return (
     <Box w="full" h="full" p={4} position="relative" bgColor="gray.50">
-      <Text fontSize="2xl" fontWeight="bold" color="slate.800">
+      <Text fontSize={['xl', '2xl', '2xl', '3xl']} fontWeight="bold" color="slate.800">
         연락처
       </Text>
 

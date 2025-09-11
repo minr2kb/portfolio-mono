@@ -1,247 +1,204 @@
-import {
-  ContactItemType,
-  EducationItemType,
-  IntroductionItemType,
-  type ExperienceItemType,
-  type ProjectItemType,
-  type SkillItemType,
-} from '@/types';
-import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { IoMail } from 'react-icons/io5';
-
-export const introData: IntroductionItemType[] = [
-  {
-    title: '빠른 개발과 실험에 자신있습니다',
-    subtitle: '6개월의 개발로 MAU 20만↑ 프로덕트의 기반을 만들었습니다.',
-    content:
-      '- 빠른 프로토타이핑을 통해 PMF를 확보하고, 1년만에 2개의 프로덕트를 성공적으로 런칭해본 경험이 있습니다.\n- 데이터 기반의 애자일한 실험 방식에도 익숙하며, 주도적으로 참여하여 새로운 피처를 논의하고, UX적인 개선점 찾기를 즐깁니다.\n- 비즈니스 요구 사항에 맞추어 3D, NFC, 시리얼 통신 등 도메인을 가리지 않고 엔지니어링적 문제를 해결합니다.',
-  },
-  {
-    title: '효율적이고 자동화된 개발 환경을 추구합니다',
-    subtitle: '디자인시스템 완전 자동화 파이프라인을 구축했습니다.',
-    content:
-      '- 초기 스타트업에서 경험한 시행착오들을 기반으로 스스로 더 나은 협업 체계를 고민하고 배워나가고 있습니다.\n- 빠른 확장성에 따라 떨어진 컴포넌트 재사용성을 위해 아토믹 디자인 패턴을 도입하여 모듈 수를 56% 가량 감소시켰습니다.\n- 디자인시스템에 아이콘 자동화 파이프라인, 유틸 개발을 통해 디자이너가 직접 코드 추가가 가능하도록 작업 효율을 높였습니다.',
-  },
-  {
-    title: '개발을 제대로 즐기는 사람입니다',
-    subtitle: '사소한 아이디어, 기술 트렌드 한 줄을 모두 연료 삼아 움직입니다.',
-    content:
-      '- 슬랙봇부터 회식 장소를 정하기 위한 월드컵 사이트 등, 재미있는 아이디어를 새로운 기술과 함께 구현하기를 즐깁니다.\n- 새로운 지식 습득 자체를 즐겨 악기 등 다양한 취미를 가지고 있으며, 적절한 컨텍스트 스위칭을 통해 번아웃 없이 지속적으로 도전 가능한 환경을 만들고 있습니다.\n- 현재 포트폴리오를 모노레포로 옮기며 module-federation기반 MFE에 대한 다양한 고민들을 시도해보고 있습니다.',
-  },
-];
-
-export const educationData: EducationItemType = {
-  title: 'Stony Brook University',
-  subtitle: '한국뉴욕주립대, 2019 Spring - 2022 Fall',
-  logoSrc: '/images/logo/sbu.png',
-  major: 'Applied Mathematics and Statistics (응용 수학 통계학)',
-  minor: 'Computer Science (컴퓨터 공학)',
-  gpa: '3.98/4.0',
-};
-
-export const experiencesData: ExperienceItemType[] = [
-  {
-    title: '퍼블리',
-    subtitle: '경영악화로 퇴사, 2023.07 - 2024.04',
-    logoSrc: '/images/logo/publy.png',
-    descs: [
-      '개발자 커리어 플랫폼 "커리어리" 서비스 웹 및 앱 프론트 개발',
-      '지표 단위 조직(Squad)으로 3주 단위 스프린트 업무 진행',
-      '엔지니어 챕터 내의 정기적 스터디와 코드리뷰 경험',
-      '디자인팀과의 협업을 통한 사내 디자인 시스템 작업',
-      '아틀라시안 제품 등의 Saas 활용 협업',
-    ],
-  },
-  {
-    title: '티엠알파운더스',
-    subtitle: '전 제로클래스랩, 2022.07 - 2023.07',
-    logoSrc: '/images/logo/tmrfounders.png',
-    descs: [
-      '원스톱 창업 플랫폼 "내일의창업" 웹 개발 및 런칭',
-      'NFC 기반 스마트 오더 솔루션 "태그히어" 서비스 제작',
-      '아이템 태거 등 주요 컴포넌트 패키지 제작',
-      '스타트업 서비스의 초기 기획부터 배포까지의 사이클 경험',
-    ],
-  },
-  {
-    title: '제로클래스랩',
-    subtitle: '피봇팅 이전 법인, 2021.07 - 2022.07',
-    logoSrc: '/images/logo/zeroclasslab.png',
-    descs: [
-      'Computer vision 기반 물류 관리 시스템 관리자 대시보드 풀스텍 제작',
-      '무인 계산 솔루션 "버키" 앱 개발 및 유지보수',
-      '풀스택 업무를 통한 프로젝트 전반적인 이해',
-    ],
-  },
-];
-
-export const skillsData: SkillItemType[] = [
-  {
-    name: 'ReactJS',
-    rating: 5,
-    image: '/images/stackIcon/ReactJS.webp',
-  },
-
-  {
-    name: 'NextJS',
-    rating: 4,
-    image: '/images/stackIcon/NextJS.webp',
-  },
-
-  {
-    name: 'TypeScript',
-    rating: 4,
-    image: '/images/stackIcon/TypeScript.webp',
-  },
-  {
-    name: 'JavaScript',
-    rating: 5,
-    image: '/images/stackIcon/JavaScript.webp',
-  },
-  {
-    name: 'ReactNative',
-    rating: 3,
-    image: '/images/stackIcon/ReactNative.webp',
-  },
-  {
-    name: 'Tanstack-Query',
-    rating: 4,
-    image: '/images/stackIcon/ReactQuery.webp',
-  },
-  {
-    name: 'Material UI',
-    rating: 5,
-    image: '/images/stackIcon/MUI.webp',
-  },
-  {
-    name: 'Tailwind CSS',
-    rating: 4,
-    image: '/images/stackIcon/Tailwind.webp',
-  },
-  {
-    name: 'ThreeJS',
-    rating: 3,
-    image: '/images/stackIcon/ThreeJS.webp',
-  },
-  {
-    name: 'Yarn Berry',
-    rating: 3,
-    image: '/images/stackIcon/Yarn.webp',
-  },
-  {
-    name: 'Nx',
-    rating: 3,
-    image: '/images/stackIcon/NX.webp',
-  },
-  {
-    name: 'Recoil',
-    rating: 4,
-    image: '/images/stackIcon/Recoil.webp',
-  },
-  {
-    name: 'Jotai',
-    rating: 5,
-    image: '/images/stackIcon/Jotai.webp',
-  },
-  {
-    name: 'Redux',
-    rating: 3,
-    image: '/images/stackIcon/Redux.webp',
-  },
-  {
-    name: 'Github Action',
-    rating: 3,
-    image: '/images/stackIcon/Github.webp',
-  },
-  {
-    name: 'Vite',
-    rating: 4,
-    image: '/images/stackIcon/Vite.webp',
-  },
-  {
-    name: 'Webpack',
-    rating: 3,
-    image: '/images/stackIcon/Webpack.webp',
-  },
-  //   {
-  //     name: 'EC2',
-  //     rating: 2,
-  //     image: '/images/stackIcon/EC2.webp',
-  //   },
-  {
-    name: 'NodeJS',
-    rating: 4,
-    image: '/images/stackIcon/NodeJS.webp',
-  },
-  {
-    name: 'Firebase',
-    rating: 4,
-    image: '/images/stackIcon/Firebase.webp',
-  },
-  {
-    name: 'Pnpm',
-    rating: 3,
-    image: '/images/stackIcon/Pnpm.webp',
-  },
-  {
-    name: 'Chakra UI',
-    rating: 4,
-    image: '/images/stackIcon/ChakraUI.webp',
-  },
-  {
-    name: 'Turborepo',
-    rating: 3,
-    image: '/images/stackIcon/Turborepo.webp',
-  },
-  {
-    name: 'Supabase',
-    rating: 3,
-    image: '/images/stackIcon/Supabase.webp',
-  },
-  {
-    name: 'Storybook',
-    rating: 3,
-    image: '/images/stackIcon/Storybook.webp',
-  },
-];
+import { ProjectItemType } from '@/types';
 
 export const projectsData: ProjectItemType[] = [
+  {
+    id: 'nationa-design-system',
+    title: 'Nation A 디자인 시스템',
+    description: `사내 디자인 시스템 구축 프로젝트`,
+    details: [
+      {
+        content: 'ArkUI + PandaCSS 기반 스타일링 체계 도입',
+        children: [
+          {
+            content:
+              'Emotion과 Tailwind의 한계를 보완하기 위해 PandaCSS 주도적 도입: SSR 최적화, 토큰 커버리지 향상, 타입 안전성 확보',
+          },
+          {
+            content: 'cva, sva, recipe 유틸로 variant 중심의 구조화된 스타일 패턴을 구축',
+          },
+          {
+            content: 'ArkUI를 활용해 상태 로직 관리를 최소화하고, slot 기반의 컴포넌트 방식 차용',
+          },
+        ],
+      },
+      {
+        content: '앱과 시스템의 역할 분리 전략',
+        children: [
+          {
+            content:
+              '디자인 시스템은 UI 컴포넌트와 theme 정의를, 앱은 Stack/Flex 기반 레이아웃 조립에 집중하도록 분리 설계',
+          },
+          {
+            content: 'Polymorphic HOC를 적용해 <Box as="section" /> 등 시맨틱 태그 대응이 가능한 유틸 컴포넌트 제공',
+          },
+          {
+            content: 'tokens, icons, ui를 패키지로 분리하고, 모노레포 기반으로 관리해 유지보수성과 확장성을 확보',
+          },
+        ],
+      },
+      {
+        content: '자동화된 빌드 · 배포 환경',
+        children: [
+          {
+            content: 'Figma의 Tokens Studio, Icona를 연동해 디자인 토큰과 아이콘을 자동 반영하는 파이프라인을 구축',
+          },
+          {
+            content: 'Turborepo + Vite/tsup 으로 간소화된 멀티 패키지 빌드 환경 구성',
+          },
+          {
+            content: 'Changesets로 npm 릴리즈 흐름을 자동화하고, Storybook을 통해 디자인 시스템 공유',
+          },
+        ],
+      },
+    ],
+    image: '/images/projects/nationa-design-system.png',
+    link: 'https://github.com/Nation-A/design-system',
+    skills: [
+      'TypeScript',
+      'PandaCSS',
+      'Tokens Studio',
+      'Icona',
+      'Storybook',
+      'Changesets',
+      'PNPM',
+      'Turborepo',
+      'Figma',
+    ],
+    cateTag: 'Nation A',
+  },
+  {
+    id: 'hey-d',
+    title: 'Hey.D',
+    description: `3D 모션 기반의 AI 채팅 서비스`,
+    details: [
+      {
+        content: '2.0 버전 개발 리드',
+        children: [
+          {
+            content:
+              '메인피드 초기 속도 개선 및 웹 마케팅 작업을 고려한 Next.js 전환 및 메인피드 ISR 최적화로 초기 로딩 속도 약 45% 개선',
+          },
+          {
+            content:
+              'zustand가 혼용되던 remote계층을 tanstack-query의 queryOptions를 활용하여 전체 재정의. 서버상태 전역 동기화 및 캐싱 안정성 개선',
+          },
+          {
+            content: 'Jira 기반 워크플로와 브랜치 전략 도입으로 병목 제거 및 작업 추적 체계 확립',
+          },
+          {
+            content:
+              'S3 단일 정적 배포에서 SSR과 정적 리소스 캐시 정책이 충돌해 배포 유연성이 떨어지던 환경을, Vercel(SSR/ISR)과 전용 CDN(정적 리소스)로 분리 설계해 동일 도메인 무중단 마이그레이션 완료',
+          },
+        ],
+      },
+      {
+        content: '핵심 로직 모듈 개발',
+        children: [
+          {
+            content:
+              '자동번역 기능 구현을 위해 정적 분석을 통한 번역 데이터 추출 파이프라인과 페이지별 텍스트 등록 및 배치 처리를 통한 동적 번역 모듈 구현',
+          },
+          {
+            content:
+              'Cognito와 Firebase 혼합 인증 구조로 인한 버그를 AuthService로 통합 캡슐화하여 인증 관련 오류를 90% 감소',
+          },
+          {
+            content: 'Webview 환경에서 산발적인 브릿지 호출 방식을 통합 브릿지 통신 모듈로 해결',
+          },
+          {
+            content:
+              'Analytics sheet로 부터의 attribute 타입 추출 스크립트 및 통합 analytics 모듈 제작으로 코드 일관성 확보 및 작업속도 70% 이상 개선',
+          },
+        ],
+      },
+    ],
+    image: '/images/projects/hey-d.webp',
+    link: 'https://hey-d.ai',
+    skills: [
+      'ReactJS',
+      'NextJS',
+      'TypeScript',
+      'Zustand',
+      'Tanstack Query',
+      'ThreeJS',
+      'PandaCSS',
+      'Emotion',
+      'Github Action',
+      'AWS',
+      'Vercel',
+      'Tailwind',
+      'Shadcn',
+      'Prisma',
+      'MariaDB',
+      'DynamoDB',
+    ],
+    cateTag: 'Nation A',
+  },
+  {
+    id: 'heyd-admin',
+    title: 'Hey.D Admin',
+    description: `AI 채팅 서비스의 운영/콘텐츠 관리용 백오피스`,
+    details: [
+      {
+        content: 'React + Django 기반의 백오피스를 Next.js 풀스택 구조로 마이그레이션',
+        children: [
+          {
+            content: '기존 운영 도구를 Next.js 기반으로 전환하여 프론트-백엔드 통합 유지보수 체계 마련',
+          },
+          {
+            content: '인증, 콘텐츠, 채팅 로그 등 기능별 API를 Prisma 기반으로 구조화하고, 타입 일관성을 확보',
+          },
+        ],
+      },
+      {
+        content: '대시보드 특성에 맞춘 성능 최적화 전략',
+        children: [
+          {
+            content:
+              '대량의 테이블을 조인해야 하는 통계성 화면에서는 Prisma의 제약을 극복하기 위해 raw query를 적절히 병행하여 쿼리 성능을 확보',
+          },
+          {
+            content: 'MUI 기반 UI를 Shadcn + Tanstack Table 조합으로 개선하고, 정렬·가상화 등 고성능 인터랙션 구현',
+          },
+          {
+            content: '메인피드 편집, 번역 수정 등 개발 리소스를 최소화한 동적 실험 기능 제공',
+          },
+        ],
+      },
+    ],
+    image: '/images/projects/heyd-admin.png',
+    skills: ['NextJS', 'TypeScript', 'Shadcn', 'Tanstack Table', 'Prisma', 'MariaDB', 'DynamoDB'],
+    cateTag: 'Nation A',
+    link: 'https://admin.hey-d.ai',
+  },
   {
     id: 'careerly',
     title: '커리어리',
     description: `개발자 커뮤니티-채용 플랫폼`,
     details: [
       {
-        content: '주도적 디자인 시스템 개발',
+        content: '디자인 시스템 작업 효율 개선',
         children: [
           {
-            content: '웹과 앱의 디자인 시스템이 분리되어 높아진 유지보수 비용에 대한 문제를 제기, 자동화를 제안',
-          },
-          {
             content:
-              '피그마 플러그인, Bitbucket Pipelines를 사용하여 피그마 내의 아이콘 및 디자인 토큰이 코드에 자동 반영 가능하도록 파이프라인을 구축',
-          },
-          {
-            content:
-              '웹과 앱 컴포넌트 컨벤션 통일을 위해 ThemeProvider와 유틸을 개발하고, 스타일링 템플릿화를 통해 개발 시간을 30% 단축',
+              'submodule을 통한 Tailwind config 기반의 토큰 적용 방식 개선 및 교체 작업을 통해 토큰 커버리지 개선',
           },
         ],
       },
-
       {
-        content: '다양한 접근법을 통한 프로덕트 개선',
+        content: '프로덕트 성능, 안정성 개선',
         children: [
           {
             content:
-              '앱 마이페이지 SectionList 성능을 개선하기 위해 lazy load와 useTransition을 모방한 timeout 적용으로 탭 컴포넌트의 블로킹 타임을 최대 4초 가량 개선',
+              '마이페이지 SectionList 렌더링 시 탭 전환마다 전체 UI가 동기 렌더링되어 최대 4초간 메인 스레드가 블로킹되던 문제를, lazy load와 useTransition 패턴을 모방한 timeout 기반 점진적 렌더링으로 전환해 블로킹 타임을 개선',
           },
           {
             content:
-              '채팅 서비스의 기능 중심 설계된 컴포넌트를 UI와 비즈니스 로직으로 분리해 20개 컴포넌트를 6개 공통 로직으로 축소',
+              '상태와 타입별 20여 개로 분리돼 중복·불일치가 발생하던 채팅 메시지 버블을  variant 분기와 비즈니스 로직 수직 통합으로 6개로 축소하고 UI·로직 일관성과 확장성을 확보',
           },
           {
             content:
-              '광고 성과 측정을 개선하기 위해 이미지 prefetch, onLoad 핸들러, 스크롤 디바운싱을 적용해 20%의 비정상 이벤트를 제거.',
+              '피드 광고에서 이미지 로딩 완료 전 노출로 집계돼 약 20%의 비정상 이벤트가 발생하던 문제를, 이미지 prefetch·onLoad 기반 노출 트리거와 스크롤 디바운싱 적용으로 정확한 노출 시점만 집계되도록 개선해 오류 이벤트를 20% 제거.',
           },
         ],
       },
@@ -253,7 +210,7 @@ export const projectsData: ProjectItemType[] = [
               '엔지니어링 문서를 통해 스프린트 작업 컨텍스트와 범위를 사전 논의하고, 이벤트 데이터 기반 유저 실험을 구현',
           },
           {
-            content: 'tl;dv와 같은 Saas 도구를 직접 제안, 도입하여 회의록 작성 시간 75% 단축 ',
+            content: '스쿼드 간의 release 단위 배포를 위한 브랜치 전략 경험 및 배포 논의 참여',
           },
           {
             content: 'MSA-gateway 아키텍쳐의 백엔드 작업을 함께 수행',
@@ -366,18 +323,6 @@ export const projectsData: ProjectItemType[] = [
           },
         ],
       },
-      {
-        content: '비즈니스 협력 적극 참여',
-        children: [
-          {
-            content:
-              '메뉴 및 주문 관리를 위한 대시보드를 개발하여 컴퓨터에 익숙치 않은 유저들을 위한 DnD, 포스기를 고려한 터치 인터페이스 등, 피드백 기반 UI 실험 진행',
-          },
-          {
-            content: '프린터 연동, 후불 결제 프로세스 프로토타입의 제작 및 비즈니스 우선순위 논의에 적극 기여',
-          },
-        ],
-      },
     ],
     image: '/images/projects/taghere.webp',
     link: 'https://tag-here.info',
@@ -476,6 +421,46 @@ export const projectsData: ProjectItemType[] = [
     image: '/images/projects/portfolio-mono.webp',
     link: 'https://github.com/minr2kb/portfolio-mono',
     skills: ['ReactJS', 'TypeScript', 'Vite', 'MUI', 'ChakraUI', 'PNPM', 'Turborepo', 'Firebase'],
+    cateTag: '사이드',
+  },
+  {
+    id: 'moon-cheese',
+    title: 'FE 모의과제: Moon Cheese',
+    description: `요구사항을 각자 해결하고, 결과를 공유하며 비교·토론하는 성장형 모의과제`,
+    details: [
+      {
+        content: '프로젝트 개요',
+        children: [
+          {
+            content: 'Toss FE Accelerator 후속 프로젝트로 진행',
+          },
+          {
+            content:
+              '실무적 요구사항을 바탕으로 여러 개발자가 각자 솔루션을 구현하고 피드백하는 협업형 과제로 3인 팀으로 문제 구성',
+          },
+          {
+            content: '모의 서버, 테스팅, UI로 역할 분담',
+          },
+        ],
+      },
+      {
+        content: 'UI 파트 전담',
+        children: [
+          {
+            content: 'UI 파트를 전담하여 요구사항을 충족하는 화면 및 컴포넌트 구현',
+          },
+          {
+            content: '디자인시스템 경험을 바탕으로 ui-lib 설계 및 추상화 작업 주도',
+          },
+          {
+            content: '도전자들이 쉽게 활용할 수 있는 컴포넌트 구조와 스타일링 패턴 정립',
+          },
+        ],
+      },
+    ],
+    image: '/images/projects/moon-cheese.webp',
+    skills: ['React.js', 'TypeScript', 'Yarn Berry', 'Vite', 'PandaCSS', 'ArkUI', 'msw'],
+    link: 'https://news.hada.io/topic?id=22494',
     cateTag: '사이드',
   },
   {
@@ -630,7 +615,6 @@ export const projectsData: ProjectItemType[] = [
     link: 'https://github.com/minr2kb/worship-team-live',
     cateTag: '사이드',
   },
-
   {
     id: 'publy-dinner-worldcup',
     title: '퍼블리 회식 월드컵',
@@ -761,32 +745,5 @@ export const projectsData: ProjectItemType[] = [
     skills: ['ReactJS', 'TypeScript', 'Webpack', 'MUI', 'Firebase'],
     link: 'https://playground-adade.web.app',
     cateTag: '사이드',
-  },
-];
-
-export const contactsData: ContactItemType[] = [
-  {
-    label: 'Email',
-    value: 'kbmin1129@gmail.com',
-    link: 'mailto:kbmin1129@gmail.com',
-    icon: IoMail,
-  },
-  {
-    label: 'Github',
-    value: 'github.com/minr2kb',
-    link: 'https://github.com/minr2kb',
-    icon: FaGithub,
-  },
-  {
-    label: 'Instagram',
-    value: 'instagram.com/minr2_kb',
-    link: 'https://instagram.com/minr2_kb',
-    icon: FaInstagram,
-  },
-  {
-    label: 'LinkedIn',
-    value: 'linkedin.com/in/kyungbae-min-5963a921b',
-    link: 'https://linkedin.com/in/kyungbae-min-5963a921b',
-    icon: FaLinkedin,
   },
 ];

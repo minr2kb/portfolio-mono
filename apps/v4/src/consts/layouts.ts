@@ -1,5 +1,5 @@
 import { Layout } from 'react-grid-layout';
-import { contactsData, experiencesData, introData, projectsData, skillsData } from './sectionData';
+import { contactsData, experiencesData, introData, projectsData, skillsData } from './sections';
 
 export const defaultLayouts: Record<string, Layout[]> = {
   sm: [

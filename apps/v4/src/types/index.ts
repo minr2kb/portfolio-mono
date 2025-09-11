@@ -45,7 +45,7 @@ export type EducationItemType = {
 export type IntroductionItemType = {
   title: string;
   subtitle: string;
-  content: string;
+  contents: string[];
 };
 
 export type ContactItemType = {

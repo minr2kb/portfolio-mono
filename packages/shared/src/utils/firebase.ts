@@ -18,9 +18,9 @@ export const analytics = getAnalytics(app);
 export const logEvent = (eventName: string, params?: Record<string, any>) => {
   try {
     firebaseLogEvent(analytics, eventName, params);
-    logger.debug(`[Analytics] event logged: ${eventName}`, params);
+    logger.debug(`Analytics event logged: ${eventName}`, params);
   } catch (error) {
-    logger.error(`[Analytics] Failed to log event: ${eventName}`, error as Error, {
+    logger.error(`Analytics event failed to log: ${eventName}`, error as Error, {
       eventName,
       params,
     });

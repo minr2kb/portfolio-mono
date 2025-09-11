@@ -5,6 +5,7 @@ import Fonts from '@/theme/Fonts';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { logger } from '@packages/shared';
+
 export const AppRoutes = () => {
   const location = useLocation();
 

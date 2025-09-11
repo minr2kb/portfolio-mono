@@ -15,7 +15,7 @@ const Educations = () => {
       bgPos="center"
       p={4}
     >
-      <Text fontSize={'2xl'} fontWeight={'bold'} color="white" lineHeight={[1, 1, 1, 1.2]}>
+      <Text fontSize={['xl', '2xl', '2xl', '3xl']} fontWeight={'bold'} color="white" lineHeight={[1, 1, 1, 1.2]}>
         Stony Brook Univ.
       </Text>
       <Text fontSize={'sm'} fontWeight={'medium'} color="white">

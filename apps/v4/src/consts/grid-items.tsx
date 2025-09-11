@@ -8,7 +8,7 @@ import {
   Skills,
   Contact,
 } from '@/components/grids';
-import { contactsData, educationData, experiencesData, introData, projectsData, skillsData } from './sectionData';
+import { contactsData, educationData, experiencesData, introData, projectsData, skillsData } from './sections';
 import { GridItem } from '@/types';
 
 export const defaultGridItems: GridItem[] = [

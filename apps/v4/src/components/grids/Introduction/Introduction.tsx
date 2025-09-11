@@ -26,7 +26,7 @@ const Introduction = () => {
       {!categoryId && <CheckoutButton position={'absolute'} top={0} right={0} m={4} to="introduction" />}
 
       <Box position={'absolute'} top={0} left={0} p={4}>
-        <Text fontSize="2xl" fontWeight="bold" color="white">
+        <Text fontSize={['xl', '2xl', '2xl', '3xl']} fontWeight="bold" color="white">
           민경배
         </Text>
         <Text fontSize="sm" color="white" fontWeight={'medium'}>
