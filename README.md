@@ -6,8 +6,8 @@
 ## 🌟 주요기능
 
 - Turborepo와 Module Federation을 활용한 MFE 모노레포 구조로, 독립적 환경을 보장합니다.
-- 새로운 앱을 cli를 통해 스캐폴딩하여 추가합니다.
-- asset의 절대경로 지원 및 nested route 지원이 가능합니다
+- 새로운 앱을 CLI로 스캐폴딩하여 추가합니다. (env, firebase, host 라우터까지 자동 등록)
+- 포트폴리오 데이터·이미지 에셋을 `@packages/data`로 중앙집중 관리합니다.
 - [type-gen](https://github.com/minr2kb/portfolio-mono/tree/main/packages/type-gen)을 제작하여 빌드타임에 리모트앱의 타입을 추출해냅니다.
 
 ## 🎯 기술적 특징
@@ -15,8 +15,9 @@
 ### 1. 확장성 있는 모노레포 구조
 
 - PNPM + Turborepo를 활용한 모노레포 환경 구성
-- 템플릿 기반 스캐폴딩 cli로 새로운 버전의 포트폴리오 앱을 독립 환경에서 빠르게 생성 가능
-- 자체 제작 type-gen 패키지를 통한 리모트 앱 타입 정의 자동 추출
+- `@packages/create-app` CLI로 새로운 버전의 포트폴리오 앱을 한 명령으로 생성 — env, firebase.json, .firebaserc, host 라우터까지 자동 등록
+- 자체 제작 `@packages/type-gen` 패키지를 통한 리모트 앱 타입 정의 자동 추출
+- `@packages/tsconfig`로 TypeScript 설정을 중앙관리, 각 앱/패키지는 `extends`로 상속
 
 ### 2. 마이크로 프론트엔드 아키텍처
 
@@ -24,45 +25,58 @@
 - 각 버전의 포트폴리오를 독립적으로 개발/배포 가능
 - Cache-control을 통한 리모트 앱 변경사항 즉시 반영
 
-### 3. 최적화된 개발 경험
+### 3. 공유 패키지
+
+- `@packages/data` — 포트폴리오 콘텐츠(경력, 프로젝트, 스킬 등) 및 이미지 에셋 중앙관리. 빌드시 각 앱의 `public/`에 복사
+- `@packages/utils` — `getAssetsUrl()` 등 공통 유틸, Firebase 로거
+- `@packages/tsconfig` — 앱/라이브러리용 TypeScript 베이스 설정
+
+### 4. 최적화된 개발 경험
 
 - 독립적인 개발 서버 구동으로 빠른 HMR 지원
 - 공통 템플릿 스캐폴딩을 통한 일관된 프로젝트 구조
-- Firebase Hosting을 통해 4개의 CDN 기반 배포
-- `getAssetsUrl()` 유틸을 통해 remote앱의 에셋을 안정적으로 로드
+- Firebase Hosting을 통해 각 앱을 독립 CDN으로 배포
 
 ## 📁 프로젝트 구조
 
 ```
-
 ├── apps/
-│ ├── host/ # 호스트 앱 (컨테이너)
-│ ├── v1/ # v1 리모트 앱
-│ ├── v2/ # v2 리모트 앱
-│ ├── v3/ # v3 리모트 앱
-│ └── v4/ # v4 리모트 앱
-├── templates/
-│ ├── react-vite/ # React + Vite 기반 템플릿
-│ └── react-vite-mui/ # React + Vite + MUI 기반 템플릿
+│   ├── host/        # 호스트 앱 (컨테이너, 포트 1129)
+│   ├── v1/          # v1 리모트 앱 (포트 5001)
+│   ├── v2/          # v2 리모트 앱 (포트 5002)
+│   ├── v3/          # v3 리모트 앱 (포트 5003)
+│   ├── v4/          # v4 리모트 앱 (포트 5004)
+│   └── v5/          # v5 리모트 앱 (포트 5005)
 ├── packages/
-│ ├── shared/ # 공통 유틸들(WIP)
-│ └── type-gen/ # 리모트앱 타입 추출을 위한 유틸
-├── scripts/
-│ └── create-app.js # 템플릿 스캐폴딩을 위한 스크립트
-├── turbo.json # Turborepo 설정
-├── firebase.json # firebase 호스팅 설정
-├── package.json # 루트 패키지 설정
-└── pnpm-workspace.yaml # PNPM 워크스페이스 설정
+│   ├── data/        # 포트폴리오 콘텐츠 데이터 및 이미지 에셋
+│   ├── utils/       # 공통 유틸리티 (getAssetsUrl, logger 등)
+│   ├── type-gen/    # 리모트앱 타입 추출 CLI
+│   ├── create-app/  # 신규 앱 스캐폴딩 CLI
+│   └── tsconfig/    # 공유 TypeScript 설정
+│       ├── tsconfig.app.json      # Vite React 앱용
+│       ├── tsconfig.node.json     # vite.config.ts용
+│       ├── tsconfig.lib-esm.json  # ESM 라이브러리용
+│       └── tsconfig.lib-cjs.json  # CJS 패키지용
+├── templates/
+│   └── react-vite/  # 신규 앱 생성용 기본 템플릿
+├── turbo.json        # Turborepo 설정
+├── firebase.json     # Firebase 호스팅 설정
+├── .firebaserc       # Firebase 타겟 설정
+├── package.json      # 루트 패키지 설정
+└── pnpm-workspace.yaml
 ```
 
 ## 🛠 기술 스택
 
-- **패키지 매니저**: PNPM
-- **빌드 도구**: Vite
-- **프레임워크**: React
-- **언어**: TypeScript
-- **모노레포 도구**: Turborepo
-- **모듈 페더레이션**: Vite Module Federation Plugin
+| 구분 | 도구 |
+|------|------|
+| 패키지 매니저 | PNPM |
+| 모노레포 | Turborepo |
+| 빌드 도구 | Vite + tsup |
+| 프레임워크 | React 19 |
+| 언어 | TypeScript |
+| 모듈 페더레이션 | @originjs/vite-plugin-federation |
+| 배포 | Firebase Hosting |
 
 ## 🚀 시작하기
 
@@ -72,68 +86,45 @@
 pnpm install
 ```
 
-### 2. 빌드
+### 2. 개발 서버 실행
 
 ```bash
-# 프로덕션 빌드
-pnpm build
-
-# 개발 빌드
-pnpm build:dev
-```
-
-### 3. 개발 서버 실행
-
-```bash
-# 각 standalone
+# 개별 앱
 pnpm dev:host
 pnpm dev:v1
 pnpm dev:v2
 pnpm dev:v3
+pnpm dev:v4
+pnpm dev:v5
 
-# 동시 구동
+# host + 모든 remote 동시 구동
 pnpm start
 ```
 
-### 배포
+### 3. 빌드
 
 ```bash
-# 따로 배포
-pnpm run deploy:host
-pnpm run deploy:v1
-pnpm run deploy:v2
-pnpm run deploy:v3
+# 프로덕션 빌드 (전체)
+pnpm build
 
-# 동시 배포
-pnpm run deploy
+# 개발 빌드 (로컬 preview용)
+pnpm build:dev
 ```
 
-## 📲 앱 구조
+### 4. 배포
 
-### Host App (Container)
+```bash
+# 개별 배포
+pnpm deploy:host
+pnpm deploy:v1
+pnpm deploy:v2
+pnpm deploy:v3
+pnpm deploy:v4
+pnpm deploy:v5
 
-- 경로: `apps/host`
-- 역할: 다른 마이크로 프론트엔드 앱들을 통합하는 컨테이너 애플리케이션
-- 포트: 1129
-
-### Remote App
-
-- 경로: `apps/v1` `apps/v2` `apps/v3`, ...
-- 역할: 각 버전별 리모트 애플리케이션
-- 포트: 5001, 5002, 5003, ...
-
-## 🖼️ 템플릿
-
-### 리모트앱 템플릿
-
-- 경로: `templates/*`
-- 설명: 새로운 마이크로 프론트엔드 앱을 생성할 때 사용되는 기본 템플릿
-- 포함된 설정:
-  - TypeScript 설정
-  - Vite 설정
-  - Module Federation 설정
-  - MUI 등 디자인 패키지 설정
-  - 기본 패키지 구성
+# 전체 빌드 후 일괄 배포
+pnpm deploy:all
+```
 
 ## ☕️ 개발 가이드
 
@@ -143,29 +134,23 @@ pnpm run deploy
 pnpm create-app
 ```
 
-1. `create-app` 스크립트 실행(이름, 포트 설정)
-2. host 앱의 `vite.config.js`에 remoteEntry 추가
-3. `host/src/AppRoutes.tsx` 내에 중첩 라우터 추가
-4. `.env` 내 base_url 작성
-5. 생성된 remote앱의 `vite.config.js` 내 base 환경변수 작성
-6. `firebase.json`, `.firebaserc` 내에 배포 config 추가
+앱 이름과 포트를 입력하면 아래 작업이 자동으로 처리됩니다:
+
+- `apps/{name}/` — 템플릿 복사 및 설정 초기화
+- `apps/.env.development / .env.production` — 환경변수 추가
+- `firebase.json` — 호스팅 엔트리 추가 (CORS 헤더, 리다이렉트 포함)
+- `.firebaserc` — Firebase 호스팅 타겟 자동 등록
+- `package.json` — `dev:{name}`, `deploy:{name}` 스크립트 추가
+- `apps/host/vite.config.ts` — remotes 등록
+- `apps/host/src/App.tsx` — 라우트 추가
+- `apps/host/src/remote-types/{name}.d.ts` — 타입 스텁 생성
 
 ### 주의사항
 
-1. asset은 각 앱의 public 내부에 위치시키되, 상대 경로의 경우 반드시 빌드타임 경로 변환을 위해 `@/utils` 내의 `getAssetsUrl()`로 감싸서 작성한다. (host의 asset 사용시 그냥 상대경로만 작성)
-2. host앱 구동시에는 각 remote앱의 빌드 결과물(`dist/assets/remoteEntry.js`)이 필요하기에 preview를 통해 구동된다. 이 때, 로컬 절대 주소 사용을 위해 `pnpm build:dev`로 빌드가 되며, HMR작동이 안된다.
-3. 각 remote앱은 독립적으로 작동 가능하며 `dev` 스크립트를 사용해 개발 가능하다.
-4. 배포는 매뉴얼 로컬 배포로 돌아가기에 반드시 프로덕션 빌드가 선행되어야 한다.
-
-## TO-DO
-
-- 공통 로직(데이터,타입,에셋 등) 패키지 분리
-- 패키지 중복로드 방지 & lazy load
-- 배포 자동화
-
-## 고민하던 부분
-
-- 각 앱 라우트별 글로벌 스타일이 간섭 -> 앱을 완전 lazy로드로 전환
+1. 이미지 에셋은 `packages/data/assets/images/`에 중앙관리하며, 빌드 시 `copy-assets` 스크립트로 각 앱의 `public/images/`에 복사됩니다.
+2. 에셋 경로는 반드시 `@packages/utils`의 `getAssetsUrl()`로 감싸서 사용합니다. (host 앱 제외)
+3. host 앱 구동 시에는 각 remote 앱의 빌드 결과물(`dist/assets/remoteEntry.js`)이 필요하므로 `pnpm start`는 `build:dev` → `dev:host` + `preview:remotes` 순으로 동작합니다.
+4. 각 remote 앱은 `pnpm dev:{name}`으로 독립 실행 가능합니다.
 
 ## 👨‍💻 개발자
 

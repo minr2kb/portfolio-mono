@@ -39,7 +39,9 @@
     "deploy:v1": "turbo run @apps/v1#build && firebase deploy --only hosting:v1",
     "deploy:v2": "turbo run @apps/v2#build && firebase deploy --only hosting:v2",
     "deploy:v3": "turbo run @apps/v3#build && firebase deploy --only hosting:v3",
-    "deploy:v4": "turbo run @apps/v4#build && firebase deploy --only hosting:v4"
+    "deploy:v4": "turbo run @apps/v4#build && firebase deploy --only hosting:v4",
+    "dev:v5": "turbo run @apps/v5#dev",
+    "deploy:v5": "turbo run @apps/v5#build && firebase deploy --only hosting:v5"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.14",

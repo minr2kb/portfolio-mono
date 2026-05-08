@@ -1,0 +1,9 @@
+{
+  "extends": "@packages/tsconfig/tsconfig.app.json",
+  "compilerOptions": {
+    "types": ["vite/client"],
+    "baseUrl": ".",
+    "paths": { "@/*": ["src/*"] }
+  },
+  "include": ["src"]
+}
