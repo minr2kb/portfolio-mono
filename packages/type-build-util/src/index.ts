@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
-import { existsSync, mkdirSync, writeFileSync } from 'fs';
-import path from 'path';
 import {
   CompilationOptions,
-  generateDtsBundle,
   type EntryPointConfig,
+  generateDtsBundle,
 } from 'dts-bundle-generator';
-import { Logger } from './utils/logger';
-import { Config, Exposes } from './types';
+import { existsSync, mkdirSync, writeFileSync } from 'fs';
+import path from 'path';
 import { loadConfig } from './helpers/load-config';
 import { loadExposes } from './helpers/load-exposes';
+import { Config, Exposes } from './types';
+import { Logger } from './utils/logger';
 
 function main() {
   Logger.normalLog('Running type generation scripts...');
@@ -36,7 +36,7 @@ function main() {
           inlineDeclareExternals: true,
         },
       };
-    }
+    },
   );
   const compilationOptions: CompilationOptions = {
     preferredConfigPath: configs.tsConfigPath,

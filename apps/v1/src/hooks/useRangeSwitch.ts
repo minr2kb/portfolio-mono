@@ -1,6 +1,9 @@
 import { useState } from 'react';
 
-const useRangeSwitch = (): [boolean, (val: number, min?: number, max?: number) => void] => {
+const useRangeSwitch = (): [
+  boolean,
+  (val: number, min?: number, max?: number) => void,
+] => {
   const [isOn, setIsOn] = useState(false);
 
   const onRange = (val: number, min?: number, max?: number) => {

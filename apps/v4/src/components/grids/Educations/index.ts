@@ -1,7 +1,7 @@
-import Main from './Educations';
 import SchoolItem from './EducationSchoolItem';
-import LogoItem from './EducationsLogoItem';
+import Main from './Educations';
 import Item from './EducationsItem';
+import LogoItem from './EducationsLogoItem';
 
 export default {
   Main,

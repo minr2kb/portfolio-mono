@@ -12,7 +12,8 @@ export const introData: IntroductionItemType[] = [
   },
   {
     title: '디자이너에게 가장 사랑받는 개발자',
-    subtitle: 'Figma 기준 용어와 컴포넌트 컨벤션을 정립해 소통 비용을 획기적으로 줄였습니다.',
+    subtitle:
+      'Figma 기준 용어와 컴포넌트 컨벤션을 정립해 소통 비용을 획기적으로 줄였습니다.',
     contents: [
       'Figma의 Tokens Studio, Icona와 연동해 토큰·아이콘을 자동으로 코드에 반영하는 파이프라인을 구축했습니다.',
       '디자인 시스템을 changeset과 storybook을 활용하여 배포하고 신규 제품 내 75% 커버리지를 달성하여 디자인 QA 티켓수를 40% 단축시켰습니다.',

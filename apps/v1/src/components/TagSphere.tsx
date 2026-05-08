@@ -1,8 +1,8 @@
-import { Box } from '@mui/material';
 import TagCloud, { type TagCloudOptions } from 'TagCloud';
+import { Box } from '@mui/material';
+import { getAssetsUrl } from '@packages/shared';
 import { useEffect, useRef } from 'react';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
-import { getAssetsUrl } from '@packages/shared';
 
 function TagSphere() {
   const { isMobile } = useDeviceQuery();
@@ -60,9 +60,16 @@ function TagSphere() {
     }
   }, [tagCloudRef.current, isMobile]);
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%', overflow: 'hidden' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        width: '100%',
+        overflow: 'hidden',
+      }}
+    >
       <Box
-        id="tagcloud"
+        id='tagcloud'
         ref={tagCloudRef}
         sx={{
           fontSize: isMobile ? 28 : 32,

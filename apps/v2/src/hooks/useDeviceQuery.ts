@@ -1,5 +1,8 @@
 import { useMediaQuery } from '@mui/material';
-import { mobileMaxWidthMediaQuery, tabletMaxWidthMediaQuery } from '@/styles/theme';
+import {
+  mobileMaxWidthMediaQuery,
+  tabletMaxWidthMediaQuery,
+} from '@/styles/theme';
 
 const useDeviceQuery = () => {
   const isMobile = useMediaQuery(mobileMaxWidthMediaQuery);

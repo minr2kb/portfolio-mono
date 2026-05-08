@@ -1,6 +1,6 @@
-import TextWithDot from '@/components/TextWithDot';
 import { Box, Grid, Typography } from '@mui/material';
 import { getAssetsUrl } from '@packages/shared';
+import TextWithDot from '@/components/TextWithDot';
 
 export interface EduExpItemType {
   title: string;
@@ -41,7 +41,7 @@ function EduExpItem(
             }}
           />
           <Typography
-            variant="h3"
+            variant='h3'
             sx={{
               flex: 1,
             }}
@@ -49,13 +49,17 @@ function EduExpItem(
             {title}
           </Typography>
         </Box>
-        <Typography color="text.secondary" variant="body1">
+        <Typography color='text.secondary' variant='body1'>
           {subtitle}
         </Typography>
       </Grid>
       <Grid item xs={8}>
         {descs.map((desc, idx) => (
-          <TextWithDot key={`${title}-desc-${idx}`} variant="body1" lineHeight={2}>
+          <TextWithDot
+            key={`${title}-desc-${idx}`}
+            variant='body1'
+            lineHeight={2}
+          >
             {desc}
           </TextWithDot>
         ))}

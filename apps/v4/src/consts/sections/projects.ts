@@ -14,10 +14,12 @@ export const projectsData: ProjectItemType[] = [
               'Emotion과 Tailwind의 한계를 보완하기 위해 PandaCSS 주도적 도입: SSR 최적화, 토큰 커버리지 향상, 타입 안전성 확보',
           },
           {
-            content: 'cva, sva, recipe 유틸로 variant 중심의 구조화된 스타일 패턴을 구축',
+            content:
+              'cva, sva, recipe 유틸로 variant 중심의 구조화된 스타일 패턴을 구축',
           },
           {
-            content: 'ArkUI를 활용해 상태 로직 관리를 최소화하고, slot 기반의 컴포넌트 방식 차용',
+            content:
+              'ArkUI를 활용해 상태 로직 관리를 최소화하고, slot 기반의 컴포넌트 방식 차용',
           },
         ],
       },
@@ -29,10 +31,12 @@ export const projectsData: ProjectItemType[] = [
               '디자인 시스템은 UI 컴포넌트와 theme 정의를, 앱은 Stack/Flex 기반 레이아웃 조립에 집중하도록 분리 설계',
           },
           {
-            content: 'Polymorphic HOC를 적용해 <Box as="section" /> 등 시맨틱 태그 대응이 가능한 유틸 컴포넌트 제공',
+            content:
+              'Polymorphic HOC를 적용해 <Box as="section" /> 등 시맨틱 태그 대응이 가능한 유틸 컴포넌트 제공',
           },
           {
-            content: 'tokens, icons, ui를 패키지로 분리하고, 모노레포 기반으로 관리해 유지보수성과 확장성을 확보',
+            content:
+              'tokens, icons, ui를 패키지로 분리하고, 모노레포 기반으로 관리해 유지보수성과 확장성을 확보',
           },
         ],
       },
@@ -40,13 +44,16 @@ export const projectsData: ProjectItemType[] = [
         content: '자동화된 빌드 · 배포 환경',
         children: [
           {
-            content: 'Figma의 Tokens Studio, Icona를 연동해 디자인 토큰과 아이콘을 자동 반영하는 파이프라인을 구축',
+            content:
+              'Figma의 Tokens Studio, Icona를 연동해 디자인 토큰과 아이콘을 자동 반영하는 파이프라인을 구축',
           },
           {
-            content: 'Turborepo + Vite/tsup 으로 간소화된 멀티 패키지 빌드 환경 구성',
+            content:
+              'Turborepo + Vite/tsup 으로 간소화된 멀티 패키지 빌드 환경 구성',
           },
           {
-            content: 'Changesets로 npm 릴리즈 흐름을 자동화하고, Storybook을 통해 디자인 시스템 공유',
+            content:
+              'Changesets로 npm 릴리즈 흐름을 자동화하고, Storybook을 통해 디자인 시스템 공유',
           },
         ],
       },
@@ -83,7 +90,8 @@ export const projectsData: ProjectItemType[] = [
               'zustand가 혼용되던 remote계층을 tanstack-query의 queryOptions를 활용하여 전체 재정의. 서버상태 전역 동기화 및 캐싱 안정성 개선',
           },
           {
-            content: 'Jira 기반 워크플로와 브랜치 전략 도입으로 병목 제거 및 작업 추적 체계 확립',
+            content:
+              'Jira 기반 워크플로와 브랜치 전략 도입으로 병목 제거 및 작업 추적 체계 확립',
           },
           {
             content:
@@ -103,7 +111,8 @@ export const projectsData: ProjectItemType[] = [
               'Cognito와 Firebase 혼합 인증 구조로 인한 버그를 AuthService로 통합 캡슐화하여 인증 관련 오류를 90% 감소',
           },
           {
-            content: 'Webview 환경에서 산발적인 브릿지 호출 방식을 통합 브릿지 통신 모듈로 해결',
+            content:
+              'Webview 환경에서 산발적인 브릿지 호출 방식을 통합 브릿지 통신 모듈로 해결',
           },
           {
             content:
@@ -140,13 +149,16 @@ export const projectsData: ProjectItemType[] = [
     description: `AI 채팅 서비스의 운영/콘텐츠 관리용 백오피스`,
     details: [
       {
-        content: 'React + Django 기반의 백오피스를 Next.js 풀스택 구조로 마이그레이션',
+        content:
+          'React + Django 기반의 백오피스를 Next.js 풀스택 구조로 마이그레이션',
         children: [
           {
-            content: '기존 운영 도구를 Next.js 기반으로 전환하여 프론트-백엔드 통합 유지보수 체계 마련',
+            content:
+              '기존 운영 도구를 Next.js 기반으로 전환하여 프론트-백엔드 통합 유지보수 체계 마련',
           },
           {
-            content: '인증, 콘텐츠, 채팅 로그 등 기능별 API를 Prisma 기반으로 구조화하고, 타입 일관성을 확보',
+            content:
+              '인증, 콘텐츠, 채팅 로그 등 기능별 API를 Prisma 기반으로 구조화하고, 타입 일관성을 확보',
           },
         ],
       },
@@ -158,16 +170,26 @@ export const projectsData: ProjectItemType[] = [
               '대량의 테이블을 조인해야 하는 통계성 화면에서는 Prisma의 제약을 극복하기 위해 raw query를 적절히 병행하여 쿼리 성능을 확보',
           },
           {
-            content: 'MUI 기반 UI를 Shadcn + Tanstack Table 조합으로 개선하고, 정렬·가상화 등 고성능 인터랙션 구현',
+            content:
+              'MUI 기반 UI를 Shadcn + Tanstack Table 조합으로 개선하고, 정렬·가상화 등 고성능 인터랙션 구현',
           },
           {
-            content: '메인피드 편집, 번역 수정 등 개발 리소스를 최소화한 동적 실험 기능 제공',
+            content:
+              '메인피드 편집, 번역 수정 등 개발 리소스를 최소화한 동적 실험 기능 제공',
           },
         ],
       },
     ],
     image: '/images/projects/heyd-admin.png',
-    skills: ['NextJS', 'TypeScript', 'Shadcn', 'Tanstack Table', 'Prisma', 'MariaDB', 'DynamoDB'],
+    skills: [
+      'NextJS',
+      'TypeScript',
+      'Shadcn',
+      'Tanstack Table',
+      'Prisma',
+      'MariaDB',
+      'DynamoDB',
+    ],
     cateTag: 'Nation A',
     link: 'https://admin.hey-d.ai',
   },
@@ -210,7 +232,8 @@ export const projectsData: ProjectItemType[] = [
               '엔지니어링 문서를 통해 스프린트 작업 컨텍스트와 범위를 사전 논의하고, 이벤트 데이터 기반 유저 실험을 구현',
           },
           {
-            content: '스쿼드 간의 release 단위 배포를 위한 브랜치 전략 경험 및 배포 논의 참여',
+            content:
+              '스쿼드 간의 release 단위 배포를 위한 브랜치 전략 경험 및 배포 논의 참여',
           },
           {
             content: 'MSA-gateway 아키텍쳐의 백엔드 작업을 함께 수행',
@@ -220,7 +243,16 @@ export const projectsData: ProjectItemType[] = [
     ],
     image: '/images/projects/careerly.webp',
     link: 'https://careerly.co.kr',
-    skills: ['ReactJS', 'NextJS', 'ReactNative', 'TypeScript', 'TailwindCSS', 'Recoil', 'Tanstack-Query', 'Redux'],
+    skills: [
+      'ReactJS',
+      'NextJS',
+      'ReactNative',
+      'TypeScript',
+      'TailwindCSS',
+      'Recoil',
+      'Tanstack-Query',
+      'Redux',
+    ],
     cateTag: 'PUBLY',
   },
   {
@@ -232,7 +264,8 @@ export const projectsData: ProjectItemType[] = [
         content: '디자인 시스템 자동화 및 통합',
         children: [
           {
-            content: '디자인 시스템의 일관성과 효율성을 높이기 위해 디자인 토큰과 아이콘 관리 자동화 제안 및 구현',
+            content:
+              '디자인 시스템의 일관성과 효율성을 높이기 위해 디자인 토큰과 아이콘 관리 자동화 제안 및 구현',
           },
           {
             content:
@@ -252,10 +285,12 @@ export const projectsData: ProjectItemType[] = [
               'ThemeProvider 및 유틸리티 함수를 개발하여 스타일링을 템플릿화하고 유지보수 및 개발 시간을 30% 단축',
           },
           {
-            content: '디자인 시스템 변경 사항이 즉각적으로 모든 플랫폼에 반영되도록 프로세스 최적화',
+            content:
+              '디자인 시스템 변경 사항이 즉각적으로 모든 플랫폼에 반영되도록 프로세스 최적화',
           },
           {
-            content: '디자인 토큰 서브모듈화를 통해 코드베이스와 디자인 자산 간의 연계성을 강화',
+            content:
+              '디자인 토큰 서브모듈화를 통해 코드베이스와 디자인 자산 간의 연계성을 강화',
           },
         ],
       },
@@ -263,7 +298,8 @@ export const projectsData: ProjectItemType[] = [
         content: '효율적인 협업 환경 구축',
         children: [
           {
-            content: '디자이너와 개발자 간의 원활한 협업을 위해 디자인 자산의 중앙 집중식 관리 환경 제공',
+            content:
+              '디자이너와 개발자 간의 원활한 협업을 위해 디자인 자산의 중앙 집중식 관리 환경 제공',
           },
           {
             content: '설계와 구현 간의 간극을 줄이기 위한 기술 문서 작성',
@@ -304,7 +340,8 @@ export const projectsData: ProjectItemType[] = [
               '초기 로드 속도 개선을 위한 라이프사이클 최적화, 코드 스플리팅, 이미지 로더 작업으로 TBT 400ms에서 40ms로 감소',
           },
           {
-            content: '불필요한 useEffect를 비즈니스 로직 기반 핸들러로 및 훅으로 분리시켜 유지보수성, 생산성을 향상',
+            content:
+              '불필요한 useEffect를 비즈니스 로직 기반 핸들러로 및 훅으로 분리시켜 유지보수성, 생산성을 향상',
           },
         ],
       },
@@ -316,10 +353,12 @@ export const projectsData: ProjectItemType[] = [
               '소켓을 통한 공유 장바구니 기능을 구현하였으며, 재연결 및 장바구니 동기화 로직을 통해 연결 안정성 확보',
           },
           {
-            content: '주문 워크 보안을 위한 위치 검증, NFC 태그의 토큰 기반 접근 제어 방식 고안',
+            content:
+              '주문 워크 보안을 위한 위치 검증, NFC 태그의 토큰 기반 접근 제어 방식 고안',
           },
           {
-            content: 'Serial API를 활용하여 프린터 웹 출력 기능을 일주일 개발 끝에 출시하여 실제 고객 20% 추가 전환',
+            content:
+              'Serial API를 활용하여 프린터 웹 출력 기능을 일주일 개발 끝에 출시하여 실제 고객 20% 추가 전환',
           },
         ],
       },
@@ -391,7 +430,8 @@ export const projectsData: ProjectItemType[] = [
               'PNPM + Turborepo를 활용한 모노레포 환경 구성과 템플릿 기반 스캐폴딩 cli로 새로운 버전의 포트폴리오 앱을 독립 환경에서 빠르게 생성 가능',
           },
           {
-            content: '자체 제작 type-build-util 패키지를 통한 리모트 앱 타입 정의 자동 추출',
+            content:
+              '자체 제작 type-build-util 패키지를 통한 리모트 앱 타입 정의 자동 추출',
           },
         ],
       },
@@ -399,7 +439,8 @@ export const projectsData: ProjectItemType[] = [
         content: '마이크로 프론트엔드 아키텍처',
         children: [
           {
-            content: 'Vite Module Federation을 활용한 런타임 통합으로 각 버전의 포트폴리오를 독립적으로 개발/배포 가능',
+            content:
+              'Vite Module Federation을 활용한 런타임 통합으로 각 버전의 포트폴리오를 독립적으로 개발/배포 가능',
           },
           {
             content: 'Cache-control을 통한 리모트 앱 변경사항 즉시 반영',
@@ -410,17 +451,28 @@ export const projectsData: ProjectItemType[] = [
         content: '최적화된 개발 경험',
         children: [
           {
-            content: '독립적인 개발 서버 구동으로 빠른 HMR 지원 및 공통 템플릿 스캐폴딩을 통한 일관된 프로젝트 구조',
+            content:
+              '독립적인 개발 서버 구동으로 빠른 HMR 지원 및 공통 템플릿 스캐폴딩을 통한 일관된 프로젝트 구조',
           },
           {
-            content: 'Firebase Hosting의 CDN 기반 배포와 getAssetsUrl() 유틸을 통해 remote앱의 에셋을 안정적으로 로드',
+            content:
+              'Firebase Hosting의 CDN 기반 배포와 getAssetsUrl() 유틸을 통해 remote앱의 에셋을 안정적으로 로드',
           },
         ],
       },
     ],
     image: '/images/projects/portfolio-mono.webp',
     link: 'https://github.com/minr2kb/portfolio-mono',
-    skills: ['ReactJS', 'TypeScript', 'Vite', 'MUI', 'ChakraUI', 'PNPM', 'Turborepo', 'Firebase'],
+    skills: [
+      'ReactJS',
+      'TypeScript',
+      'Vite',
+      'MUI',
+      'ChakraUI',
+      'PNPM',
+      'Turborepo',
+      'Firebase',
+    ],
     cateTag: '사이드',
   },
   {
@@ -447,19 +499,30 @@ export const projectsData: ProjectItemType[] = [
         content: 'UI 파트 전담',
         children: [
           {
-            content: 'UI 파트를 전담하여 요구사항을 충족하는 화면 및 컴포넌트 구현',
+            content:
+              'UI 파트를 전담하여 요구사항을 충족하는 화면 및 컴포넌트 구현',
           },
           {
-            content: '디자인시스템 경험을 바탕으로 ui-lib 설계 및 추상화 작업 주도',
+            content:
+              '디자인시스템 경험을 바탕으로 ui-lib 설계 및 추상화 작업 주도',
           },
           {
-            content: '도전자들이 쉽게 활용할 수 있는 컴포넌트 구조와 스타일링 패턴 정립',
+            content:
+              '도전자들이 쉽게 활용할 수 있는 컴포넌트 구조와 스타일링 패턴 정립',
           },
         ],
       },
     ],
     image: '/images/projects/moon-cheese.webp',
-    skills: ['React.js', 'TypeScript', 'Yarn Berry', 'Vite', 'PandaCSS', 'ArkUI', 'msw'],
+    skills: [
+      'React.js',
+      'TypeScript',
+      'Yarn Berry',
+      'Vite',
+      'PandaCSS',
+      'ArkUI',
+      'msw',
+    ],
     link: 'https://news.hada.io/topic?id=22494',
     cateTag: '사이드',
   },
@@ -475,10 +538,12 @@ export const projectsData: ProjectItemType[] = [
             content: 'Supabase Realtime을 활용한 실시간 데이터 동기화',
           },
           {
-            content: 'animationQueue 구현을 통한 자연스러운 조건부 애니메이션 구현',
+            content:
+              'animationQueue 구현을 통한 자연스러운 조건부 애니메이션 구현',
           },
           {
-            content: 'WebRTC 기반 QR 코드 스캔과 원격 조작을 통한 트리 제어기능 구현',
+            content:
+              'WebRTC 기반 QR 코드 스캔과 원격 조작을 통한 트리 제어기능 구현',
           },
         ],
       },
@@ -486,10 +551,12 @@ export const projectsData: ProjectItemType[] = [
         content: '보안 및 사용자 경험 최적화',
         children: [
           {
-            content: 'Row Level Security (RLS)와 Aho-Corasick 알고리즘 기반 욕설 필터링으로 안전한 익명 접속 환경 구축',
+            content:
+              'Row Level Security (RLS)와 Aho-Corasick 알고리즘 기반 욕설 필터링으로 안전한 익명 접속 환경 구축',
           },
           {
-            content: 'CSS transform 활용 성능 최적화 및 토스트 메시지를 통한 직관적인 사용자 피드백 제공',
+            content:
+              'CSS transform 활용 성능 최적화 및 토스트 메시지를 통한 직관적인 사용자 피드백 제공',
           },
         ],
       },
@@ -500,7 +567,8 @@ export const projectsData: ProjectItemType[] = [
             content: 'QR 코드 생성/다운로드, 공유 링크 복사 등 편의 기능 구현',
           },
           {
-            content: '전체화면, UI 요소 제어 등 다양한 단축키 지원으로 개발자 경험 향상',
+            content:
+              '전체화면, UI 요소 제어 등 다양한 단축키 지원으로 개발자 경험 향상',
           },
         ],
       },
@@ -508,7 +576,8 @@ export const projectsData: ProjectItemType[] = [
         content: '효율적인 기술 선택',
         children: [
           {
-            content: 'Tanstack-query, Nextjs 등을 고려했으나, 실시간 인터렉션 지원을 위해 React + jotai로 진행',
+            content:
+              'Tanstack-query, Nextjs 등을 고려했으나, 실시간 인터렉션 지원을 위해 React + jotai로 진행',
           },
           {
             content: 'api는 네임스페이스 분리를 위해 class로 감싸 활용',
@@ -530,14 +599,16 @@ export const projectsData: ProjectItemType[] = [
     description: `수출입 전문가 매칭 플랫폼, '트레이드포스' 외주 개발`,
     details: [
       {
-        content: '서비스 의뢰 페이지 부터, 의뢰를 관리하는 어드민 페이지 내부 퍼널을 구성하기 위한 고민들을 경험',
+        content:
+          '서비스 의뢰 페이지 부터, 의뢰를 관리하는 어드민 페이지 내부 퍼널을 구성하기 위한 고민들을 경험',
       },
       {
         content:
           '소수의 인원과 초기 프로젝트 구축부터 단기간의 빠른 개발을 위한 효율적인 스택 디자인을 구상하고 백엔드와의 긴밀한 협업을 통해 작업',
       },
       {
-        content: '디자이너와 Figma로 협력하여 MUI를 활용한 간단한 타이포 위계 및 컴포넌트 디자인 시스템을 구축',
+        content:
+          '디자이너와 Figma로 협력하여 MUI를 활용한 간단한 타이포 위계 및 컴포넌트 디자인 시스템을 구축',
       },
     ],
     image: '/images/projects/tradeforce.webp',
@@ -554,10 +625,12 @@ export const projectsData: ProjectItemType[] = [
         content: '효율적인 크롤링 아키텍처 설계',
         children: [
           {
-            content: 'Koa 기반 크롤링 서버를 CloudType에 배포하여 안정적인 서비스 제공',
+            content:
+              'Koa 기반 크롤링 서버를 CloudType에 배포하여 안정적인 서비스 제공',
           },
           {
-            content: '카테고리 수에 따른 동기/비동기 처리 전환으로 서버 부하 최적화 (5개 기준)',
+            content:
+              '카테고리 수에 따른 동기/비동기 처리 전환으로 서버 부하 최적화 (5개 기준)',
           },
           {
             content: 'AbortController를 활용한 크롤링 중단/재시작 기능 구현',
@@ -568,7 +641,8 @@ export const projectsData: ProjectItemType[] = [
         content: '데스크톱 앱 개발 및 배포 자동화',
         children: [
           {
-            content: 'electron-updater와 Github Release를 활용한 자동 업데이트 파이프라인 구축',
+            content:
+              'electron-updater와 Github Release를 활용한 자동 업데이트 파이프라인 구축',
           },
           {
             content: 'IPC 통신으로 메인-렌더러 프로세스 간 로컬 API 구현',
@@ -582,7 +656,8 @@ export const projectsData: ProjectItemType[] = [
         content: '사용자 중심 기능 구현',
         children: [
           {
-            content: '6개 주요 채용 플랫폼 통합 검색 지원 (잡코리아, 원티드 등)',
+            content:
+              '6개 주요 채용 플랫폼 통합 검색 지원 (잡코리아, 원티드 등)',
           },
           {
             content: '플랫폼/날짜별 필터링 및 CSV 형식 결과 다운로드 기능',
@@ -594,7 +669,17 @@ export const projectsData: ProjectItemType[] = [
       },
     ],
     image: '/images/projects/recruit-crawler.webp',
-    skills: ['ReactJS', 'Electron', 'TypeScript', 'Koa', 'Vite', 'MUI', 'Recoil', 'Tanstack-Query', 'CloudType'],
+    skills: [
+      'ReactJS',
+      'Electron',
+      'TypeScript',
+      'Koa',
+      'Vite',
+      'MUI',
+      'Recoil',
+      'Tanstack-Query',
+      'CloudType',
+    ],
     link: 'https://github.com/minr2kb/recruit-crawler-app',
     cateTag: '사이드',
   },
@@ -604,7 +689,8 @@ export const projectsData: ProjectItemType[] = [
     description: `악기 연주자를 위한 라이브 소통 대시보드 서비스`,
     details: [
       {
-        content: '미리 저장해둔 단축어를 활용하여 소통하는 방식으로, 최소한의 인증과 범용성을 위해 구글 OAuth를 활용',
+        content:
+          '미리 저장해둔 단축어를 활용하여 소통하는 방식으로, 최소한의 인증과 범용성을 위해 구글 OAuth를 활용',
       },
       {
         content: 'Firebase Realtime DB를 활용하여 실시간 요청 기능 구현',
@@ -627,7 +713,8 @@ export const projectsData: ProjectItemType[] = [
             content: '1:1 대결 방식의 토너먼트 구조로 최종 우승 식당을 선정',
           },
           {
-            content: '회식 참여자/비참여자 구분 투표 및 포인트 시스템을 통한 순위 산정',
+            content:
+              '회식 참여자/비참여자 구분 투표 및 포인트 시스템을 통한 순위 산정',
           },
           {
             content: '라운드별 애니메이션 효과로 게임적 요소 강화',
@@ -638,10 +725,12 @@ export const projectsData: ProjectItemType[] = [
         content: 'Firebase 기반 실시간 데이터 관리',
         children: [
           {
-            content: '실시간 투표 결과 반영 및 장소별/유저별 결과 필터링 기능 구현',
+            content:
+              '실시간 투표 결과 반영 및 장소별/유저별 결과 필터링 기능 구현',
           },
           {
-            content: '투표 이력 관리와 결과 테이블 제공으로 투명한 집계 시스템 구축',
+            content:
+              '투표 이력 관리와 결과 테이블 제공으로 투명한 집계 시스템 구축',
           },
         ],
       },
@@ -649,7 +738,8 @@ export const projectsData: ProjectItemType[] = [
         content: '인터랙티브 UI/UX 구현',
         children: [
           {
-            content: '음식 이모지가 내리는 애니메이션 효과로 생동감 있는 화면 연출',
+            content:
+              '음식 이모지가 내리는 애니메이션 효과로 생동감 있는 화면 연출',
           },
           {
             content: '귀여운 개미 캐릭터와 상황별 멘트로 사용자 친근감 향상',
@@ -717,7 +807,8 @@ export const projectsData: ProjectItemType[] = [
     description: `컴퓨터 비전 기반 자동 물류 관리 시스템의 관리자 대시보드`,
     details: [
       {
-        content: 'React와 CoreUI를 활용하여 프론트를 기획 및 개발하였고, Flask와 MySQL을 활용하여 백엔드를 구축',
+        content:
+          'React와 CoreUI를 활용하여 프론트를 기획 및 개발하였고, Flask와 MySQL을 활용하여 백엔드를 구축',
       },
       {
         content:
@@ -725,7 +816,15 @@ export const projectsData: ProjectItemType[] = [
       },
     ],
     image: '/images/projects/zcl-admin-dashboard.webp',
-    skills: ['ReactJS', 'JavaScript', 'Redux', 'CoreUI', 'Flask', 'MySQL', 'Heroku'],
+    skills: [
+      'ReactJS',
+      'JavaScript',
+      'Redux',
+      'CoreUI',
+      'Flask',
+      'MySQL',
+      'Heroku',
+    ],
     cateTag: 'ZeroClassLab',
   },
   {

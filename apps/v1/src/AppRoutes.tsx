@@ -1,10 +1,10 @@
-import { Route, Routes } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import Home from '@/pages/Home';
-import useDeviceQuery from '@/hooks/useDeviceQuery';
-import { getTheme } from '@/styles/theme';
 import { logger } from '@packages/shared';
 import { useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import useDeviceQuery from '@/hooks/useDeviceQuery';
+import Home from '@/pages/Home';
+import { getTheme } from '@/styles/theme';
 
 export const AppRoutes = () => {
   const { isMobile } = useDeviceQuery();

@@ -1,6 +1,8 @@
-import ParallaxItem, { type ParallaxItemProps } from '@/components/ParallaxItem';
 import { Box, Divider, Typography } from '@mui/material';
 import EduExpItem from '@/components/ExperienceItem';
+import ParallaxItem, {
+  type ParallaxItemProps,
+} from '@/components/ParallaxItem';
 import { type EduExpItemType } from '@/types';
 
 const experiences: EduExpItemType[] = [
@@ -100,16 +102,24 @@ const parallaxIcons: ParallaxItemProps[] = [
   },
 ];
 
-function ExperienceSection({ open = true, parallax = false }: { open?: boolean; parallax?: boolean }) {
+function ExperienceSection({
+  open = true,
+  parallax = false,
+}: {
+  open?: boolean;
+  parallax?: boolean;
+}) {
   return (
-    <Box position="relative">
-      <Typography variant="h2">Experience</Typography>
+    <Box position='relative'>
+      <Typography variant='h2'>Experience</Typography>
       <Divider sx={{ mb: 2 }} />
       {experiences.map((experience, idx) => (
         <EduExpItem key={`experience-${idx}`} open={open} {...experience} />
       ))}
       {parallax &&
-        parallaxIcons.map((parallaxIcon, idx) => <ParallaxItem key={`parallax-exp-${idx}`} {...parallaxIcon} />)}
+        parallaxIcons.map((parallaxIcon, idx) => (
+          <ParallaxItem key={`parallax-exp-${idx}`} {...parallaxIcon} />
+        ))}
     </Box>
   );
 }

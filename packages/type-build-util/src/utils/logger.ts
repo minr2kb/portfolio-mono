@@ -19,7 +19,7 @@ export class Logger {
 
   private static logMessage(
     message: string,
-    level: LogLevel = LogLevel.Normal
+    level: LogLevel = LogLevel.Normal,
   ): void {
     switch (level) {
       case LogLevel.Error:

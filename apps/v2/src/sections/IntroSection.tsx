@@ -1,14 +1,14 @@
 import { Box } from '@mui/material';
+import { getAssetsUrl } from '@packages/shared';
 import GradientBackground from '@/components/GradientBackground';
 import HoverChangingText from '@/components/HoverChangingText';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
-import { getAssetsUrl } from '@packages/shared';
 
 function IntroSection() {
   const { isMobile } = useDeviceQuery();
   return (
     <Box
-      component="header"
+      component='header'
       sx={{
         position: 'relative',
         display: 'flex',
@@ -52,26 +52,26 @@ function IntroSection() {
 
           <HoverChangingText
             fontSize={isMobile ? 40 : 54}
-            text="안녕하세요,"
-            alt="👋하세요,"
+            text='안녕하세요,'
+            alt='👋하세요,'
             sx={{
               mixBlendMode: 'color-burn',
               transform: 'translate3d(0,0,0)',
             }}
           />
-          <Box display="flex">
+          <Box display='flex'>
             <HoverChangingText
               fontSize={isMobile ? 40 : 54}
-              text="성장하는 "
-              alt="🌱📈하는"
+              text='성장하는 '
+              alt='🌱📈하는'
               sx={{
                 mixBlendMode: 'color-burn',
               }}
             />
             <HoverChangingText
               fontSize={isMobile ? 40 : 54}
-              text="FE 개발자,"
-              alt="💻📱 🧑‍💻 ,"
+              text='FE 개발자,'
+              alt='💻📱 🧑‍💻 ,'
               sx={{
                 mixBlendMode: 'color-burn',
               }}
@@ -79,10 +79,14 @@ function IntroSection() {
           </Box>
           <HoverChangingText
             fontSize={isMobile ? 40 : 54}
-            text="민경배입니다"
+            text='민경배입니다'
             alt={
-              <Box display="flex">
-                <img src={getAssetsUrl('/images/memoji.png')} alt="미모지" height={isMobile ? '60px' : '65px'} />
+              <Box display='flex'>
+                <img
+                  src={getAssetsUrl('/images/memoji.png')}
+                  alt='미모지'
+                  height={isMobile ? '60px' : '65px'}
+                />
                 입니다
               </Box>
             }

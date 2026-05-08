@@ -1,4 +1,4 @@
-import { type ProjectItemType, type EduExpItemType } from '@/types';
+import { type EduExpItemType, type ProjectItemType } from '@/types';
 
 export const educationData: EduExpItemType = {
   title: 'Stony Brook University',
@@ -69,10 +69,14 @@ export const projectsData: ProjectItemType[] = [
         type: 'text',
       },
       {
-        content: '추가적으로 모노레포 구축 혹은 스크립트를 통한 통합 환경 구축에 대한 로드맵을 공유하기도 했습니다.',
+        content:
+          '추가적으로 모노레포 구축 혹은 스크립트를 통한 통합 환경 구축에 대한 로드맵을 공유하기도 했습니다.',
         type: 'text',
       },
-      { content: '지속적인 서비스 개선에 관심을 두고 작업했습니다', type: 'subtitle' },
+      {
+        content: '지속적인 서비스 개선에 관심을 두고 작업했습니다',
+        type: 'subtitle',
+      },
       {
         content:
           '안드로이드 플랫폼에서 마이페이지의 SectionList에서 성능 문제가 발생했고, lazy load와 순차적 렌더링 적용을 통해 블로킹 타임을 최대 4초 가량 개선시켰습니다.',
@@ -90,7 +94,8 @@ export const projectsData: ProjectItemType[] = [
       },
       { content: '스쿼드 단위의 협업을 경험했습니다', type: 'subtitle' },
       {
-        content: '스쿼드 단위로 3주 스프린트 작업을 진행했으며, 이벤트 데이터에 기반한 유저 실험을 구현했습니다.',
+        content:
+          '스쿼드 단위로 3주 스프린트 작업을 진행했으며, 이벤트 데이터에 기반한 유저 실험을 구현했습니다.',
         type: 'text',
       },
       {
@@ -99,20 +104,33 @@ export const projectsData: ProjectItemType[] = [
         type: 'text',
       },
       {
-        content: '필요에 따라 MSA-gateway로 구성된 백엔드 작업을 함께 수행했습니다.',
+        content:
+          '필요에 따라 MSA-gateway로 구성된 백엔드 작업을 함께 수행했습니다.',
         type: 'text',
       },
     ],
     image: '/images/projects/careerly.webp',
     link: 'https://careerly.co.kr',
-    skills: ['ReactJS', 'NextJS', 'ReactNative', 'TypeScript', 'TailwindCSS', 'Recoil', 'React-Query', 'Redux'],
+    skills: [
+      'ReactJS',
+      'NextJS',
+      'ReactNative',
+      'TypeScript',
+      'TailwindCSS',
+      'Recoil',
+      'React-Query',
+      'Redux',
+    ],
     cateTag: 'PUBLY',
   },
   {
     title: '태그히어',
     description: `NFC를 활용한 스마트 테이블 오더 서비스`,
     details: [
-      { content: '프로젝트의 셋팅과 개선에 대한 지속적인 고민을 했습니다', type: 'subtitle' },
+      {
+        content: '프로젝트의 셋팅과 개선에 대한 지속적인 고민을 했습니다',
+        type: 'subtitle',
+      },
       {
         content:
           '적은 인원간의 빠른 개발을 위해 NX 모노레포로 함께 구성된 Nest 백엔드와 TypeScript를 활용하여 인터페이스를 공유하고 타이핑을 진행했습니다.',
@@ -128,7 +146,10 @@ export const projectsData: ProjectItemType[] = [
           '메인 기능 모듈에서 useEffect의 남용으로 인해 라이프사이클 관리가 어려워졌고, 이를 비즈니스 로직 기반 핸들러로 분리하여 로직을 정리한적이 있습니다.',
         type: 'text',
       },
-      { content: '웹과 관련된 다양한 기술을 시도해보았습니다', type: 'subtitle' },
+      {
+        content: '웹과 관련된 다양한 기술을 시도해보았습니다',
+        type: 'subtitle',
+      },
       {
         content:
           '대부분 네이티브로 구현하는 기능들을 웹으로 풀어내며 로컬 스토리지 보안, 소켓 세션 끊김, 토큰 유지 문제 등 수많은 트러블 슈팅을 경험했고, 웹과 브라우저에 대한 이해도를 크게 높였습니다.',
@@ -140,7 +161,8 @@ export const projectsData: ProjectItemType[] = [
         type: 'text',
       },
       {
-        content: 'Serial API를 활용하여 브라우저 위에서도 프린터 등의 하드웨어가 제어가능하도록 기능을 개발했습니다.',
+        content:
+          'Serial API를 활용하여 브라우저 위에서도 프린터 등의 하드웨어가 제어가능하도록 기능을 개발했습니다.',
         type: 'text',
       },
       { content: '비즈니스적 실험에 적극 참여했습니다.', type: 'subtitle' },
@@ -217,7 +239,15 @@ export const projectsData: ProjectItemType[] = [
       },
     ],
     image: '/images/projects/zcl-admin-dashboard.webp',
-    skills: ['ReactJS', 'JavaScript', 'Redux', 'CoreUI', 'Flask', 'MySQL', 'Heroku'],
+    skills: [
+      'ReactJS',
+      'JavaScript',
+      'Redux',
+      'CoreUI',
+      'Flask',
+      'MySQL',
+      'Heroku',
+    ],
     cateTag: 'ZeroClassLab',
   },
   {
@@ -235,7 +265,8 @@ export const projectsData: ProjectItemType[] = [
         type: 'text',
       },
       {
-        content: '디자이너와 Figma로 협력하여 MUI를 활용한 타이포 위계 및 컴포넌트 디자인 시스템을 구축했습니다.',
+        content:
+          '디자이너와 Figma로 협력하여 MUI를 활용한 타이포 위계 및 컴포넌트 디자인 시스템을 구축했습니다.',
         type: 'text',
       },
     ],
@@ -254,20 +285,33 @@ export const projectsData: ProjectItemType[] = [
         type: 'text',
       },
       {
-        content: 'request 갯수에 상한선을 두어, 동기/비동기 요청을 별개로 주도록 만들어 서버 부하를 방지시켰습니다.',
+        content:
+          'request 갯수에 상한선을 두어, 동기/비동기 요청을 별개로 주도록 만들어 서버 부하를 방지시켰습니다.',
         type: 'text',
       },
       {
-        content: 'github에 release를 배포하여 자동 업데이트가 가능하도록 구현했습니다.',
+        content:
+          'github에 release를 배포하여 자동 업데이트가 가능하도록 구현했습니다.',
         type: 'text',
       },
       {
-        content: '간단한 ipc통신으로 로컬 api를 구현했고, AbortController를 활용하여 요청 취소를 구현했습니다.',
+        content:
+          '간단한 ipc통신으로 로컬 api를 구현했고, AbortController를 활용하여 요청 취소를 구현했습니다.',
         type: 'text',
       },
     ],
     image: '/images/projects/recruit-crawler.webp',
-    skills: ['ReactJS', 'Electron', 'TypeScript', 'Koa', 'Vite', 'MUI', 'Recoil', 'React-Query', 'CloudType'],
+    skills: [
+      'ReactJS',
+      'Electron',
+      'TypeScript',
+      'Koa',
+      'Vite',
+      'MUI',
+      'Recoil',
+      'React-Query',
+      'CloudType',
+    ],
     link: 'https://github.com/minr2kb/recruit-crawler-app',
     cateTag: '사이드',
   },
@@ -295,14 +339,18 @@ export const projectsData: ProjectItemType[] = [
     title: '찬양팀 라이브',
     description: `악기 연주자를 위한 라이브 소통 대시보드 서비스`,
     details: [
-      { content: '직접 Figma를 활용하여 UI를 기획 및 디자인했습니다.', type: 'text' },
+      {
+        content: '직접 Figma를 활용하여 UI를 기획 및 디자인했습니다.',
+        type: 'text',
+      },
       {
         content:
           '미리 저장해둔 단축어를 활용하여 소통하는 방식으로, 최소한의 인증과 범용성을 위해 구글 OAuth를 활용했습니다.',
         type: 'text',
       },
       {
-        content: 'Firebase Realtime DB를 활용하여 실시간 요청 데이터를 관리하였습니다.',
+        content:
+          'Firebase Realtime DB를 활용하여 실시간 요청 데이터를 관리하였습니다.',
         type: 'text',
       },
     ],

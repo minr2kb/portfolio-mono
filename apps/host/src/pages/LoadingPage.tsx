@@ -12,7 +12,7 @@ const LoadingPage = () => {
         backgroundColor: '#E7EFF6',
       }}
     >
-      <BarLoader color="#44698C" />
+      <BarLoader color='#44698C' />
     </div>
   );
 };

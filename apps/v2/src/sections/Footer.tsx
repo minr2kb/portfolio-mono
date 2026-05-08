@@ -1,6 +1,6 @@
-import { FontWeightValues } from '@/types/styles';
 import { Divider, Grid, Typography } from '@mui/material';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
+import { FontWeightValues } from '@/types/styles';
 
 function Footer() {
   const { isMobile } = useDeviceQuery();

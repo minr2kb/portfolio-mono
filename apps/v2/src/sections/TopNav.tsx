@@ -1,4 +1,3 @@
-import { FontWeightValues } from '@/types/styles';
 import { MoreHoriz } from '@mui/icons-material';
 import {
   Badge,
@@ -10,19 +9,27 @@ import {
   List,
   ListItem,
   ListItemButton,
-  Typography,
   type SxProps,
+  Typography,
 } from '@mui/material';
 import React, { forwardRef, useEffect, useState } from 'react';
-import useDeviceQuery from '@/hooks/useDeviceQuery';
 import { Link } from 'react-router-dom';
+import useDeviceQuery from '@/hooks/useDeviceQuery';
+import { FontWeightValues } from '@/types/styles';
 
 interface Props {
   startedScroll?: boolean;
   version?: string;
 }
 
-const sections = ['Intro', 'Education', 'Experience', 'Skills', 'Projects', 'Contacts'];
+const sections = [
+  'Intro',
+  'Education',
+  'Experience',
+  'Skills',
+  'Projects',
+  'Contacts',
+];
 
 const NavBar = forwardRef<
   HTMLDivElement,
@@ -31,7 +38,10 @@ const NavBar = forwardRef<
     sx?: SxProps;
     children?: React.ReactNode;
   } & Props
->(function NavBar({ startedScroll = false, version = '', openNavigator, sx, children }, ref) {
+>(function NavBar(
+  { startedScroll = false, version = '', openNavigator, sx, children },
+  ref,
+) {
   const { isMobile } = useDeviceQuery();
 
   return (
@@ -63,7 +73,7 @@ const NavBar = forwardRef<
         }}
       >
         <Link
-          to="/v3"
+          to='/v3'
           style={{
             textDecoration: 'none',
             color: 'inherit',
@@ -134,19 +144,26 @@ function TopNav(props: Props) {
   }, [startedScroll]);
 
   return (
-    <Box component="nav">
-      <NavBar {...props} sx={{ opacity: startedScroll ? 0 : 1, mixBlendMode: 'color-burn' }} />
+    <Box component='nav'>
+      <NavBar
+        {...props}
+        sx={{ opacity: startedScroll ? 0 : 1, mixBlendMode: 'color-burn' }}
+      />
       <ClickAwayListener
         onClickAway={() => {
           if (isOpen) setIsOpen(false);
         }}
       >
-        <NavBar {...props} openNavigator={openNavigator} sx={{ opacity: startedScroll ? 1 : 0 }}>
+        <NavBar
+          {...props}
+          openNavigator={openNavigator}
+          sx={{ opacity: startedScroll ? 1 : 0 }}
+        >
           <Collapse in={isOpen}>
             <Box px={3}>
               <Divider />
             </Box>
-            <Box width="100%">
+            <Box width='100%'>
               <List sx={{ py: 2 }}>
                 {sections.map((section) => (
                   <ListItem key={section} disablePadding>

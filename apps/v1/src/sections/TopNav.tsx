@@ -1,10 +1,10 @@
-import { FontWeightValues } from '@/types/styles';
 import { Badge, Box, Grid, Typography } from '@mui/material';
+import { getAssetsUrl } from '@packages/shared';
 
 import { animated, type SpringValue } from '@react-spring/web';
 import { Link } from 'react-router-dom';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
-import { getAssetsUrl } from '@packages/shared';
+import { FontWeightValues } from '@/types/styles';
 
 export interface Props {
   startedScroll?: boolean;
@@ -41,7 +41,7 @@ function TopNav({ startedScroll, scrollY, pageHeight }: Props) {
         }}
       >
         <Link
-          to="/v2"
+          to='/v2'
           style={{
             textDecoration: 'none',
             color: 'inherit',
@@ -83,14 +83,19 @@ function TopNav({ startedScroll, scrollY, pageHeight }: Props) {
         >
           <animated.div
             style={{
-              width: scrollY.to((val) => `${Math.max(Math.min(val / pageHeight, 1), 0) * 100}%`),
+              width: scrollY.to(
+                (val) => `${Math.max(Math.min(val / pageHeight, 1), 0) * 100}%`,
+              ),
               height: '1px',
               backgroundColor: ' #1ECCA2',
             }}
           />
           <animated.div
             style={{
-              width: scrollY.to((val) => `${Math.max(Math.min(1 - val / pageHeight, 1), 0) * 100}%`),
+              width: scrollY.to(
+                (val) =>
+                  `${Math.max(Math.min(1 - val / pageHeight, 1), 0) * 100}%`,
+              ),
               height: '1px',
               backgroundColor: 'rgba(0,0,0,0.2)',
             }}
@@ -114,7 +119,7 @@ function TopNav({ startedScroll, scrollY, pageHeight }: Props) {
 
           <img
             src={getAssetsUrl('/images/memoji.png')}
-            alt="미모지"
+            alt='미모지'
             style={{
               transition: 'all 0.2s ease-in-out',
               width: startedScroll ? '30px' : 0,

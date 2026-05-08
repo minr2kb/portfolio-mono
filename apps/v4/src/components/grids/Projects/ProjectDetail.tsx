@@ -1,6 +1,14 @@
-import { Badge, Box, Flex, Heading, IconButton, List, Text } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import {
+  Badge,
+  Box,
+  Flex,
+  Heading,
+  IconButton,
+  List,
+  Text,
+} from '@chakra-ui/react';
 import { IoLink } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
 import { Tooltip } from '@/components/ui/tooltip';
 import { ProjectItemType } from '@/types';
 
@@ -14,8 +22,8 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
   return (
     <Box
       p={6}
-      h="full"
-      overflow="auto"
+      h='full'
+      overflow='auto'
       css={{
         '&::-webkit-scrollbar': {
           width: '4px',
@@ -35,8 +43,13 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
             <Heading size={'2xl'}>{title}</Heading>
             {link && (
               <Tooltip content={link}>
-                <Link to={link} target="_blank" rel="noopener noreferrer" className="no-drag">
-                  <IconButton variant="ghost" rounded="full">
+                <Link
+                  to={link}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='no-drag'
+                >
+                  <IconButton variant='ghost' rounded='full'>
                     <IoLink />
                   </IconButton>
                 </Link>
@@ -54,7 +67,7 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
           </Text>
           <Flex gap={2} flexWrap={'wrap'}>
             {skills.map((skill) => (
-              <Badge key={skill} variant="surface">
+              <Badge key={skill} variant='surface'>
                 {skill}
               </Badge>
             ))}
@@ -79,7 +92,12 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
                 {children && (
                   <List.Root ps={5} gap={1}>
                     {children.map(({ content }) => (
-                      <List.Item key={content} fontSize={'sm'} fontWeight={'normal'} color={'slate.600'}>
+                      <List.Item
+                        key={content}
+                        fontSize={'sm'}
+                        fontWeight={'normal'}
+                        color={'slate.600'}
+                      >
                         {content}
                       </List.Item>
                     ))}

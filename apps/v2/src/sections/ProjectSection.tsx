@@ -1,12 +1,21 @@
-import RatioBox from '@/components/RatioBox';
-import { FontWeightValues } from '@/types/styles';
-import { type ProjectItemType } from '@/types';
 import { Link } from '@mui/icons-material';
-import { Box, Chip, Collapse, Divider, Grid, IconButton, Typography, Zoom } from '@mui/material';
+import {
+  Box,
+  Chip,
+  Collapse,
+  Divider,
+  Grid,
+  IconButton,
+  Typography,
+  Zoom,
+} from '@mui/material';
+import { getAssetsUrl } from '@packages/shared';
 import { useRef, useState } from 'react';
+import RatioBox from '@/components/RatioBox';
 import { projectsData } from '@/data/sectionData';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
-import { getAssetsUrl } from '@packages/shared';
+import { type ProjectItemType } from '@/types';
+import { FontWeightValues } from '@/types/styles';
 
 function ProjectItem({
   title,
@@ -39,7 +48,7 @@ function ProjectItem({
   };
 
   return (
-    <Grid item width="100%">
+    <Grid item width='100%'>
       {expanded && (
         <>
           <Zoom in={expanded} timeout={400}>
@@ -81,8 +90,8 @@ function ProjectItem({
               >
                 <img
                   src={getAssetsUrl(image)}
-                  alt="project"
-                  loading="lazy"
+                  alt='project'
+                  loading='lazy'
                   style={{
                     transition: 'all 0.2s ease-in-out',
                     width: '100%',
@@ -96,22 +105,25 @@ function ProjectItem({
             </RatioBox>
             <Collapse in={open}>
               <Box sx={{ py: 2 }}>
-                <Box display="flex" alignItems="center">
-                  <Typography variant="h3">{title}</Typography>
+                <Box display='flex' alignItems='center'>
+                  <Typography variant='h3'>{title}</Typography>
                   {link !== '' && (
-                    <IconButton size="small" href={link} target="_blank">
-                      <Link htmlColor="#999" fontSize={isMobile ? 'small' : 'medium'} />
+                    <IconButton size='small' href={link} target='_blank'>
+                      <Link
+                        htmlColor='#999'
+                        fontSize={isMobile ? 'small' : 'medium'}
+                      />
                     </IconButton>
                   )}
                 </Box>
-                <Box display="flex" flexWrap="wrap">
+                <Box display='flex' flexWrap='wrap'>
                   {cateTag !== '' && (
                     <Chip
-                      variant="outlined"
+                      variant='outlined'
                       label={cateTag}
                       clickable
-                      size="small"
-                      color="secondary"
+                      size='small'
+                      color='secondary'
                       sx={{ mr: 1, mt: 1 }}
                     />
                   )}
@@ -119,37 +131,41 @@ function ProjectItem({
                     return (
                       <Chip
                         key={`${title}-${skill}`}
-                        variant="outlined"
+                        variant='outlined'
                         label={skill}
                         clickable
-                        size="small"
-                        color="primary"
+                        size='small'
+                        color='primary'
                         sx={{ mr: 1, mt: 1 }}
                       />
                     );
                   })}
                 </Box>
                 <Typography
-                  variant="body2"
+                  variant='body2'
                   sx={{
                     my: 2,
                     fontWeight: FontWeightValues.SEMI_BOLD,
                   }}
-                  color="text.secondary"
+                  color='text.secondary'
                 >
                   {description}
                 </Typography>
                 <Box sx={{ maxHeight: '30vh', overflow: 'auto' }}>
                   {details.map((detail, idx) => (
-                    <Box display="flex" key={`${title}-detail-${idx}`}>
+                    <Box display='flex' key={`${title}-detail-${idx}`}>
                       <Typography
-                        variant="body2"
-                        color="text.secondary"
+                        variant='body2'
+                        color='text.secondary'
                         sx={{ mx: 1, fontWeight: FontWeightValues.BLACK }}
                       >
                         ·
                       </Typography>
-                      <Typography variant="body2" sx={{ flex: 1, my: 0.3 }} color="text.secondary">
+                      <Typography
+                        variant='body2'
+                        sx={{ flex: 1, my: 0.3 }}
+                        color='text.secondary'
+                      >
                         {detail.content}
                       </Typography>
                     </Box>
@@ -177,8 +193,8 @@ function ProjectItem({
           >
             <img
               src={getAssetsUrl(image)}
-              alt="project"
-              loading="lazy"
+              alt='project'
+              loading='lazy'
               style={{
                 transition: 'all 0.2s ease-in-out',
                 width: '100%',
@@ -200,10 +216,10 @@ function ProjectSection() {
 
   return (
     <Box>
-      <Typography variant="h2">Projects</Typography>
+      <Typography variant='h2'>Projects</Typography>
       <Divider />
       {/* TODO: 필터 / 검색기능 */}
-      <Grid container mt={2} spacing={2} alignItems="center">
+      <Grid container mt={2} spacing={2} alignItems='center'>
         {projectsData.slice(0, 8).map((project) => (
           <ProjectItem key={project.title} isMobile={isMobile} {...project} />
         ))}

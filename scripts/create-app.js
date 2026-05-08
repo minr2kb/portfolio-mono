@@ -9,7 +9,9 @@ const APPS_DIR = path.join(process.cwd(), 'apps');
 
 async function getTemplates() {
   const templates = await fs.readdir(TEMPLATES_DIR);
-  return templates.filter((dir) => fs.statSync(path.join(TEMPLATES_DIR, dir)).isDirectory());
+  return templates.filter((dir) =>
+    fs.statSync(path.join(TEMPLATES_DIR, dir)).isDirectory(),
+  );
 }
 
 async function promptUser() {
@@ -67,7 +69,9 @@ async function createApp() {
       process.exit(1);
     }
 
-    console.log(chalk.blue(`Creating new app: ${appName} using ${template} template...`));
+    console.log(
+      chalk.blue(`Creating new app: ${appName} using ${template} template...`),
+    );
 
     const envName = `VITE_${toSnakeCase(appName)}_URL`;
 
@@ -79,14 +83,25 @@ async function createApp() {
     // Update package.json
     const packageJson = await fs.readJson(path.join(targetDir, 'package.json'));
     packageJson.name = `@apps/${appName}`;
-    await fs.writeJson(path.join(targetDir, 'package.json'), packageJson, { spaces: 2 });
+    await fs.writeJson(path.join(targetDir, 'package.json'), packageJson, {
+      spaces: 2,
+    });
 
     // Update vite.config.ts base path and port
     const viteConfigPath = path.join(targetDir, 'vite.config.ts');
     let viteConfig = await fs.readFile(viteConfigPath, 'utf8');
-    viteConfig = viteConfig.replace(/base:\s*['"][^'"]*['"]/, `base: env.${envName}`);
-    viteConfig = viteConfig.replace(/server:\s*{[^}]*}/, `server: { port: ${port} }`);
-    viteConfig = viteConfig.replace(/preview:\s*{[^}]*}/, `preview: { port: ${port} }`);
+    viteConfig = viteConfig.replace(
+      /base:\s*['"][^'"]*['"]/,
+      `base: env.${envName}`,
+    );
+    viteConfig = viteConfig.replace(
+      /server:\s*{[^}]*}/,
+      `server: { port: ${port} }`,
+    );
+    viteConfig = viteConfig.replace(
+      /preview:\s*{[^}]*}/,
+      `preview: { port: ${port} }`,
+    );
     await fs.writeFile(viteConfigPath, viteConfig);
 
     // Update .env

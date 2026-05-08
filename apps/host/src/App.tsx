@@ -1,9 +1,12 @@
-import React, { Suspense, useEffect } from 'react';
-import { Navigate, Route, Routes, BrowserRouter } from 'react-router-dom';
-import LoadingPage from '@/pages/LoadingPage';
-import ErrorPage from '@/pages/ErrorPage';
 import { logger } from '@packages/shared';
-const LazyRouteLoader = (remoteImport: () => Promise<{ default: React.FC }>) => {
+import React, { Suspense, useEffect } from 'react';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import ErrorPage from '@/pages/ErrorPage';
+import LoadingPage from '@/pages/LoadingPage';
+
+const LazyRouteLoader = (
+  remoteImport: () => Promise<{ default: React.FC }>,
+) => {
   const LazyComponent = React.lazy(() =>
     remoteImport().catch((err) => {
       logger.error('Remote app loading failed', err, {
@@ -44,12 +47,15 @@ function App() {
       }}
     >
       <Routes>
-        <Route index element={<Navigate to="v4" replace />} />
-        <Route path="/v1/*" element={v1Routes} />
-        <Route path="/v2/*" element={v2Routes} />
-        <Route path="/v3/*" element={v3Routes} />
-        <Route path="/v4/*" element={v4Routes} />
-        <Route path="*" element={<ErrorPage error={new Error('404 | Page Not Found')} />} />
+        <Route index element={<Navigate to='v4' replace />} />
+        <Route path='/v1/*' element={v1Routes} />
+        <Route path='/v2/*' element={v2Routes} />
+        <Route path='/v3/*' element={v3Routes} />
+        <Route path='/v4/*' element={v4Routes} />
+        <Route
+          path='*'
+          element={<ErrorPage error={new Error('404 | Page Not Found')} />}
+        />
       </Routes>
     </BrowserRouter>
   );

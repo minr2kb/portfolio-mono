@@ -1,12 +1,20 @@
-import useDeviceQuery from '@/hooks/useDeviceQuery';
-import { Sections, SectionsType } from '@/types';
-import { FontWeightValues } from '@/types/styles';
 import { EmailOutlined, MoreHoriz, Phone } from '@mui/icons-material';
-import { Box, BoxProps, Grid, SxProps, Theme, Typography, Zoom } from '@mui/material';
+import {
+  Box,
+  BoxProps,
+  Grid,
+  SxProps,
+  Theme,
+  Typography,
+  Zoom,
+} from '@mui/material';
+import { getAssetsUrl } from '@packages/shared';
 import { useCallback, useMemo } from 'react';
 import HelloAnimation from '@/components/HelloAnimation';
 import { skillsData } from '@/data/sectionData';
-import { getAssetsUrl } from '@packages/shared';
+import useDeviceQuery from '@/hooks/useDeviceQuery';
+import { Sections, SectionsType } from '@/types';
+import { FontWeightValues } from '@/types/styles';
 
 type WidgetCardProps = {
   bgImage?: string;
@@ -98,9 +106,13 @@ const ContactInfo = () => {
             <detail.icon sx={{ fontSize: 14, color: '#F9F9F9' }} />
           </Box>
           <Typography
-            variant="body2"
-            color="primary.contrastText"
-            sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
+            variant='body2'
+            color='primary.contrastText'
+            sx={{
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+            }}
           >
             {detail.text}
           </Typography>
@@ -126,7 +138,9 @@ const SkillWidgets = () => {
   };
 
   return (
-    <Box sx={{ overflow: 'hidden', borderRadius: '20px', position: 'relative' }}>
+    <Box
+      sx={{ overflow: 'hidden', borderRadius: '20px', position: 'relative' }}
+    >
       <Box sx={scrollAnimation}>
         {[...skillsData, ...skillsData].map((skill, i) => (
           <Box key={skill.name + i} sx={{ whiteSpace: 'normal' }}>
@@ -161,24 +175,26 @@ function HeroSection() {
   const renderTags = useMemo(
     () => (
       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, mt: 5 }}>
-        {['빠른실험', 'UI/UX', '스타트업', '디자인시스템', '프론트엔드'].map((tag) => (
-          <Box
-            key={tag}
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              bgcolor: 'rgba(255,255,255,0.4)',
-              px: 2,
-              height: 32,
-              borderRadius: 16,
-              backdropFilter: 'blur(2px)',
-            }}
-          >
-            <Typography variant="body2" color="primary.contrastText">
-              #{tag}
-            </Typography>
-          </Box>
-        ))}
+        {['빠른실험', 'UI/UX', '스타트업', '디자인시스템', '프론트엔드'].map(
+          (tag) => (
+            <Box
+              key={tag}
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                bgcolor: 'rgba(255,255,255,0.4)',
+                px: 2,
+                height: 32,
+                borderRadius: 16,
+                backdropFilter: 'blur(2px)',
+              }}
+            >
+              <Typography variant='body2' color='primary.contrastText'>
+                #{tag}
+              </Typography>
+            </Box>
+          ),
+        )}
       </Box>
     ),
     [],
@@ -186,7 +202,7 @@ function HeroSection() {
 
   return (
     <Box
-      component="header"
+      component='header'
       sx={{
         display: 'flex',
         alignItems: 'center',
@@ -228,10 +244,14 @@ function HeroSection() {
                 }}
               >
                 <Box>
-                  <Typography variant="h3" color="primary.contrastText">
+                  <Typography variant='h3' color='primary.contrastText'>
                     민경배
                   </Typography>
-                  <Typography fontSize={16} fontWeight={FontWeightValues.MEDIUM} color="primary.contrastText">
+                  <Typography
+                    fontSize={16}
+                    fontWeight={FontWeightValues.MEDIUM}
+                    color='primary.contrastText'
+                  >
                     2000.11.29
                   </Typography>
                 </Box>
@@ -244,16 +264,25 @@ function HeroSection() {
               <Grid item xs={6}>
                 <WidgetCard
                   index={1}
-                  bgcolor="#E7EFF6"
-                  sx={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-end' }}
+                  bgcolor='#E7EFF6'
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'flex-end',
+                    justifyContent: 'flex-end',
+                  }}
                   onClick={() => onClickNavigator(Sections.PROJECTS)}
                 >
-                  <Typography variant="h3" lineHeight={1}>
+                  <Typography variant='h3' lineHeight={1}>
                     프로젝트
                   </Typography>
                   <img
                     src={getAssetsUrl('images/widget_projects.webp')}
-                    style={{ width: '60%', position: 'absolute', top: 20, left: 0 }}
+                    style={{
+                      width: '60%',
+                      position: 'absolute',
+                      top: 20,
+                      left: 0,
+                    }}
                   />
                 </WidgetCard>
               </Grid>
@@ -270,10 +299,14 @@ function HeroSection() {
                   onClick={() => onClickNavigator(Sections.EDUCATION)}
                 >
                   <Box>
-                    <Typography variant="h3" lineHeight={1} color="primary.contrastText">
+                    <Typography
+                      variant='h3'
+                      lineHeight={1}
+                      color='primary.contrastText'
+                    >
                       Stony Brook Univ.
                     </Typography>
-                    <Typography variant="body1" color="primary.contrastText">
+                    <Typography variant='body1' color='primary.contrastText'>
                       응용수학통계학/컴퓨터과학 학사
                     </Typography>
                   </Box>
@@ -292,7 +325,7 @@ function HeroSection() {
                   }}
                 />
                 <Typography
-                  color="text.disabled"
+                  color='text.disabled'
                   sx={{
                     overflow: 'auto',
                     textAlign: 'center',
@@ -303,8 +336,8 @@ function HeroSection() {
                   안녕하세요
                 </Typography>
                 <Typography
-                  variant="h4"
-                  color="primary"
+                  variant='h4'
+                  color='primary'
                   sx={{
                     position: 'absolute',
                     ...(isMobile ? { top: 32 } : { bottom: 32 }),
@@ -328,24 +361,41 @@ function HeroSection() {
         {/* SECTION: 하단 리스트 */}
         <Grid container item spacing={2} xs={12}>
           <Grid item xs={isMobile ? 12 : 8}>
-            <WidgetCard index={4} bgcolor="#E7EFF6" onClick={() => onClickNavigator(Sections.EXPERIENCE)}>
+            <WidgetCard
+              index={4}
+              bgcolor='#E7EFF6'
+              onClick={() => onClickNavigator(Sections.EXPERIENCE)}
+            >
               <Box>
-                <Typography variant="h3" color="primary">
+                <Typography variant='h3' color='primary'>
                   3년의 경험을 통한 성장
                 </Typography>
-                <Typography variant="body1" color="secondary">
+                <Typography variant='body1' color='secondary'>
                   스타트업의 시작부터 마지막 과정까지
                 </Typography>
               </Box>
               <img
                 src={getAssetsUrl('images/widget_career.webp')}
-                style={{ width: '90%', position: 'absolute', bottom: 0, right: 0 }}
+                style={{
+                  width: '90%',
+                  position: 'absolute',
+                  bottom: 0,
+                  right: 0,
+                }}
               />
             </WidgetCard>
           </Grid>
           <Grid item xs={isMobile ? 12 : 4}>
-            <WidgetCard index={5} bgcolor="#334155" onClick={() => onClickNavigator(Sections.CONTACTS)}>
-              <Typography variant="h3" color="primary.contrastText" sx={{ mb: 2 }}>
+            <WidgetCard
+              index={5}
+              bgcolor='#334155'
+              onClick={() => onClickNavigator(Sections.CONTACTS)}
+            >
+              <Typography
+                variant='h3'
+                color='primary.contrastText'
+                sx={{ mb: 2 }}
+              >
                 연락처
               </Typography>
               <ContactInfo />

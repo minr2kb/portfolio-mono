@@ -1,6 +1,6 @@
-import useBrowserThemeColor from '@/hooks/useBrowserThemeColor';
-import { Sections } from '@/types';
 import { Box } from '@mui/material';
+import { useRef } from 'react';
+import useBrowserThemeColor from '@/hooks/useBrowserThemeColor';
 import AboutSection from '@/sections/AboutSection';
 import ContactSection from '@/sections/ContactSection';
 import EducationSection from '@/sections/EducationSection';
@@ -8,7 +8,7 @@ import ExperienceSection from '@/sections/ExperienceSection';
 import HeroSection from '@/sections/HeroSection';
 import ProjectSection from '@/sections/ProjectSection';
 import TopNav from '@/sections/TopNav';
-import { useRef } from 'react';
+import { Sections } from '@/types';
 
 function Home() {
   const containerRef = useRef<HTMLDivElement>(null!);
@@ -16,7 +16,7 @@ function Home() {
 
   return (
     <>
-      <TopNav containerRef={containerRef} version="V3" />
+      <TopNav containerRef={containerRef} version='V3' />
 
       {/* Outer Container */}
       <Box
@@ -31,8 +31,15 @@ function Home() {
         <Box id={Sections.INTRO} sx={{ width: '100%' }}>
           <HeroSection />
         </Box>
-        <Box component="main" sx={{ position: 'sticky', top: '0' }}>
-          <Box sx={{ bgcolor: 'white', boxShadow: '0 10px 5px 7px rgba(0,0,0,0.1)', px: 3, pb: 15 }}>
+        <Box component='main' sx={{ position: 'sticky', top: '0' }}>
+          <Box
+            sx={{
+              bgcolor: 'white',
+              boxShadow: '0 10px 5px 7px rgba(0,0,0,0.1)',
+              px: 3,
+              pb: 15,
+            }}
+          >
             <Box sx={{ mx: 'auto', maxWidth: '1024px' }}>
               <AboutSection />
               <EducationSection />

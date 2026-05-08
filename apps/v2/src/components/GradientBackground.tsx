@@ -16,20 +16,20 @@ function GradientBackground({
   purple?: boolean;
 }) {
   return (
-    <div className="gradient-bg">
-      <div className="gradients-container">
+    <div className='gradient-bg'>
+      <div className='gradients-container'>
         {/* Blue */}
-        {blue && <div className="g1" />}
+        {blue && <div className='g1' />}
         {/* Pink */}
-        {pink && <div className="g2" />}
+        {pink && <div className='g2' />}
         {/* Sky-blue */}
-        {skyblue && <div className="g3" />}
+        {skyblue && <div className='g3' />}
         {/* Orange */}
-        {orange && <div className="g4" />}
+        {orange && <div className='g4' />}
         {/* Yellow */}
-        {yellow && <div className="g5" />}
+        {yellow && <div className='g5' />}
         {/* purple */}
-        {purple && <div className="g6" />}
+        {purple && <div className='g6' />}
       </div>
     </div>
   );

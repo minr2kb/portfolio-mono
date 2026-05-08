@@ -1,12 +1,21 @@
-import RatioBox from '@/components/RatioBox';
-import { FontWeightValues } from '@/types/styles';
 import { KeyboardArrowDown, KeyboardArrowUp, Link } from '@mui/icons-material';
-import { Box, Button, Chip, Collapse, Divider, Grid, IconButton, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  Chip,
+  Collapse,
+  Divider,
+  Grid,
+  IconButton,
+  Typography,
+} from '@mui/material';
+import { getAssetsUrl } from '@packages/shared';
 import { useState } from 'react';
+import RatioBox from '@/components/RatioBox';
 import { projectsData } from '@/data/sectionData';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
 import { type ProjectItemType } from '@/types';
-import { getAssetsUrl } from '@packages/shared';
+import { FontWeightValues } from '@/types/styles';
 
 function ProjectBlock({
   title,
@@ -34,8 +43,8 @@ function ProjectBlock({
         >
           <img
             src={getAssetsUrl(image)}
-            alt="project"
-            loading="lazy"
+            alt='project'
+            loading='lazy'
             style={{
               transition: 'all 0.2s ease-in-out',
               width: '100%',
@@ -48,49 +57,64 @@ function ProjectBlock({
         </Grid>
       </RatioBox>
       <Grid mt={2}>
-        <Box display="flex" alignItems="center">
-          <Typography variant="h3">{title}</Typography>
+        <Box display='flex' alignItems='center'>
+          <Typography variant='h3'>{title}</Typography>
           {link !== '' && (
-            <IconButton size="small" href={link} target="_blank">
-              <Link htmlColor="#999" fontSize={isMobile ? 'small' : 'medium'} />
+            <IconButton size='small' href={link} target='_blank'>
+              <Link htmlColor='#999' fontSize={isMobile ? 'small' : 'medium'} />
             </IconButton>
           )}
         </Box>
       </Grid>
       <Grid container>
         {cateTag !== '' && (
-          <Chip variant="outlined" label={cateTag} clickable size="small" color="secondary" sx={{ mr: 1, mt: 1 }} />
+          <Chip
+            variant='outlined'
+            label={cateTag}
+            clickable
+            size='small'
+            color='secondary'
+            sx={{ mr: 1, mt: 1 }}
+          />
         )}
         {skills.map((skill) => {
           return (
             <Chip
               key={`${title}-${skill}`}
-              variant="outlined"
+              variant='outlined'
               label={skill}
               clickable
-              size="small"
-              color="primary"
+              size='small'
+              color='primary'
               sx={{ mr: 1, mt: 1 }}
             />
           );
         })}
       </Grid>
       <Typography
-        variant="body2"
+        variant='body2'
         sx={{
           my: 2,
           fontWeight: FontWeightValues.SEMI_BOLD,
         }}
-        color="text.secondary"
+        color='text.secondary'
       >
         {description}
       </Typography>
       {details.map((detail, idx) => (
         <Grid container key={`${title}-detail-${idx}`}>
-          <Typography variant="body2" color="text.secondary" sx={{ mx: 1, fontWeight: FontWeightValues.BLACK }}>
+          <Typography
+            variant='body2'
+            color='text.secondary'
+            sx={{ mx: 1, fontWeight: FontWeightValues.BLACK }}
+          >
             ·
           </Typography>
-          <Typography variant="body2" sx={{ flex: 1, my: 0.3 }} color="text.secondary">
+          <Typography
+            variant='body2'
+            sx={{ flex: 1, my: 0.3 }}
+            color='text.secondary'
+          >
             {detail.content}
           </Typography>
         </Grid>
@@ -104,7 +128,7 @@ function ProjectSection() {
   const [viewMore, setViewMore] = useState(false);
   return (
     <Grid>
-      <Typography variant="h2">Projects</Typography>
+      <Typography variant='h2'>Projects</Typography>
       <Divider />
       {/* TODO: 필터 / 검색기능 */}
       {projectsData.slice(0, 3).map((project) => (
@@ -121,7 +145,12 @@ function ProjectSection() {
         />
       ))}
 
-      <Collapse in={viewMore} unmountOnExit mountOnEnter timeout={{ enter: 1200, exit: 500 }}>
+      <Collapse
+        in={viewMore}
+        unmountOnExit
+        mountOnEnter
+        timeout={{ enter: 1200, exit: 500 }}
+      >
         {projectsData.slice(3).map((project) => (
           <ProjectBlock
             key={project.title}
@@ -138,7 +167,7 @@ function ProjectSection() {
       </Collapse>
       <Button
         fullWidth
-        variant="outlined"
+        variant='outlined'
         onClick={() => {
           setViewMore(!viewMore);
         }}

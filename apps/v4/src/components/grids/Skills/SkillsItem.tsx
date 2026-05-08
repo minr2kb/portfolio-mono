@@ -10,16 +10,23 @@ export const SkillItem = ({ skill }: { skill: SkillItemType }) => {
       display={'flex'}
       flexDirection={'column'}
       gap={2}
-      h="full"
+      h='full'
       p={4}
       justifyContent={'center'}
       alignItems={'center'}
     >
-      <Image src={getAssetsUrl(image)} w={14} h={14} objectFit={'contain'} objectPosition={'center'} alt={name} />
-      <Text fontSize={'xl'} fontWeight={'bold'} color="slate.600">
+      <Image
+        src={getAssetsUrl(image)}
+        w={14}
+        h={14}
+        objectFit={'contain'}
+        objectPosition={'center'}
+        alt={name}
+      />
+      <Text fontSize={'xl'} fontWeight={'bold'} color='slate.600'>
         {name}
       </Text>
-      <Rating readOnly defaultValue={rating} colorPalette="yellow" count={5} />
+      <Rating readOnly defaultValue={rating} colorPalette='yellow' count={5} />
     </Box>
   );
 };

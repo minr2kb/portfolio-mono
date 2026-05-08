@@ -1,12 +1,12 @@
-import GridLayoutItem from '@/components/layout/GridLayoutItem';
-import GridLayout from '@/components/layout/GridLayout';
 import { Container } from '@chakra-ui/react';
-import useGridByRoute from '@/hooks/useGridByRoute';
-import Footer from '@/components/Footer';
-import useBrowserThemeColor from '@/hooks/useBrowserThemeColor';
-import { system } from '@/theme';
 import { logger } from '@packages/shared';
 import { useEffect } from 'react';
+import Footer from '@/components/Footer';
+import GridLayout from '@/components/layout/GridLayout';
+import GridLayoutItem from '@/components/layout/GridLayoutItem';
+import useBrowserThemeColor from '@/hooks/useBrowserThemeColor';
+import useGridByRoute from '@/hooks/useGridByRoute';
+import { system } from '@/theme';
 
 const MainPage = () => {
   const { gridItems, categoryId } = useGridByRoute();
@@ -24,7 +24,7 @@ const MainPage = () => {
   }, [categoryId]);
 
   return (
-    <Container as="main" p={0} maxWidth={'100vw'} minHeight={'100vh'}>
+    <Container as='main' p={0} maxWidth={'100vw'} minHeight={'100vh'}>
       <GridLayout>
         {gridItems.map((item) => (
           <GridLayoutItem key={item.i}>{item.component}</GridLayoutItem>

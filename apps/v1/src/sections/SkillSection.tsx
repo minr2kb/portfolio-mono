@@ -78,8 +78,13 @@ function SkillList({
   return (
     <>
       {skills.map((skill) => (
-        <Box key={`skill-${skill.name}`} display="flex" alignItems="center" mt={2}>
-          <Typography color="text.secondary" variant="body1">
+        <Box
+          key={`skill-${skill.name}`}
+          display='flex'
+          alignItems='center'
+          mt={2}
+        >
+          <Typography color='text.secondary' variant='body1'>
             {skill.name}
           </Typography>
           <Box
@@ -94,8 +99,8 @@ function SkillList({
           <Rating
             defaultValue={skill.rating}
             precision={0.5}
-            icon={<Lightbulb fontSize="inherit" />}
-            emptyIcon={<LightbulbOutlined fontSize="inherit" />}
+            icon={<Lightbulb fontSize='inherit' />}
+            emptyIcon={<LightbulbOutlined fontSize='inherit' />}
             readOnly
           />
         </Box>
@@ -107,20 +112,20 @@ function SkillList({
 function SkillSection() {
   return (
     <Box>
-      <Typography variant="h2">Skills</Typography>
+      <Typography variant='h2'>Skills</Typography>
       <Divider />
       <TagSphere />
       <Grid container columnSpacing={3}>
         <Grid item mb={5} xs={12} sm={4}>
-          <Typography variant="h3">개발 스택</Typography>
+          <Typography variant='h3'>개발 스택</Typography>
           <SkillList skills={devSkills} />
         </Grid>
         <Grid item mb={5} xs={12} sm={4}>
-          <Typography variant="h3">업무 협업 툴</Typography>
+          <Typography variant='h3'>업무 협업 툴</Typography>
           <SkillList skills={toolSkills} />
         </Grid>
         <Grid item mb={5} xs={12} sm={4}>
-          <Typography variant="h3">기타</Typography>
+          <Typography variant='h3'>기타</Typography>
           <SkillList skills={etcSkills} />
         </Grid>
       </Grid>

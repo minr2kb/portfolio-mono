@@ -1,6 +1,6 @@
-export { introData } from './intro';
+export { contactsData } from './contacts';
 export { educationData } from './education';
 export { experiencesData } from './experiences';
-export { skillsData } from './skills';
+export { introData } from './intro';
 export { projectsData } from './projects';
-export { contactsData } from './contacts';
+export { skillsData } from './skills';

@@ -1,11 +1,18 @@
-import { FontWeightValues } from '@/types/styles';
-import { type SkillItemType } from '@/types';
-import { Box, Collapse, Divider, Grid, LinearProgress, Typography } from '@mui/material';
+import {
+  Box,
+  Collapse,
+  Divider,
+  Grid,
+  LinearProgress,
+  Typography,
+} from '@mui/material';
+import { getAssetsUrl } from '@packages/shared';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import React, { useRef, useState } from 'react';
 import { skillsData } from '@/data/sectionData';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
-import { getAssetsUrl } from '@packages/shared';
+import { type SkillItemType } from '@/types';
+import { FontWeightValues } from '@/types/styles';
 
 function SkillItem({
   skill,
@@ -61,13 +68,15 @@ function SkillItem({
         }}
       />
       <Box sx={{ position: 'absolute', left: '100%', pl: 2 }}>
-        <Collapse in={isSelected && open} orientation="horizontal">
-          <Typography sx={{ fontWeight: FontWeightValues.BOLD }}>{skill.name}</Typography>
-          <Grid container width="100%" spacing={0.5} flexWrap="nowrap">
+        <Collapse in={isSelected && open} orientation='horizontal'>
+          <Typography sx={{ fontWeight: FontWeightValues.BOLD }}>
+            {skill.name}
+          </Typography>
+          <Grid container width='100%' spacing={0.5} flexWrap='nowrap'>
             {[...Array(5)].map((_, i) => (
-              <Grid key={`${skill.name}-star-${i}`} item width="40px">
+              <Grid key={`${skill.name}-star-${i}`} item width='40px'>
                 <LinearProgress
-                  variant="determinate"
+                  variant='determinate'
                   value={skill.rating > i ? 100 : 0}
                   color={skill.rating > 3 ? 'primary' : 'warning'}
                   sx={{ mt: 1, height: 10, borderRadius: 0 }}
@@ -101,8 +110,12 @@ function SkillList({ skills }: { skills: SkillItemType[] }) {
   };
 
   return (
-    <Box position="relative" onClick={open ? handleCloseSkill : undefined}>
-      <Grid container spacing={2} sx={{ mt: 2, width: '100%', position: 'relative' }}>
+    <Box position='relative' onClick={open ? handleCloseSkill : undefined}>
+      <Grid
+        container
+        spacing={2}
+        sx={{ mt: 2, width: '100%', position: 'relative' }}
+      >
         {skills.map((skill) => {
           const isSelected = selectedSkill?.name === skill.name;
           return (
@@ -118,16 +131,20 @@ function SkillList({ skills }: { skills: SkillItemType[] }) {
           );
         })}
       </Grid>
-      <Collapse in={open} sx={{ position: 'absolute', top: isMobile ? 180 : 150, width: '100%' }}>
+      <Collapse
+        in={open}
+        sx={{ position: 'absolute', top: isMobile ? 180 : 150, width: '100%' }}
+      >
         <CodeEditor
           value={`{\n  name: "${selectedSkill?.name}",\n  level: ${selectedSkill?.rating}, // out of 5\n  description: "${selectedSkill?.description}"\n}`}
-          language="json"
+          language='json'
           disabled
           padding={15}
           style={{
             fontSize: 12,
             borderRadius: 10,
-            fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
+            fontFamily:
+              'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
           }}
         />
       </Collapse>
@@ -138,7 +155,7 @@ function SkillList({ skills }: { skills: SkillItemType[] }) {
 function SkillSection() {
   return (
     <Box>
-      <Typography variant="h2">Skills</Typography>
+      <Typography variant='h2'>Skills</Typography>
       <Divider />
       <Grid container>
         <Grid mb={5} item>

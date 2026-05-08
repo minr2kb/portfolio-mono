@@ -1,7 +1,13 @@
-import { Layout } from 'react-grid-layout';
-import { contactsData, experiencesData, introData, projectsData, skillsData } from './sections';
+import type { ResponsiveLayouts } from 'react-grid-layout';
+import {
+  contactsData,
+  experiencesData,
+  introData,
+  projectsData,
+  skillsData,
+} from './sections';
 
-export const defaultLayouts: Record<string, Layout[]> = {
+export const defaultLayouts: ResponsiveLayouts = {
   sm: [
     { i: 'introduction', x: 0, y: 0, w: 1, h: 2 },
     { i: 'projects', x: 1, y: 0, w: 1, h: 1 },
@@ -34,7 +40,7 @@ export const defaultLayouts: Record<string, Layout[]> = {
   ],
 };
 
-export const introductionLayouts: Record<string, Layout[]> = {
+export const introductionLayouts: ResponsiveLayouts = {
   sm: [
     { i: 'introduction', x: 0, y: 0, w: 1, h: 1 },
     { i: 'navigator', x: 1, y: 0, w: 1, h: 1 },
@@ -70,7 +76,7 @@ export const introductionLayouts: Record<string, Layout[]> = {
   ],
 };
 
-export const experiencesLayouts: Record<string, Layout[]> = {
+export const experiencesLayouts: ResponsiveLayouts = {
   sm: [
     { i: 'experiences', x: 0, y: 0, w: 2, h: 1 },
     { i: 'navigator', x: 0, y: 1, w: 2, h: 1 },
@@ -106,7 +112,7 @@ export const experiencesLayouts: Record<string, Layout[]> = {
   ],
 };
 
-export const educationsLayouts: Record<string, Layout[]> = {
+export const educationsLayouts: ResponsiveLayouts = {
   sm: [
     { i: 'educations', x: 0, y: 0, w: 1, h: 1 },
     { i: 'navigator', x: 1, y: 0, w: 1, h: 1 },
@@ -136,7 +142,7 @@ export const educationsLayouts: Record<string, Layout[]> = {
   ],
 };
 
-export const skillsLayouts: Record<string, Layout[]> = {
+export const skillsLayouts: ResponsiveLayouts = {
   sm: [
     { i: 'skills', x: 0, y: 0, w: 1, h: 1 },
     { i: 'navigator', x: 1, y: 0, w: 1, h: 1 },
@@ -172,7 +178,7 @@ export const skillsLayouts: Record<string, Layout[]> = {
   ],
 };
 
-export const projectsLayouts: Record<string, Layout[]> = {
+export const projectsLayouts: ResponsiveLayouts = {
   sm: [
     { i: 'projects', x: 0, y: 0, w: 1, h: 1 },
     { i: 'navigator', x: 1, y: 0, w: 1, h: 1 },
@@ -208,7 +214,7 @@ export const projectsLayouts: Record<string, Layout[]> = {
   ],
 };
 
-export const contactLayouts: Record<string, Layout[]> = {
+export const contactLayouts: ResponsiveLayouts = {
   sm: [
     { i: 'contact', x: 0, y: 0, w: 1, h: 1 },
     { i: 'navigator', x: 1, y: 0, w: 1, h: 1 },

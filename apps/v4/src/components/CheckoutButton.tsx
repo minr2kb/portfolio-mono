@@ -8,12 +8,17 @@ type CheckoutButtonProps = FlexProps & {
   onClick?: () => void;
 };
 
-const CheckoutButton = ({ to, title, onClick, ...props }: CheckoutButtonProps) => {
+const CheckoutButton = ({
+  to,
+  title,
+  onClick,
+  ...props
+}: CheckoutButtonProps) => {
   const navigate = useNavigate();
 
   return (
     <Flex
-      className="no-drag group"
+      className='no-drag group'
       {...props}
       css={{
         alignItems: 'center',
@@ -31,10 +36,10 @@ const CheckoutButton = ({ to, title, onClick, ...props }: CheckoutButtonProps) =
       }}
     >
       <IconButton
-        variant="surface"
-        size="sm"
-        transform="rotate(-45deg)"
-        rounded="full"
+        variant='surface'
+        size='sm'
+        transform='rotate(-45deg)'
+        rounded='full'
         css={{
           display: 'inline-flex',
           transition: 'all 0.3s ease-in-out',

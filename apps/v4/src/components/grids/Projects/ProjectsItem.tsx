@@ -1,14 +1,14 @@
 import { Box, IconButton, Image } from '@chakra-ui/react';
 import { getAssetsUrl, logger } from '@packages/shared';
-import CheckoutButton from '../../CheckoutButton';
-import { ProjectItemType } from '@/types';
-import { useNavigate, useSearchParams } from 'react-router-dom';
-import { useCallback, useEffect } from 'react';
-import { layoutsAtom } from '@/store/atoms';
 import { useSetAtom } from 'jotai';
-import { Layout } from 'react-grid-layout';
-import ProjectDetail from './ProjectDetail';
+import { useCallback, useEffect } from 'react';
+import type { LayoutItem } from 'react-grid-layout';
 import { CgClose } from 'react-icons/cg';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { layoutsAtom } from '@/store/atoms';
+import { ProjectItemType } from '@/types';
+import CheckoutButton from '../../CheckoutButton';
+import ProjectDetail from './ProjectDetail';
 
 const ProjectsItem = ({ project }: { project: ProjectItemType }) => {
   const { id, title, image } = project;
@@ -23,10 +23,14 @@ const ProjectsItem = ({ project }: { project: ProjectItemType }) => {
       setLayouts((prev) =>
         Object.entries(prev).reduce(
           (acc, [key, layouts]) => {
-            acc[key] = layouts.map((layout) => ({ ...layout, h: layout.i === `project-item-${id}` ? 2 : 1 }));
+            if (!layouts) return acc;
+            acc[key] = layouts.map((layout) => ({
+              ...layout,
+              h: layout.i === `project-item-${id}` ? 2 : 1,
+            }));
             return acc;
           },
-          {} as Record<string, Layout[]>,
+          {} as Record<string, LayoutItem[]>,
         ),
       );
     },
@@ -52,15 +56,15 @@ const ProjectsItem = ({ project }: { project: ProjectItemType }) => {
   }, [pid]);
 
   return (
-    <Box className="group" position={'relative'} w="full" h="full">
+    <Box className='group' position={'relative'} w='full' h='full'>
       <Image
         position={'absolute'}
         top={0}
         left={0}
         src={getAssetsUrl(image)}
         alt={title}
-        w="full"
-        h="full"
+        w='full'
+        h='full'
         objectFit={'cover'}
         filter={isSelected ? 'blur(10px) opacity(0.1)' : 'none'}
         transition={'filter 0.3s ease-in-out'}
@@ -68,10 +72,10 @@ const ProjectsItem = ({ project }: { project: ProjectItemType }) => {
 
       {isSelected ? (
         <IconButton
-          className="no-drag"
-          variant="surface"
-          size="sm"
-          rounded="full"
+          className='no-drag'
+          variant='surface'
+          size='sm'
+          rounded='full'
           onClick={onClose}
           position={'absolute'}
           top={0}

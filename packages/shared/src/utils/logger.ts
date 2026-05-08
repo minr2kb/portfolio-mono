@@ -42,7 +42,11 @@ export class Logger {
     }
   }
 
-  public error(message: string, error?: Error, params?: Record<string, any>): void {
+  public error(
+    message: string,
+    error?: Error,
+    params?: Record<string, any>,
+  ): void {
     console.error(`[ERROR] ${message}`, error, params);
     if (this.isProduction) {
       logEvent('error_log', {

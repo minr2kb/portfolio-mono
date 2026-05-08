@@ -1,22 +1,27 @@
-import RotatingText from '@/components/RotatingText';
 import { Grid, Typography } from '@mui/material';
-import useDeviceQuery from '@/hooks/useDeviceQuery';
 import { getAssetsUrl } from '@packages/shared';
+import RotatingText from '@/components/RotatingText';
+import useDeviceQuery from '@/hooks/useDeviceQuery';
+
 function IntroSection() {
   const { isMobile } = useDeviceQuery();
 
   return (
     <Grid
       container
-      height="90vh"
+      height='90vh'
       flexDirection={isMobile ? 'column' : 'row'}
       justifyContent={isMobile ? 'center' : 'start'}
       alignItems={isMobile ? 'start' : 'center'}
     >
-      <img src={getAssetsUrl('/images/memoji.png')} alt="미모지" height={isMobile ? '200px' : '250px'} />
+      <img
+        src={getAssetsUrl('/images/memoji.png')}
+        alt='미모지'
+        height={isMobile ? '200px' : '250px'}
+      />
       <Grid>
-        <Typography variant="h1">안녕하세요</Typography>
-        <Typography variant="h1">
+        <Typography variant='h1'>안녕하세요</Typography>
+        <Typography variant='h1'>
           <RotatingText
             texts={['도전하는', '꼼꼼한', '새로움을 찾는', '즐기는']}
             textSx={{
@@ -27,7 +32,7 @@ function IntroSection() {
           />
           FE 개발자
         </Typography>
-        <Typography variant="h1">민경배입니다</Typography>
+        <Typography variant='h1'>민경배입니다</Typography>
       </Grid>
     </Grid>
   );

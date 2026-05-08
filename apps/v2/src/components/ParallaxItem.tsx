@@ -37,7 +37,7 @@ function ParallaxItem(props: ParallaxItemProps) {
           fontSize: isMobile ? fontSize * 0.7 : fontSize,
           filter: `blur(${blur}px)`,
           cursor: 'pointer',
-          opacity: isOpacityEnabled ? 0.1 : opacity ?? 1,
+          opacity: isOpacityEnabled ? 0.1 : (opacity ?? 1),
           transition: 'all ease-in-out 0.1s',
           ':hover': isMobile ? {} : { transform: 'scale(1.1)' },
         }}

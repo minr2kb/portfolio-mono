@@ -1,10 +1,9 @@
-import { defineConfig, loadEnv } from 'vite';
-import react from '@vitejs/plugin-react';
 import federation from '@originjs/vite-plugin-federation';
-import tsconfigPaths from 'vite-tsconfig-paths';
-import exposes from './exposes.json';
-import dtsConfig from './dts.config.json';
+import react from '@vitejs/plugin-react';
 import path from 'path';
+import { defineConfig, loadEnv } from 'vite';
+import dtsConfig from './dts.config.json';
+import exposes from './exposes.json';
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
@@ -16,7 +15,6 @@ export default defineConfig(({ mode }) => {
     base: env.VITE_V4_URL,
     plugins: [
       react(),
-      tsconfigPaths(),
       federation({
         name: dtsConfig.name,
         filename: 'remoteEntry.js',
@@ -24,6 +22,7 @@ export default defineConfig(({ mode }) => {
         shared: ['react', 'react-dom', 'react-router-dom'],
       }),
     ],
+    resolve: { tsconfigPaths: true },
     cacheDir: './.vite',
     build: {
       modulePreload: false,

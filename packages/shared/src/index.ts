@@ -1,3 +1,3 @@
-export { getAssetsUrl } from './utils/getAssetsUrl';
 export { analytics, logEvent } from './utils/firebase';
-export { logger, LogLevel } from './utils/logger';
+export { getAssetsUrl } from './utils/getAssetsUrl';
+export { LogLevel, logger } from './utils/logger';

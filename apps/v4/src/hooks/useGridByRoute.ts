@@ -1,8 +1,15 @@
-import { useEffect, useState } from 'react';
-
-import { layoutsAtom } from '@/store/atoms';
-import { useParams } from 'react-router-dom';
 import { useSetAtom } from 'jotai';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import {
+  contactGridItems,
+  defaultGridItems,
+  educationsGridItems,
+  experiencesGridItems,
+  introductionGridItems,
+  projectsGridItems,
+  skillsGridItems,
+} from '@/consts/grid-items';
 import {
   contactLayouts,
   defaultLayouts,
@@ -12,16 +19,7 @@ import {
   projectsLayouts,
   skillsLayouts,
 } from '@/consts/layouts';
-
-import {
-  experiencesGridItems,
-  introductionGridItems,
-  skillsGridItems,
-  defaultGridItems,
-  educationsGridItems,
-  projectsGridItems,
-  contactGridItems,
-} from '@/consts/grid-items';
+import { layoutsAtom } from '@/store/atoms';
 import { GridItem } from '@/types';
 
 const useGridByRoute = () => {

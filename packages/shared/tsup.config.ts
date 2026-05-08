@@ -1,7 +1,11 @@
 import { defineConfig } from 'tsup';
 import { loadEnv } from 'vite';
 
-const env = loadEnv(process.env.NODE_ENV || 'development', process.cwd(), 'VITE_');
+const env = loadEnv(
+  process.env.NODE_ENV || 'development',
+  process.cwd(),
+  'VITE_',
+);
 
 export default defineConfig({
   clean: true,

@@ -1,15 +1,22 @@
 import {
-  Educations,
-  Introduction,
-  Projects,
-  Greeting,
-  Experiences,
-  Navigator,
-  Skills,
   Contact,
+  Educations,
+  Experiences,
+  Greeting,
+  Introduction,
+  Navigator,
+  Projects,
+  Skills,
 } from '@/components/grids';
-import { contactsData, educationData, experiencesData, introData, projectsData, skillsData } from './sections';
 import { GridItem } from '@/types';
+import {
+  contactsData,
+  educationData,
+  experiencesData,
+  introData,
+  projectsData,
+  skillsData,
+} from './sections';
 
 export const defaultGridItems: GridItem[] = [
   { i: 'introduction', component: <Introduction.Main /> },
@@ -53,16 +60,32 @@ export const educationsGridItems: GridItem[] = [
       />
     ),
   },
-  { i: 'education-logo', component: <Educations.LogoItem logoSrc={'/images/seawolf.webp'} /> },
+  {
+    i: 'education-logo',
+    component: <Educations.LogoItem logoSrc={'/images/seawolf.webp'} />,
+  },
   {
     i: 'education-major',
-    component: <Educations.Item title="주전공" content={educationData.major.split(' (').join('\n(')} />,
+    component: (
+      <Educations.Item
+        title='주전공'
+        content={educationData.major.split(' (').join('\n(')}
+      />
+    ),
   },
   {
     i: 'education-minor',
-    component: <Educations.Item title="부전공" content={educationData.minor.split(' (').join('\n(')} />,
+    component: (
+      <Educations.Item
+        title='부전공'
+        content={educationData.minor.split(' (').join('\n(')}
+      />
+    ),
   },
-  { i: 'education-gpa', component: <Educations.Item title="학점" content={educationData.gpa} /> },
+  {
+    i: 'education-gpa',
+    component: <Educations.Item title='학점' content={educationData.gpa} />,
+  },
 ];
 
 export const projectsGridItems: GridItem[] = [

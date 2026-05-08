@@ -1,17 +1,17 @@
+import { Box } from '@mui/material';
+import { useEffect, useRef, useState } from 'react';
+import { ParallaxProvider } from 'react-scroll-parallax';
 import useBrowserThemeColor from '@/hooks/useBrowserThemeColor';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
 import useStartedScroll from '@/hooks/useStartedScroll';
-import { Box } from '@mui/material';
-import Footer from '@/sections/Footer';
 import ContactSection from '@/sections/ContactSection';
 import EducationSection from '@/sections/EducationSection';
 import ExperienceSection from '@/sections/ExperienceSection';
+import Footer from '@/sections/Footer';
 import IntroSection from '@/sections/IntroSection';
 import ProjectSection from '@/sections/ProjectSection';
 import SkillSection from '@/sections/SkillSection';
 import TopNav from '@/sections/TopNav';
-import { useEffect, useRef, useState } from 'react';
-import { ParallaxProvider } from 'react-scroll-parallax';
 
 function Home() {
   const { isMobile } = useDeviceQuery();
@@ -28,7 +28,7 @@ function Home() {
 
   return (
     <>
-      <TopNav startedScroll={startedScroll} version="V2" />
+      <TopNav startedScroll={startedScroll} version='V2' />
       <ParallaxProvider scrollContainer={scrollEl ?? undefined}>
         {/* Outer Container */}
         <Box
@@ -40,39 +40,42 @@ function Home() {
             overflowX: 'hidden',
           }}
         >
-          <Box id="intro" sx={{ width: '100%' }}>
+          <Box id='intro' sx={{ width: '100%' }}>
             <IntroSection />
 
-            <Box component="main" sx={{ mx: 'auto', maxWidth: '640px', p: 3 }}>
+            <Box component='main' sx={{ mx: 'auto', maxWidth: '640px', p: 3 }}>
               {/* SECTION: Education */}
-              <Box pt={10} id="education" component="section">
+              <Box pt={10} id='education' component='section'>
                 <EducationSection open parallax={!isMobile} />
               </Box>
 
               {/* SECTION: Experiences */}
-              <Box pt={10} id="experience" component="section">
+              <Box pt={10} id='experience' component='section'>
                 <ExperienceSection open parallax={!isMobile} />
               </Box>
 
               {/* SECTION: Skills */}
-              <Box pt={10} id="skills" component="section">
+              <Box pt={10} id='skills' component='section'>
                 <SkillSection />
               </Box>
 
               {/* SECTION: Projects */}
-              <Box pt={10} id="projects" component="section">
+              <Box pt={10} id='projects' component='section'>
                 <ProjectSection />
               </Box>
 
               {/* SECTION: Contacts */}
-              <Box pt={10} id="contacts" component="section">
+              <Box pt={10} id='contacts' component='section'>
                 <ContactSection />
               </Box>
             </Box>
 
             {/* SECTION: Footer */}
 
-            <Box component="footer" sx={{ mx: 'auto', maxWidth: '640px', p: 3, pt: 10 }}>
+            <Box
+              component='footer'
+              sx={{ mx: 'auto', maxWidth: '640px', p: 3, pt: 10 }}
+            >
               <Footer />
             </Box>
           </Box>

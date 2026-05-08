@@ -1,5 +1,3 @@
-import { FontWeightValues } from '@/types/styles';
-import { Sections } from '@/types';
 import { MoreHoriz } from '@mui/icons-material';
 import {
   Badge,
@@ -11,14 +9,22 @@ import {
   List,
   ListItem,
   ListItemButton,
-  Typography,
   type SxProps,
+  Typography,
 } from '@mui/material';
-import React, { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';
+import { getAssetsUrl } from '@packages/shared';
+import React, {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
+import { Link } from 'react-router-dom';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
 import useStartedScroll from '@/hooks/useStartedScroll';
-import { getAssetsUrl } from '@packages/shared';
-import { Link } from 'react-router-dom';
+import { Sections } from '@/types';
+import { FontWeightValues } from '@/types/styles';
 
 type NavBarProps = {
   openNavigator?: () => void;
@@ -29,7 +35,10 @@ type NavBarProps = {
 };
 
 const NavBar = forwardRef<HTMLDivElement, NavBarProps>(
-  ({ startedScroll = false, version = '', openNavigator, sx, children }, ref) => {
+  (
+    { startedScroll = false, version = '', openNavigator, sx, children },
+    ref,
+  ) => {
     const { isMobile } = useDeviceQuery();
 
     const navBarStyles: SxProps = useMemo(
@@ -110,13 +119,17 @@ const NavBarContent: React.FC<NavBarContentProps> = React.memo(
         }}
       >
         <Link
-          to="/v4"
+          to='/v4'
           style={{
             textDecoration: 'none',
             color: 'inherit',
           }}
         >
-          <Badge badgeContent={<Typography sx={badgeContentStyles}>{version}</Typography>}>
+          <Badge
+            badgeContent={
+              <Typography sx={badgeContentStyles}>{version}</Typography>
+            }
+          >
             <Typography sx={typographyStyles}>Portfolio</Typography>
           </Badge>
         </Link>
@@ -127,7 +140,7 @@ const NavBarContent: React.FC<NavBarContentProps> = React.memo(
           <Typography sx={typographyStyles}>by.</Typography>
           <img
             src={getAssetsUrl('images/memoji.png')}
-            alt="미모지"
+            alt='미모지'
             style={{ width: '40px', marginTop: '2px', marginRight: '-8px' }}
           />
         </Box>
@@ -165,8 +178,16 @@ function TopNav(props: TopNavProps) {
     () =>
       Object.values(Sections).map((section) => (
         <ListItem key={section} disablePadding>
-          <ListItemButton sx={{ mx: 1, borderRadius: 23 }} onClick={() => onClickNavigator(section)}>
-            <Typography sx={{ fontSize: isMobile ? 16 : 20, fontWeight: FontWeightValues.MEDIUM }}>
+          <ListItemButton
+            sx={{ mx: 1, borderRadius: 23 }}
+            onClick={() => onClickNavigator(section)}
+          >
+            <Typography
+              sx={{
+                fontSize: isMobile ? 16 : 20,
+                fontWeight: FontWeightValues.MEDIUM,
+              }}
+            >
               {section}
             </Typography>
           </ListItemButton>
@@ -176,7 +197,7 @@ function TopNav(props: TopNavProps) {
   );
 
   return (
-    <Box component="nav">
+    <Box component='nav'>
       <ClickAwayListener onClickAway={() => isOpen && setIsOpen(false)}>
         <NavBar
           version={version}
@@ -188,7 +209,7 @@ function TopNav(props: TopNavProps) {
             <Box px={3}>
               <Divider />
             </Box>
-            <Box width="100%">
+            <Box width='100%'>
               <List sx={{ py: 2 }}>{listItems}</List>
             </Box>
           </Collapse>

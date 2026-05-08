@@ -1,15 +1,21 @@
-import { type EduExpItemType, type ProjectItemType, type SkillItemType } from '@/types';
+import {
+  type EduExpItemType,
+  type ProjectItemType,
+  type SkillItemType,
+} from '@/types';
 
 export const aboutData = [
   {
     title: '빠른 개발과 실험에 자신있습니다',
-    subtitle: '단 6개월의 개발로 현재 MAU 20만을 넘기는 웹 프로덕트의 기반을 만들었습니다.',
+    subtitle:
+      '단 6개월의 개발로 현재 MAU 20만을 넘기는 웹 프로덕트의 기반을 만들었습니다.',
     content:
       '- 빠른 프로토타이핑을 통해 PMF를 확보하고, 1년만에 2개의 프로덕트를 성공적으로 런칭, 운영해본 경험이 있습니다.\n- 성숙한 프로덕트팀의 경험으로 데이터 기반의 애자일한 실험 방식에도 익숙하며, 주도적으로 참여하여 새로운 피처를 논의하고, UX적인 개선점 찾기를 즐깁니다.\n- 비즈니스 요구 사항에 맞추어 3D, NFC, 시리얼 통신 등 도메인을 가리지 않는 다양한 기능 개발을 통해 엔지니어링적 문제를 해결합니다.',
   },
   {
     title: '효율적이고 자동화된 개발 환경을 추구합니다',
-    subtitle: '디자인시스템 파이프라인 작업을 통해 개발자의 개입이 필요없는 완전 자동화 프로세스를 구축했습니다.',
+    subtitle:
+      '디자인시스템 파이프라인 작업을 통해 개발자의 개입이 필요없는 완전 자동화 프로세스를 구축했습니다.',
     content:
       '- 초기 스타트업에서 경험한 기술, 문화적 시행착오들을 기반으로 스스로 더 나은 방법을 고민하고 배워나가고 있습니다.\n- 기획에 따라 빠른 확장성을 요구하는 프로젝트를 다루며 떨어진 컴포넌트 재사용성을 높이기 위해 위해 아토믹 디자인 패턴을 적극 검토, 도입하여 모듈 수를 56% 가량 감소시켰습니다.\n- 디자인시스템에 아이콘 자동화 파이프라인, 웹/앱 컨벤션 통일을 위한 유틸 개발을 통해 개발자의 개입없이, 디자이너가 직접 코드 추가가 가능할 정도로 작업 효율을 높이기도 했습니다.',
   },
@@ -159,7 +165,8 @@ export const skillsData: SkillItemType[] = [
     name: 'Jotai',
     rating: 5,
     image: '/images/stackIcon/Jotai.webp',
-    description: 'Recoil의 사용 경험을 바탕으로 더 간소화된 사용을 위해 도입했습니다.',
+    description:
+      'Recoil의 사용 경험을 바탕으로 더 간소화된 사용을 위해 도입했습니다.',
   },
   {
     name: 'Redux',
@@ -178,7 +185,8 @@ export const skillsData: SkillItemType[] = [
     name: 'Vite',
     rating: 3,
     image: '/images/stackIcon/Vite.webp',
-    description: 'esbuild의 빠른 번들링의 이점을 활용하기 위해 webpack에서 마이그레이션을 진행했습니다.',
+    description:
+      'esbuild의 빠른 번들링의 이점을 활용하기 위해 webpack에서 마이그레이션을 진행했습니다.',
   },
   {
     name: 'Webpack',
@@ -190,7 +198,8 @@ export const skillsData: SkillItemType[] = [
     name: 'EC2',
     rating: 2,
     image: '/images/stackIcon/EC2.webp',
-    description: 'Nextjs 프로젝트의 배포를 위해 사용했습니다. github actions 파이프라인으로 CD를 구축했습니다.',
+    description:
+      'Nextjs 프로젝트의 배포를 위해 사용했습니다. github actions 파이프라인으로 CD를 구축했습니다.',
   },
 ];
 
@@ -201,7 +210,8 @@ export const projectsData: ProjectItemType[] = [
     details: [
       { content: '주도적 디자인 시스템 개발', type: 'subtitle' },
       {
-        content: '웹과 앱의 디자인 시스템이 분리되어 높아진 유지보수 비용에 대한 문제를 제기, 자동화를 제안',
+        content:
+          '웹과 앱의 디자인 시스템이 분리되어 높아진 유지보수 비용에 대한 문제를 제기, 자동화를 제안',
         type: 'text',
       },
       {
@@ -237,7 +247,8 @@ export const projectsData: ProjectItemType[] = [
         type: 'text',
       },
       {
-        content: 'tl;dv와 같은 Saas 도구를 직접 제안, 도입하여 회의록 작성 시간 75% 단축 ',
+        content:
+          'tl;dv와 같은 Saas 도구를 직접 제안, 도입하여 회의록 작성 시간 75% 단축 ',
         type: 'text',
       },
       {
@@ -247,7 +258,16 @@ export const projectsData: ProjectItemType[] = [
     ],
     image: '/images/projects/careerly.webp',
     link: 'https://careerly.co.kr',
-    skills: ['ReactJS', 'NextJS', 'ReactNative', 'TypeScript', 'TailwindCSS', 'Recoil', 'React-Query', 'Redux'],
+    skills: [
+      'ReactJS',
+      'NextJS',
+      'ReactNative',
+      'TypeScript',
+      'TailwindCSS',
+      'Recoil',
+      'React-Query',
+      'Redux',
+    ],
     cateTag: 'PUBLY',
   },
   {
@@ -266,7 +286,8 @@ export const projectsData: ProjectItemType[] = [
         type: 'text',
       },
       {
-        content: '불필요한 useEffect를 비즈니스 로직 기반 핸들러로 및 훅으로 분리시켜 유지보수성, 생산성을 향상',
+        content:
+          '불필요한 useEffect를 비즈니스 로직 기반 핸들러로 및 훅으로 분리시켜 유지보수성, 생산성을 향상',
         type: 'text',
       },
       { content: '다양한 웹 기술 적용 경험', type: 'subtitle' },
@@ -276,11 +297,13 @@ export const projectsData: ProjectItemType[] = [
         type: 'text',
       },
       {
-        content: '주문 워크 보안을 위한 위치 검증, NFC 태그의 토큰 기반 접근 제어 방식 고안',
+        content:
+          '주문 워크 보안을 위한 위치 검증, NFC 태그의 토큰 기반 접근 제어 방식 고안',
         type: 'text',
       },
       {
-        content: 'Serial API를 활용하여 프린터 웹 출력 기능을 일주일 개발 끝에 출시하여 실제 고객 20% 추가 전환',
+        content:
+          'Serial API를 활용하여 프린터 웹 출력 기능을 일주일 개발 끝에 출시하여 실제 고객 20% 추가 전환',
         type: 'text',
       },
       { content: '비즈니스 협력 적극 참여', type: 'subtitle' },
@@ -290,7 +313,8 @@ export const projectsData: ProjectItemType[] = [
         type: 'text',
       },
       {
-        content: '프린터 연동, 후불 결제 프로세스 프로토타입의 제작 및 비즈니스 우선순위 논의에 적극 기여',
+        content:
+          '프린터 연동, 후불 결제 프로세스 프로토타입의 제작 및 비즈니스 우선순위 논의에 적극 기여',
         type: 'text',
       },
     ],
@@ -324,7 +348,8 @@ export const projectsData: ProjectItemType[] = [
         type: 'text',
       },
       {
-        content: 'MUI의 클래스 단위의 커스터마이징을 통해 디자인 가이드에 대한 이해도를 크게 높임',
+        content:
+          'MUI의 클래스 단위의 커스터마이징을 통해 디자인 가이드에 대한 이해도를 크게 높임',
         type: 'text',
       },
     ],
@@ -350,7 +375,8 @@ export const projectsData: ProjectItemType[] = [
     description: `포트폴리오 버전관리를 위한 MFE 모노레포`,
     details: [
       {
-        content: 'PNPM + Turborepo를 통해 모노레포 환경 구축 및 템플릿+스크립트를 통해 프로젝트 스캐폴딩 구현',
+        content:
+          'PNPM + Turborepo를 통해 모노레포 환경 구축 및 템플릿+스크립트를 통해 프로젝트 스캐폴딩 구현',
         type: 'text',
       },
       {
@@ -358,7 +384,8 @@ export const projectsData: ProjectItemType[] = [
         type: 'text',
       },
       {
-        content: 'type-build-utils 패키지를 제작하여 host앱에서 remote 모듈의 타입 정의를 사용할 수 있도록 구성',
+        content:
+          'type-build-utils 패키지를 제작하여 host앱에서 remote 모듈의 타입 정의를 사용할 수 있도록 구성',
         type: 'text',
       },
       {
@@ -368,7 +395,16 @@ export const projectsData: ProjectItemType[] = [
     ],
     image: '/images/projects/portfolio-mono.webp',
     link: 'https://github.com/minr2kb/portfolio-mono',
-    skills: ['ReactJS', 'TypeScript', 'Vite', 'MUI', 'ChakraUI', 'PNPM', 'Turborepo', 'Firebase'],
+    skills: [
+      'ReactJS',
+      'TypeScript',
+      'Vite',
+      'MUI',
+      'ChakraUI',
+      'PNPM',
+      'Turborepo',
+      'Firebase',
+    ],
     cateTag: '사이드',
   },
 
@@ -377,7 +413,8 @@ export const projectsData: ProjectItemType[] = [
     description: `수출입 전문가 매칭 플랫폼, ‘트레이드포스’ 외주 개발`,
     details: [
       {
-        content: '서비스 의뢰 페이지 부터, 의뢰를 관리하는 어드민 페이지 내부 퍼널을 구성하기 위한 고민들을 경험',
+        content:
+          '서비스 의뢰 페이지 부터, 의뢰를 관리하는 어드민 페이지 내부 퍼널을 구성하기 위한 고민들을 경험',
         type: 'text',
       },
       {
@@ -386,7 +423,8 @@ export const projectsData: ProjectItemType[] = [
         type: 'text',
       },
       {
-        content: '디자이너와 Figma로 협력하여 MUI를 활용한 간단한 타이포 위계 및 컴포넌트 디자인 시스템을 구축',
+        content:
+          '디자이너와 Figma로 협력하여 MUI를 활용한 간단한 타이포 위계 및 컴포넌트 디자인 시스템을 구축',
         type: 'text',
       },
     ],
@@ -404,7 +442,8 @@ export const projectsData: ProjectItemType[] = [
         type: 'text',
       },
       {
-        content: 'request 갯수에 상한선을 두어, 동기/비동기 요청을 별개로 주도록 만들어 서버 부하를 방지',
+        content:
+          'request 갯수에 상한선을 두어, 동기/비동기 요청을 별개로 주도록 만들어 서버 부하를 방지',
         type: 'text',
       },
       {
@@ -412,12 +451,23 @@ export const projectsData: ProjectItemType[] = [
         type: 'text',
       },
       {
-        content: '간단한 ipc통신으로 로컬 api를 제작하였으며, AbortController를 활용하여 알맞 요청 취소를 구현',
+        content:
+          '간단한 ipc통신으로 로컬 api를 제작하였으며, AbortController를 활용하여 알맞 요청 취소를 구현',
         type: 'text',
       },
     ],
     image: '/images/projects/recruit-crawler.webp',
-    skills: ['ReactJS', 'Electron', 'TypeScript', 'Koa', 'Vite', 'MUI', 'Recoil', 'React-Query', 'CloudType'],
+    skills: [
+      'ReactJS',
+      'Electron',
+      'TypeScript',
+      'Koa',
+      'Vite',
+      'MUI',
+      'Recoil',
+      'React-Query',
+      'CloudType',
+    ],
     link: 'https://github.com/minr2kb/recruit-crawler-app',
     cateTag: '사이드',
   },
@@ -426,7 +476,8 @@ export const projectsData: ProjectItemType[] = [
     description: `악기 연주자를 위한 라이브 소통 대시보드 서비스`,
     details: [
       {
-        content: '미리 저장해둔 단축어를 활용하여 소통하는 방식으로, 최소한의 인증과 범용성을 위해 구글 OAuth를 활용',
+        content:
+          '미리 저장해둔 단축어를 활용하여 소통하는 방식으로, 최소한의 인증과 범용성을 위해 구글 OAuth를 활용',
         type: 'text',
       },
       {
@@ -463,7 +514,8 @@ export const projectsData: ProjectItemType[] = [
     description: `컴퓨터 비전 기반 자동 물류 관리 시스템의 관리자 대시보드`,
     details: [
       {
-        content: 'React와 CoreUI를 활용하여 프론트를 기획 및 개발하였고, Flask와 MySQL을 활용하여 백엔드를 구축',
+        content:
+          'React와 CoreUI를 활용하여 프론트를 기획 및 개발하였고, Flask와 MySQL을 활용하여 백엔드를 구축',
         type: 'text',
       },
       {
@@ -473,7 +525,15 @@ export const projectsData: ProjectItemType[] = [
       },
     ],
     image: '/images/projects/zcl-admin-dashboard.webp',
-    skills: ['ReactJS', 'JavaScript', 'Redux', 'CoreUI', 'Flask', 'MySQL', 'Heroku'],
+    skills: [
+      'ReactJS',
+      'JavaScript',
+      'Redux',
+      'CoreUI',
+      'Flask',
+      'MySQL',
+      'Heroku',
+    ],
     cateTag: 'ZeroClassLab',
   },
   {

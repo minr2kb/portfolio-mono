@@ -7,7 +7,7 @@ const { mobile, email, githubId, instagramId, linkedIn } = contactsData;
 function ContactSection() {
   return (
     <Grid>
-      <Typography variant="h2">Contacts</Typography>
+      <Typography variant='h2'>Contacts</Typography>
       <Divider />
       <Grid
         sx={{
@@ -17,16 +17,16 @@ function ContactSection() {
       >
         <Grid
           container
-          alignItems="center"
+          alignItems='center'
           mt={2}
-          component="a"
-          target="_blank"
+          component='a'
+          target='_blank'
           href={`tel:${mobile.replace(/-/g, '')}`}
           sx={{ textDecoration: 'none', color: 'inherit' }}
         >
           <Call />
           <Typography
-            variant="body2"
+            variant='body2'
             sx={{
               ml: 2,
             }}
@@ -36,16 +36,16 @@ function ContactSection() {
         </Grid>
         <Grid
           container
-          alignItems="center"
+          alignItems='center'
           mt={2}
-          component="a"
-          target="_blanc"
+          component='a'
+          target='_blanc'
           href={`mailto:${email}`}
           sx={{ textDecoration: 'none', color: 'inherit' }}
         >
           <Email />
           <Typography
-            variant="body2"
+            variant='body2'
             sx={{
               ml: 2,
             }}
@@ -55,16 +55,16 @@ function ContactSection() {
         </Grid>
         <Grid
           container
-          alignItems="center"
+          alignItems='center'
           mt={2}
-          component="a"
-          target="_blanc"
+          component='a'
+          target='_blanc'
           href={`https://github.com/${githubId}`}
           sx={{ textDecoration: 'none', color: 'inherit' }}
         >
           <GitHub />
           <Typography
-            variant="body2"
+            variant='body2'
             sx={{
               ml: 2,
             }}
@@ -74,16 +74,16 @@ function ContactSection() {
         </Grid>
         <Grid
           container
-          alignItems="center"
+          alignItems='center'
           mt={2}
-          component="a"
-          target="_blanc"
+          component='a'
+          target='_blanc'
           href={`https://www.instagram.com/${instagramId}`}
           sx={{ textDecoration: 'none', color: 'inherit' }}
         >
           <Instagram />
           <Typography
-            variant="body2"
+            variant='body2'
             sx={{
               ml: 2,
             }}
@@ -93,16 +93,16 @@ function ContactSection() {
         </Grid>
         <Grid
           container
-          alignItems="center"
+          alignItems='center'
           mt={2}
-          component="a"
-          target="_blanc"
+          component='a'
+          target='_blanc'
           href={`https://www.linkedin.com/in/${linkedIn}`}
           sx={{ textDecoration: 'none', color: 'inherit' }}
         >
           <LinkedIn />
           <Typography
-            variant="body2"
+            variant='body2'
             sx={{
               ml: 2,
             }}

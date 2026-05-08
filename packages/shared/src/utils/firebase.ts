@@ -1,5 +1,5 @@
+import { logEvent as firebaseLogEvent, getAnalytics } from 'firebase/analytics';
 import { initializeApp } from 'firebase/app';
-import { getAnalytics, logEvent as firebaseLogEvent } from 'firebase/analytics';
 import { logger } from './logger';
 
 const firebaseConfig = {
@@ -20,9 +20,13 @@ export const logEvent = (eventName: string, params?: Record<string, any>) => {
     firebaseLogEvent(analytics, eventName, params);
     logger.debug(`Analytics event logged: ${eventName}`, params);
   } catch (error) {
-    logger.error(`Analytics event failed to log: ${eventName}`, error as Error, {
-      eventName,
-      params,
-    });
+    logger.error(
+      `Analytics event failed to log: ${eventName}`,
+      error as Error,
+      {
+        eventName,
+        params,
+      },
+    );
   }
 };

@@ -1,6 +1,6 @@
-import { Logger } from '../utils/logger';
-import { Config } from '../types';
 import { existsSync, readFileSync } from 'fs';
+import { Config } from '../types';
+import { Logger } from '../utils/logger';
 
 function isValidConfig(obj: any): obj is Config {
   return (

@@ -2,7 +2,10 @@ import { useBreakpoint } from '@chakra-ui/react';
 
 import { breakpoints } from '@/theme/breakpoints';
 
-const useBreakPoint = (): { isMobile: boolean; breakpoint: keyof typeof breakpoints } => {
+const useBreakPoint = (): {
+  isMobile: boolean;
+  breakpoint: keyof typeof breakpoints;
+} => {
   const breakpoint = useBreakpoint({
     breakpoints: Object.keys(breakpoints),
   });
