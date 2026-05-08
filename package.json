@@ -33,7 +33,7 @@
     "check:fix": "biome check --write .",
     "format": "biome format --write .",
     "clean": "turbo run clean && rm -rf node_modules",
-    "create-app": "node scripts/create-app.js",
+    "create-app": "create-app",
     "deploy:all": "pnpm build && firebase deploy",
     "deploy:host": "turbo run @apps/host#build && firebase deploy --only hosting:host",
     "deploy:v1": "turbo run @apps/v1#build && firebase deploy --only hosting:v1",
@@ -43,10 +43,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.14",
-    "chalk": "^4.1.2",
+    "@packages/create-app": "workspace:*",
     "concurrently": "^9.1.0",
-    "fs-extra": "^11.1.1",
-    "inquirer": "^12.1.0",
     "turbo": "latest"
   },
   "packageManager": "pnpm@9.13.0"
