@@ -1,20 +1,6 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@packages/tsconfig/tsconfig.lib-esm.json",
   "compilerOptions": {
-    "declaration": true,
-    "lib": ["esnext", "DOM"],
-    "module": "ESNext",
-    "target": "esnext",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "moduleResolution": "bundler",
-    "newLine": "LF",
-    "noEmitOnError": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "stripInternal": true,
     "outDir": "dist"
   },
   "include": ["src"]

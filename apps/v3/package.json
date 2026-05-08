@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "copy-assets": "cp -r ../../packages/data/assets/images/. ./public/images/",
-    "prebuild": "pnpm type-build-util && pnpm copy-assets",
+    "prebuild": "pnpm type-gen && pnpm copy-assets",
     "build": "tsc -b && vite build",
     "build:dev": "tsc -b && vite build --mode development",
     "preview": "vite preview"
@@ -23,14 +23,15 @@
   "devDependencies": {
     "@originjs/vite-plugin-federation": "1.3.8",
     "@packages/data": "workspace:*",
-    "@packages/type-build-util": "workspace:*",
-    "@packages/shared": "workspace:*",
+    "@packages/type-gen": "workspace:*",
+    "@packages/utils": "workspace:*",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^4.3.3",
     "sass": "^1.81.0",
     "typescript": "~5.6.2",
     "vite": "^5.4.10",
-    "vite-tsconfig-paths": "^5.1.2"
+    "vite-tsconfig-paths": "^5.1.2",
+    "@packages/tsconfig": "workspace:*"
   }
 }

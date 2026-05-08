@@ -1,5 +1,5 @@
 import { Box, Image } from '@chakra-ui/react';
-import { getAssetsUrl } from '@packages/shared';
+import { getAssetsUrl } from '@packages/utils';
 
 export const EducationLogoItem = ({ logoSrc }: { logoSrc: string }) => {
   return (

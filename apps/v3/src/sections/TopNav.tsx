@@ -12,7 +12,7 @@ import {
   type SxProps,
   Typography,
 } from '@mui/material';
-import { getAssetsUrl } from '@packages/shared';
+import { getAssetsUrl } from '@packages/utils';
 import React, {
   forwardRef,
   useCallback,

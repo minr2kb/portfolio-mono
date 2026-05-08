@@ -1,5 +1,5 @@
 import { Grid, Typography } from '@mui/material';
-import { getAssetsUrl } from '@packages/shared';
+import { getAssetsUrl } from '@packages/utils';
 import RotatingText from '@/components/RotatingText';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
 

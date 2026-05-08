@@ -1,4 +1,4 @@
-import { logger } from '@packages/shared';
+import { logger } from '@packages/utils';
 import { StrictMode, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { ErrorBoundary } from 'react-error-boundary';

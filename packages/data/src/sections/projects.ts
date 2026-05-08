@@ -431,7 +431,7 @@ export const projectsData: ProjectItemType[] = [
           },
           {
             content:
-              '자체 제작 type-build-util 패키지를 통한 리모트 앱 타입 정의 자동 추출',
+              '자체 제작 type-gen 패키지를 통한 리모트 앱 타입 정의 자동 추출',
           },
         ],
       },

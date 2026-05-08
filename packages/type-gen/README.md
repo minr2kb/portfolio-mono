@@ -1,6 +1,6 @@
-# @packages/type-build-util
+# @packages/type-gen
 
-`type-build-util`은 TypeScript 모듈의 타입을 자동으로 생성하고 관리하는 내부 유틸리티입니다. 이 패키지는 Module Federation 환경에서 타입 정의를 쉽게 생성하고 사용할 수 있도록 도와줍니다.
+`type-gen`은 TypeScript 모듈의 타입을 자동으로 생성하고 관리하는 내부 유틸리티입니다. 이 패키지는 Module Federation 환경에서 타입 정의를 쉽게 생성하고 사용할 수 있도록 도와줍니다.
 
 ## 시작하기
 
@@ -8,7 +8,7 @@
 
 ```bash
 
-$ yarn add @kbmin/type-build-util
+$ yarn add @kbmin/type-gen
 
 ```
 
@@ -41,7 +41,7 @@ $ yarn add @kbmin/type-build-util
 3. **타입 생성 스크립트 실행**: 다음 명령어를 사용하여 타입을 생성합니다.
 
 ```bash
-$ yarn type-build-util
+$ yarn type-gen
 ```
 
 ## API

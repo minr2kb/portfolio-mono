@@ -1,5 +1,5 @@
 import { Box, Image, Text } from '@chakra-ui/react';
-import { getAssetsUrl } from '@packages/shared';
+import { getAssetsUrl } from '@packages/utils';
 import HelloAnimation from '../../HelloAnimation';
 
 const Greeting = () => {

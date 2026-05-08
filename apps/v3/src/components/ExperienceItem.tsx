@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from '@mui/material';
-import { getAssetsUrl } from '@packages/shared';
+import { getAssetsUrl } from '@packages/utils';
 import TextWithDot from '@/components/TextWithDot';
 
 export interface EduExpItemType {

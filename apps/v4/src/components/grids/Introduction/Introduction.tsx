@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
-import { getAssetsUrl } from '@packages/shared';
+import { getAssetsUrl } from '@packages/utils';
 import { useParams } from 'react-router-dom';
 import useBreakPoint from '@/hooks/useBreakPoint';
 import CheckoutButton from '../../CheckoutButton';

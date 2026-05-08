@@ -1,5 +1,5 @@
 import { Badge, Box, Grid, Typography } from '@mui/material';
-import { getAssetsUrl } from '@packages/shared';
+import { getAssetsUrl } from '@packages/utils';
 
 import { animated, type SpringValue } from '@react-spring/web';
 import { Link } from 'react-router-dom';

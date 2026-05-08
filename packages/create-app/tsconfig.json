@@ -1,15 +1,6 @@
 {
+  "extends": "@packages/tsconfig/tsconfig.lib-cjs.json",
   "compilerOptions": {
-    "lib": ["esnext"],
-    "module": "commonjs",
-    "target": "esnext",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "moduleResolution": "node",
-    "types": ["node"],
-    "noEmitOnError": true,
-    "noUnusedLocals": true,
     "outDir": "dist"
   },
   "include": ["src"]

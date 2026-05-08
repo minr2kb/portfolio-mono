@@ -1,5 +1,5 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import { logger } from '@packages/shared';
+import { logger } from '@packages/utils';
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import useDeviceQuery from '@/hooks/useDeviceQuery';

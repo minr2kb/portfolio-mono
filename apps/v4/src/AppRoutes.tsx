@@ -1,4 +1,4 @@
-import { logger } from '@packages/shared';
+import { logger } from '@packages/utils';
 import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { Provider as ChakraProvider } from '@/components/ui/provider';

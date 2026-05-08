@@ -8,7 +8,7 @@
 - Turborepo와 Module Federation을 활용한 MFE 모노레포 구조로, 독립적 환경을 보장합니다.
 - 새로운 앱을 cli를 통해 스캐폴딩하여 추가합니다.
 - asset의 절대경로 지원 및 nested route 지원이 가능합니다
-- [type-build-util](https://github.com/minr2kb/portfolio-mono/tree/main/packages/type-build-util)을 제작하여 빌드타임에 리모트앱의 타입을 추출해냅니다.
+- [type-gen](https://github.com/minr2kb/portfolio-mono/tree/main/packages/type-gen)을 제작하여 빌드타임에 리모트앱의 타입을 추출해냅니다.
 
 ## 🎯 기술적 특징
 
@@ -16,7 +16,7 @@
 
 - PNPM + Turborepo를 활용한 모노레포 환경 구성
 - 템플릿 기반 스캐폴딩 cli로 새로운 버전의 포트폴리오 앱을 독립 환경에서 빠르게 생성 가능
-- 자체 제작 type-build-util 패키지를 통한 리모트 앱 타입 정의 자동 추출
+- 자체 제작 type-gen 패키지를 통한 리모트 앱 타입 정의 자동 추출
 
 ### 2. 마이크로 프론트엔드 아키텍처
 
@@ -46,7 +46,7 @@
 │ └── react-vite-mui/ # React + Vite + MUI 기반 템플릿
 ├── packages/
 │ ├── shared/ # 공통 유틸들(WIP)
-│ └── type-build-util/ # 리모트앱 타입 추출을 위한 유틸
+│ └── type-gen/ # 리모트앱 타입 추출을 위한 유틸
 ├── scripts/
 │ └── create-app.js # 템플릿 스캐폴딩을 위한 스크립트
 ├── turbo.json # Turborepo 설정

@@ -10,7 +10,7 @@ import {
   Typography,
 } from '@mui/material';
 import { projectsData } from '@packages/data';
-import { getAssetsUrl } from '@packages/shared';
+import { getAssetsUrl } from '@packages/utils';
 import { useState } from 'react';
 import RatioBox from '@/components/RatioBox';
 import useDeviceQuery from '@/hooks/useDeviceQuery';

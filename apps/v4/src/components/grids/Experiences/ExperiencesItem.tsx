@@ -1,5 +1,5 @@
 import { Box, Flex, Image, Stack, Text, VStack } from '@chakra-ui/react';
-import { getAssetsUrl } from '@packages/shared';
+import { getAssetsUrl } from '@packages/utils';
 import { ExperienceItemType } from '@/types';
 
 const ExperienceItem = ({ item }: { item: ExperienceItemType }) => {

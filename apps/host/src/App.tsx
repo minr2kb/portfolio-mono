@@ -1,4 +1,4 @@
-import { logger } from '@packages/shared';
+import { logger } from '@packages/utils';
 import React, { Suspense, useEffect } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import ErrorPage from '@/pages/ErrorPage';

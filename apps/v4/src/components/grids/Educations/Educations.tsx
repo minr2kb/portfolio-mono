@@ -1,5 +1,5 @@
 import { Box, Text } from '@chakra-ui/react';
-import { getAssetsUrl } from '@packages/shared';
+import { getAssetsUrl } from '@packages/utils';
 import { useParams } from 'react-router-dom';
 import CheckoutButton from '../../CheckoutButton';
 

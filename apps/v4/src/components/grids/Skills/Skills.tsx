@@ -1,7 +1,7 @@
 import { Box, BoxProps, Image, Text } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
 import { skillsData } from '@packages/data';
-import { getAssetsUrl } from '@packages/shared';
+import { getAssetsUrl } from '@packages/utils';
 import { useParams } from 'react-router-dom';
 import CheckoutButton from '../../CheckoutButton';
 

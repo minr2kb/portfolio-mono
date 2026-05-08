@@ -1,5 +1,5 @@
 import { Container } from '@chakra-ui/react';
-import { logger } from '@packages/shared';
+import { logger } from '@packages/utils';
 import { useEffect } from 'react';
 import Footer from '@/components/Footer';
 import GridLayout from '@/components/layout/GridLayout';

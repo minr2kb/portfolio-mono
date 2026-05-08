@@ -1,5 +1,5 @@
 import { Box, IconButton, Image } from '@chakra-ui/react';
-import { getAssetsUrl, logger } from '@packages/shared';
+import { getAssetsUrl, logger } from '@packages/utils';
 import { useSetAtom } from 'jotai';
 import { useCallback, useEffect } from 'react';
 import type { LayoutItem } from 'react-grid-layout';

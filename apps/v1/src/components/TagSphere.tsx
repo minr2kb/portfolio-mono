@@ -1,6 +1,6 @@
 import TagCloud, { type TagCloudOptions } from 'TagCloud';
 import { Box } from '@mui/material';
-import { getAssetsUrl } from '@packages/shared';
+import { getAssetsUrl } from '@packages/utils';
 import { useEffect, useRef } from 'react';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
 

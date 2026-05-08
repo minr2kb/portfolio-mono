@@ -7,7 +7,7 @@ import {
   Typography,
 } from '@mui/material';
 import { type SkillItemType, skillsData } from '@packages/data';
-import { getAssetsUrl } from '@packages/shared';
+import { getAssetsUrl } from '@packages/utils';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import React, { useRef, useState } from 'react';
 import useDeviceQuery from '@/hooks/useDeviceQuery';

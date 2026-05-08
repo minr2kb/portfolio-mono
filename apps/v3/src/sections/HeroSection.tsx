@@ -9,7 +9,7 @@ import {
   Zoom,
 } from '@mui/material';
 import { contactsData, skillsData } from '@packages/data';
-import { getAssetsUrl } from '@packages/shared';
+import { getAssetsUrl } from '@packages/utils';
 import { useCallback, useMemo } from 'react';
 import HelloAnimation from '@/components/HelloAnimation';
 import useDeviceQuery from '@/hooks/useDeviceQuery';

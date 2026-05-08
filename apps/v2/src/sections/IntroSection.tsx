@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import { getAssetsUrl } from '@packages/shared';
+import { getAssetsUrl } from '@packages/utils';
 import GradientBackground from '@/components/GradientBackground';
 import HoverChangingText from '@/components/HoverChangingText';
 import useDeviceQuery from '@/hooks/useDeviceQuery';

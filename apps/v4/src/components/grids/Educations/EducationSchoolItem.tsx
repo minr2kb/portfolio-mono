@@ -1,5 +1,5 @@
 import { Box, HStack, Image, Text, VStack } from '@chakra-ui/react';
-import { getAssetsUrl } from '@packages/shared';
+import { getAssetsUrl } from '@packages/utils';
 
 const EducationSchoolItem = ({
   title,
