@@ -9,13 +9,14 @@ import {
   Typography,
   Zoom,
 } from '@mui/material';
+import { projectsData } from '@packages/data';
 import { getAssetsUrl } from '@packages/shared';
 import { useRef, useState } from 'react';
 import RatioBox from '@/components/RatioBox';
-import { projectsData } from '@/data/sectionData';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
-import { type ProjectItemType } from '@/types';
 import { FontWeightValues } from '@/types/styles';
+
+type ProjectItem = (typeof projectsData)[number];
 
 function ProjectItem({
   title,
@@ -26,7 +27,7 @@ function ProjectItem({
   skills,
   cateTag = '',
   isMobile = false,
-}: ProjectItemType) {
+}: ProjectItem & { isMobile?: boolean }) {
   const [expanded, setExpanded] = useState(false);
   const [open, setOpen] = useState(false);
   const itemRef = useRef<HTMLDivElement>(null);
@@ -127,47 +128,56 @@ function ProjectItem({
                       sx={{ mr: 1, mt: 1 }}
                     />
                   )}
-                  {skills.map((skill) => {
-                    return (
-                      <Chip
-                        key={`${title}-${skill}`}
-                        variant='outlined'
-                        label={skill}
-                        clickable
-                        size='small'
-                        color='primary'
-                        sx={{ mr: 1, mt: 1 }}
-                      />
-                    );
-                  })}
+                  {skills.map((skill) => (
+                    <Chip
+                      key={`${title}-${skill}`}
+                      variant='outlined'
+                      label={skill}
+                      clickable
+                      size='small'
+                      color='primary'
+                      sx={{ mr: 1, mt: 1 }}
+                    />
+                  ))}
                 </Box>
                 <Typography
                   variant='body2'
-                  sx={{
-                    my: 2,
-                    fontWeight: FontWeightValues.SEMI_BOLD,
-                  }}
+                  sx={{ my: 2, fontWeight: FontWeightValues.SEMI_BOLD }}
                   color='text.secondary'
                 >
                   {description}
                 </Typography>
                 <Box sx={{ maxHeight: '30vh', overflow: 'auto' }}>
                   {details.map((detail, idx) => (
-                    <Box display='flex' key={`${title}-detail-${idx}`}>
+                    <Box key={`${title}-detail-${idx}`}>
                       <Typography
                         variant='body2'
-                        color='text.secondary'
-                        sx={{ mx: 1, fontWeight: FontWeightValues.BLACK }}
-                      >
-                        ·
-                      </Typography>
-                      <Typography
-                        variant='body2'
-                        sx={{ flex: 1, my: 0.3 }}
+                        sx={{ my: 0.5, fontWeight: FontWeightValues.BLACK }}
                         color='text.secondary'
                       >
                         {detail.content}
                       </Typography>
+                      {detail.children?.map((child, childIdx) => (
+                        <Box
+                          display='flex'
+                          key={`${title}-detail-${idx}-child-${childIdx}`}
+                        >
+                          <Typography
+                            variant='body2'
+                            color='text.secondary'
+                            sx={{ mx: 1, fontWeight: FontWeightValues.BLACK }}
+                          >
+                            ·
+                          </Typography>
+                          <Typography
+                            variant='body2'
+                            sx={{ flex: 1, my: 0.3 }}
+                            color='text.secondary'
+                          >
+                            {child.content}
+                          </Typography>
+                        </Box>
+                      ))}
                     </Box>
                   ))}
                 </Box>
@@ -218,7 +228,6 @@ function ProjectSection() {
     <Box>
       <Typography variant='h2'>Projects</Typography>
       <Divider />
-      {/* TODO: 필터 / 검색기능 */}
       <Grid container mt={2} spacing={2} alignItems='center'>
         {projectsData.slice(0, 8).map((project) => (
           <ProjectItem key={project.title} isMobile={isMobile} {...project} />

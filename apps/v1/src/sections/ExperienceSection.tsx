@@ -1,6 +1,6 @@
 import { Divider, Grid, Typography } from '@mui/material';
+import { experiencesData } from '@packages/data';
 import EduExpItem from '@/components/ExperienceItem';
-import { experiencesData } from '@/data/sectionData';
 
 function ExperienceSection({ open = true }: { open?: boolean }) {
   return (

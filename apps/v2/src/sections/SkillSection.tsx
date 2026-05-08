@@ -6,12 +6,11 @@ import {
   LinearProgress,
   Typography,
 } from '@mui/material';
+import { type SkillItemType, skillsData } from '@packages/data';
 import { getAssetsUrl } from '@packages/shared';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import React, { useRef, useState } from 'react';
-import { skillsData } from '@/data/sectionData';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
-import { type SkillItemType } from '@/types';
 import { FontWeightValues } from '@/types/styles';
 
 function SkillItem({
@@ -136,7 +135,7 @@ function SkillList({ skills }: { skills: SkillItemType[] }) {
         sx={{ position: 'absolute', top: isMobile ? 180 : 150, width: '100%' }}
       >
         <CodeEditor
-          value={`{\n  name: "${selectedSkill?.name}",\n  level: ${selectedSkill?.rating}, // out of 5\n  description: "${selectedSkill?.description}"\n}`}
+          value={`{\n  name: "${selectedSkill?.name}",\n  level: ${selectedSkill?.rating} // out of 5\n}`}
           language='json'
           disabled
           padding={15}

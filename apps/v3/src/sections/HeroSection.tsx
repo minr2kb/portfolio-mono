@@ -1,4 +1,4 @@
-import { EmailOutlined, MoreHoriz, Phone } from '@mui/icons-material';
+import { MoreHoriz } from '@mui/icons-material';
 import {
   Box,
   BoxProps,
@@ -8,10 +8,10 @@ import {
   Typography,
   Zoom,
 } from '@mui/material';
+import { contactsData, skillsData } from '@packages/data';
 import { getAssetsUrl } from '@packages/shared';
 import { useCallback, useMemo } from 'react';
 import HelloAnimation from '@/components/HelloAnimation';
-import { skillsData } from '@/data/sectionData';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
 import { Sections, SectionsType } from '@/types';
 import { FontWeightValues } from '@/types/styles';
@@ -68,8 +68,10 @@ const WidgetCard: React.FC<WidgetCardProps> = ({
 
 const ContactInfo = () => {
   const contactDetails = [
-    { icon: Phone, text: '010-4554-1664' },
-    { icon: EmailOutlined, text: 'kbmin1129@gmail.com' },
+    ...contactsData.slice(0, 2).map((contact) => ({
+      icon: contact.icon,
+      text: contact.value,
+    })),
     { icon: MoreHoriz, text: '더보기' },
   ];
 
@@ -101,9 +103,10 @@ const ContactInfo = () => {
               width: 24,
               borderRadius: 12,
               mr: 1,
+              color: '#F9F9F9',
             }}
           >
-            <detail.icon sx={{ fontSize: 14, color: '#F9F9F9' }} />
+            <detail.icon sx={{ fontSize: 14 }} color='inherit' />
           </Box>
           <Typography
             variant='body2'

@@ -6,9 +6,18 @@
       "outputs": ["dist/**"],
       "cache": false
     },
+    "copy-assets": {
+      "dependsOn": ["@packages/data#build"],
+      "outputs": [
+        "public/images/logo/**",
+        "public/images/projects/**",
+        "public/images/stackIcon/**"
+      ],
+      "cache": true
+    },
     "dev": {
       "outputs": [],
-      "dependsOn": [],
+      "dependsOn": ["copy-assets"],
       "persistent": true,
       "inputs": ["apps/**"]
     },

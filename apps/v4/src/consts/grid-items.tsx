@@ -1,4 +1,12 @@
 import {
+  contactsData,
+  educationData,
+  experiencesData,
+  introData,
+  projectsData,
+  skillsData,
+} from '@packages/data';
+import {
   Contact,
   Educations,
   Experiences,
@@ -9,14 +17,6 @@ import {
   Skills,
 } from '@/components/grids';
 import { GridItem } from '@/types';
-import {
-  contactsData,
-  educationData,
-  experiencesData,
-  introData,
-  projectsData,
-  skillsData,
-} from './sections';
 
 export const defaultGridItems: GridItem[] = [
   { i: 'introduction', component: <Introduction.Main /> },

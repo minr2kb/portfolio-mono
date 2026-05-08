@@ -9,14 +9,16 @@ import {
   Typography,
   Zoom,
 } from '@mui/material';
+import { projectsData } from '@packages/data';
 import { getAssetsUrl } from '@packages/shared';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import RatioBox from '@/components/RatioBox';
 import TextWithDot from '@/components/TextWithDot';
-import { projectsData } from '@/data/sectionData';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
-import { type ProjectItemType, Sections } from '@/types';
+import { Sections } from '@/types';
 import { FontWeightValues } from '@/types/styles';
+
+type ProjectItem = (typeof projectsData)[number];
 
 function ExpandedProjectItem({
   item,
@@ -24,7 +26,7 @@ function ExpandedProjectItem({
   open,
   onClose,
 }: {
-  item: ProjectItemType;
+  item: ProjectItem;
   clientRect?: DOMRect;
   open?: boolean;
   onClose?: () => void;
@@ -37,8 +39,8 @@ function ExpandedProjectItem({
     link = '',
     skills,
     cateTag = '',
-    isMobile = false,
   } = item;
+  const { isMobile } = useDeviceQuery();
   const [openBG, setOpenBG] = useState(false);
   const [openInfo, setOpenInfo] = useState(false);
 
@@ -140,9 +142,7 @@ function ExpandedProjectItem({
             </Box>
             <Typography
               variant='body1'
-              sx={{
-                fontWeight: FontWeightValues.SEMI_BOLD,
-              }}
+              sx={{ fontWeight: FontWeightValues.SEMI_BOLD }}
               color='text.secondary'
             >
               {description}
@@ -158,19 +158,17 @@ function ExpandedProjectItem({
                   sx={{ mr: 1, mt: 1 }}
                 />
               )}
-              {skills.map((skill) => {
-                return (
-                  <Chip
-                    key={`${title}-${skill}`}
-                    variant='outlined'
-                    label={skill}
-                    clickable
-                    size='small'
-                    color='primary'
-                    sx={{ mr: 1, mt: 1 }}
-                  />
-                );
-              })}
+              {skills.map((skill) => (
+                <Chip
+                  key={`${title}-${skill}`}
+                  variant='outlined'
+                  label={skill}
+                  clickable
+                  size='small'
+                  color='primary'
+                  sx={{ mr: 1, mt: 1 }}
+                />
+              ))}
             </Box>
 
             <Box
@@ -190,32 +188,26 @@ function ExpandedProjectItem({
                   'linear-gradient(to bottom, black 80%, transparent 100%)',
               }}
             >
-              {details.map((detail, idx) => {
-                if (detail.type === 'text') {
-                  return (
-                    <TextWithDot
-                      key={`project-${title}-detail-${idx}`}
-                      variant='body2'
-                      color='text.secondary'
-                    >
-                      {detail.content}
-                    </TextWithDot>
-                  );
-                }
-                return (
+              {details.map((detail, idx) => (
+                <Box key={`project-${title}-detail-${idx}`}>
                   <Typography
-                    key={`project-${title}-detail-${idx}`}
                     variant='body2'
-                    sx={{
-                      fontWeight: FontWeightValues.BOLD,
-                      my: 1,
-                    }}
+                    sx={{ fontWeight: FontWeightValues.BOLD, my: 1 }}
                     color='text.secondary'
                   >
                     {detail.content}
                   </Typography>
-                );
-              })}
+                  {detail.children?.map((child, childIdx) => (
+                    <TextWithDot
+                      key={`project-${title}-child-${childIdx}`}
+                      variant='body2'
+                      color='text.secondary'
+                    >
+                      {child.content}
+                    </TextWithDot>
+                  ))}
+                </Box>
+              ))}
             </Box>
           </Box>
         </Collapse>
@@ -224,7 +216,7 @@ function ExpandedProjectItem({
   );
 }
 
-function ProjectItem(props: ProjectItemType) {
+function ProjectItem(props: ProjectItem) {
   const { title, image } = props;
   const [open, setOpen] = useState(false);
   const itemRef = useRef<HTMLDivElement>(null);
@@ -300,29 +292,24 @@ function ProjectItem(props: ProjectItemType) {
 }
 
 function ProjectSection() {
-  const { isMobile } = useDeviceQuery();
   const [selectedTag, setSelectedTag] = useState<string>('전체');
 
   const cateTags = useMemo(() => {
     const tags = projectsData
       .map((project) => project.cateTag)
       .filter((tag): tag is string => tag !== undefined);
-
     return Array.from(new Set(tags));
-  }, [projectsData]);
+  }, []);
 
   const filteredProjects = useMemo(() => {
-    if (selectedTag === '전체') {
-      return projectsData;
-    }
+    if (selectedTag === '전체') return projectsData;
     return projectsData.filter((project) => project.cateTag === selectedTag);
-  }, [selectedTag, projectsData]);
+  }, [selectedTag]);
 
   return (
     <Box id={Sections.PROJECTS} sx={{ pt: 10 }}>
       <Typography variant='h2'>{Sections.PROJECTS}.</Typography>
       <Divider orientation='horizontal' sx={{ mt: 1, mb: 3 }} />
-      {/* 필터 / 검색기능 */}
       <Box sx={{ display: 'flex', gap: 1, overflow: 'auto' }}>
         {['전체', ...cateTags].map((tag) => (
           <Chip
@@ -337,7 +324,7 @@ function ProjectSection() {
       </Box>
       <Grid container mt={2} spacing={2} alignItems='center'>
         {filteredProjects.map((project) => (
-          <ProjectItem key={project.title} isMobile={isMobile} {...project} />
+          <ProjectItem key={project.title} {...project} />
         ))}
       </Grid>
     </Box>

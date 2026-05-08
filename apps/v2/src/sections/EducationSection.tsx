@@ -1,9 +1,9 @@
 import { Box, Divider, Typography } from '@mui/material';
+import { educationData } from '@packages/data';
 import EduExpItem from '@/components/ExperienceItem';
 import ParallaxItem, {
   type ParallaxItemProps,
 } from '@/components/ParallaxItem';
-import { educationData } from '@/data/sectionData';
 
 const parallaxIcons: ParallaxItemProps[] = [
   {
@@ -55,7 +55,18 @@ function EducationSection({
       <Typography variant='h2'>Education</Typography>
       <Divider sx={{ mb: 2 }} />
 
-      <EduExpItem open={open} {...educationData} />
+      <EduExpItem
+        open={open}
+        title={educationData.title}
+        subtitle={educationData.subtitle}
+        logoSrc={educationData.logoSrc}
+        descs={[
+          'Bachelor of Science',
+          `전공: ${educationData.major}`,
+          `부전공: ${educationData.minor}`,
+          `CGPA: ${educationData.gpa}`,
+        ]}
+      />
 
       {parallax &&
         parallaxIcons.map((parallaxIcon, idx) => (

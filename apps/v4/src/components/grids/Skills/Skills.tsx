@@ -1,8 +1,8 @@
 import { Box, BoxProps, Image, Text } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
+import { skillsData } from '@packages/data';
 import { getAssetsUrl } from '@packages/shared';
 import { useParams } from 'react-router-dom';
-import { skillsData } from '@/consts/sections';
 import CheckoutButton from '../../CheckoutButton';
 
 const rotateAnimation = keyframes`

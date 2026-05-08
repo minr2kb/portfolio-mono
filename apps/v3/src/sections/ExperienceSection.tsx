@@ -1,10 +1,8 @@
 import { Box, Divider, Typography } from '@mui/material';
+import { experiencesData } from '@packages/data';
 import EduExpItem from '@/components/ExperienceItem';
-import { experiencesData } from '@/data/sectionData';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
 import { Sections } from '@/types';
-
-// TODO: 업무내용 - 기술 - 배운점
 
 function ExperienceSection() {
   const { isMobile } = useDeviceQuery();

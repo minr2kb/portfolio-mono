@@ -1,5 +1,5 @@
 import { Box, Divider, Typography } from '@mui/material';
-import { aboutData } from '@/data/sectionData';
+import { introData } from '@packages/data';
 import { Sections } from '@/types';
 import { FontWeightValues } from '@/types/styles';
 
@@ -8,22 +8,24 @@ function AboutSection() {
     <Box id={Sections.ABOUT} sx={{ width: '100%', pt: 10 }}>
       <Typography variant='h2'>{Sections.ABOUT}.</Typography>
       <Divider orientation='horizontal' sx={{ mt: 1, mb: 3 }} />
-      {aboutData.map((about) => (
+      {introData.map((item) => (
         <Box
-          key={about.title}
+          key={item.title}
           sx={{ display: 'flex', flexDirection: 'column', gap: 1, mb: 5 }}
         >
-          <Typography variant='h4'>| {about.title}</Typography>
+          <Typography variant='h4'>| {item.title}</Typography>
           <Typography
             variant='body1'
             fontWeight={FontWeightValues.BOLD}
             color={'text.secondary'}
           >
-            {about.subtitle}
+            {item.subtitle}
           </Typography>
-          <Typography variant='body2' whiteSpace={'pre-wrap'}>
-            {about.content}
-          </Typography>
+          {item.contents.map((content, idx) => (
+            <Typography key={idx} variant='body2'>
+              - {content}
+            </Typography>
+          ))}
         </Box>
       ))}
     </Box>

@@ -1,11 +1,11 @@
-import type { ResponsiveLayouts } from 'react-grid-layout';
 import {
   contactsData,
   experiencesData,
   introData,
   projectsData,
   skillsData,
-} from './sections';
+} from '@packages/data';
+import type { ResponsiveLayouts } from 'react-grid-layout';
 
 export const defaultLayouts: ResponsiveLayouts = {
   sm: [

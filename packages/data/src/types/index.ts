@@ -1,0 +1,52 @@
+import { IconType } from 'react-icons';
+
+export type SkillItemType = {
+  name: string;
+  rating: number;
+  image: string;
+};
+
+type DetailType = {
+  content: string;
+  children?: DetailType[];
+};
+
+export type ProjectItemType = {
+  id: string;
+  title: string;
+  description: string;
+  details: DetailType[];
+  image: string;
+  link?: string;
+  skills: string[];
+  cateTag?: string;
+};
+
+export type ExperienceItemType = {
+  title: string;
+  subtitle: string;
+  logoSrc: string;
+  descs: string[];
+};
+
+export type EducationItemType = {
+  title: string;
+  subtitle: string;
+  logoSrc: string;
+  major: string;
+  minor: string;
+  gpa: string;
+};
+
+export type IntroductionItemType = {
+  title: string;
+  subtitle: string;
+  contents: string[];
+};
+
+export type ContactItemType = {
+  label: string;
+  value: string;
+  link: string;
+  icon: IconType;
+};

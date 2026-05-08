@@ -9,12 +9,11 @@ import {
   IconButton,
   Typography,
 } from '@mui/material';
+import { projectsData } from '@packages/data';
 import { getAssetsUrl } from '@packages/shared';
 import { useState } from 'react';
 import RatioBox from '@/components/RatioBox';
-import { projectsData } from '@/data/sectionData';
 import useDeviceQuery from '@/hooks/useDeviceQuery';
-import { type ProjectItemType } from '@/types';
 import { FontWeightValues } from '@/types/styles';
 
 function ProjectBlock({
@@ -26,7 +25,16 @@ function ProjectBlock({
   skills,
   cateTag = '',
   isMobile = false,
-}: ProjectItemType) {
+}: {
+  title: string;
+  description: string;
+  details: { content: string; children?: { content: string }[] }[];
+  image: string;
+  link?: string;
+  skills: string[];
+  cateTag?: string;
+  isMobile?: boolean;
+}) {
   return (
     <Grid py={5}>
       <RatioBox ratio={2.4}>
@@ -77,46 +85,52 @@ function ProjectBlock({
             sx={{ mr: 1, mt: 1 }}
           />
         )}
-        {skills.map((skill) => {
-          return (
-            <Chip
-              key={`${title}-${skill}`}
-              variant='outlined'
-              label={skill}
-              clickable
-              size='small'
-              color='primary'
-              sx={{ mr: 1, mt: 1 }}
-            />
-          );
-        })}
+        {skills.map((skill) => (
+          <Chip
+            key={`${title}-${skill}`}
+            variant='outlined'
+            label={skill}
+            clickable
+            size='small'
+            color='primary'
+            sx={{ mr: 1, mt: 1 }}
+          />
+        ))}
       </Grid>
       <Typography
         variant='body2'
-        sx={{
-          my: 2,
-          fontWeight: FontWeightValues.SEMI_BOLD,
-        }}
+        sx={{ my: 2, fontWeight: FontWeightValues.SEMI_BOLD }}
         color='text.secondary'
       >
         {description}
       </Typography>
       {details.map((detail, idx) => (
-        <Grid container key={`${title}-detail-${idx}`}>
+        <Grid key={`${title}-detail-${idx}`}>
           <Typography
             variant='body2'
-            color='text.secondary'
-            sx={{ mx: 1, fontWeight: FontWeightValues.BLACK }}
-          >
-            ·
-          </Typography>
-          <Typography
-            variant='body2'
-            sx={{ flex: 1, my: 0.3 }}
+            sx={{ my: 0.5, fontWeight: FontWeightValues.BLACK }}
             color='text.secondary'
           >
             {detail.content}
           </Typography>
+          {detail.children?.map((child, childIdx) => (
+            <Grid container key={`${title}-detail-${idx}-child-${childIdx}`}>
+              <Typography
+                variant='body2'
+                color='text.secondary'
+                sx={{ mx: 1, fontWeight: FontWeightValues.BLACK }}
+              >
+                ·
+              </Typography>
+              <Typography
+                variant='body2'
+                sx={{ flex: 1, my: 0.3 }}
+                color='text.secondary'
+              >
+                {child.content}
+              </Typography>
+            </Grid>
+          ))}
         </Grid>
       ))}
     </Grid>
@@ -130,7 +144,6 @@ function ProjectSection() {
     <Grid>
       <Typography variant='h2'>Projects</Typography>
       <Divider />
-      {/* TODO: 필터 / 검색기능 */}
       {projectsData.slice(0, 3).map((project) => (
         <ProjectBlock
           key={project.title}
@@ -168,9 +181,7 @@ function ProjectSection() {
       <Button
         fullWidth
         variant='outlined'
-        onClick={() => {
-          setViewMore(!viewMore);
-        }}
+        onClick={() => setViewMore(!viewMore)}
       >
         {viewMore ? '접기' : `${projectsData.length - 3}개 더보기`}{' '}
         {viewMore ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
