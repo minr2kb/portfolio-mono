@@ -76,7 +76,7 @@ export const projectsData: ProjectItemType[] = [
   {
     id: 'hey-d',
     title: 'Hey.D',
-    description: `3D 모션 기반의 AI 채팅 서비스`,
+    description: `3D 모션 기반의 AI 채팅 서비스 [퇴사 이후 AI Slop화]`,
     details: [
       {
         content: '2.0 버전 개발 리드',
@@ -196,7 +196,7 @@ export const projectsData: ProjectItemType[] = [
   {
     id: 'careerly',
     title: '커리어리',
-    description: `개발자 커뮤니티-채용 플랫폼`,
+    description: `개발자 커뮤니티-채용 플랫폼 [퇴사 이후 AI Slop화]`,
     details: [
       {
         content: '디자인 시스템 작업 효율 개선',

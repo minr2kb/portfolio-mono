@@ -5,6 +5,7 @@ import {
   Heading,
   IconButton,
   List,
+  Stack,
   Text,
 } from '@chakra-ui/react';
 import { IoLink } from 'react-icons/io5';
@@ -37,7 +38,7 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
         },
       }}
     >
-      <Flex direction={'column'} gap={4}>
+      <Stack gap={6}>
         <Box>
           <Flex alignItems={'center'}>
             <Heading size={'2xl'}>{title}</Heading>
@@ -56,58 +57,49 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
               </Tooltip>
             )}
           </Flex>
-          <Text fontSize={'sm'} color={'slate.600'}>
+          <Text textStyle={'sm'} fontWeight={'medium'} color={'slate.600'}>
             {description}
           </Text>
         </Box>
 
-        <Box>
-          <Text fontSize={'sm'} fontWeight={'bold'} mb={2} color={'slate.600'}>
-            Skills
-          </Text>
-          <Flex gap={2} flexWrap={'wrap'}>
-            {skills.map((skill) => (
-              <Badge key={skill} variant='surface'>
-                {skill}
-              </Badge>
-            ))}
-          </Flex>
-        </Box>
+        <Flex gap={2} flexWrap={'wrap'}>
+          {skills.map((skill) => (
+            <Badge key={skill} variant='outline'>
+              {skill}
+            </Badge>
+          ))}
+        </Flex>
 
-        <Box>
-          <Text fontSize={'sm'} fontWeight={'bold'} mb={2} color={'slate.600'}>
-            Details
-          </Text>
-          <List.Root gap={2}>
-            {details.map(({ content, children }) => (
-              <List.Item
-                key={content}
-                fontSize={'sm'}
-                css={{
-                  fontWeight: children ? 'semibold' : 'normal',
-                  color: children ? 'slate.800' : 'slate.600',
-                }}
-              >
-                {content}
-                {children && (
-                  <List.Root ps={5} gap={1}>
-                    {children.map(({ content }) => (
-                      <List.Item
-                        key={content}
-                        fontSize={'sm'}
-                        fontWeight={'normal'}
-                        color={'slate.600'}
-                      >
-                        {content}
-                      </List.Item>
-                    ))}
-                  </List.Root>
-                )}
-              </List.Item>
-            ))}
-          </List.Root>
-        </Box>
-      </Flex>
+        <List.Root gap={3} ps={4} listStyle={'outside'}>
+          {details.map(({ content, children }) => (
+            <List.Item
+              key={content}
+              fontSize={'sm'}
+              css={{
+                fontWeight: children ? 'semibold' : 'normal',
+                color: children ? 'slate.800' : 'slate.600',
+              }}
+            >
+              {content}
+              {children && (
+                <List.Root ps={3} gap={1} listStylePos={'outside'}>
+                  {children.map(({ content }) => (
+                    <List.Item
+                      key={content}
+                      fontSize={'sm'}
+                      fontWeight={'normal'}
+                      color={'slate.600'}
+                      lineHeight={'1.7'}
+                    >
+                      {content}
+                    </List.Item>
+                  ))}
+                </List.Root>
+              )}
+            </List.Item>
+          ))}
+        </List.Root>
+      </Stack>
     </Box>
   );
 };
