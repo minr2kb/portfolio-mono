@@ -11,6 +11,13 @@
       content="프론트엔드, 개발자, 포트폴리오, React, TypeScript, Module Federation, Web Development"
     />
     <meta name="author" content="kbmin1129@gmail.com" />
+    <script>
+      if (location.hostname === 'portfolio-kbmin.web.app') {
+        location.replace(
+          'https://kbmin.is-a.dev' + location.pathname + location.search + location.hash,
+        );
+      }
+    </script>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
