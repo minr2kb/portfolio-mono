@@ -8,6 +8,25 @@
         "**/.*",
         "**/node_modules/**"
       ],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "GET,OPTIONS"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "Content-Type, Authorization"
+            }
+          ]
+        }
+      ],
       "rewrites": [
         {
           "source": "**",
@@ -38,7 +57,7 @@
           "headers": [
             {
               "key": "Access-Control-Allow-Origin",
-              "value": "https://portfolio-kbmin.web.app"
+              "value": "*"
             },
             {
               "key": "Access-Control-Allow-Methods",
@@ -54,7 +73,7 @@
       "redirects": [
         {
           "source": "/",
-          "destination": "https://portfolio-kbmin.web.app/v1",
+          "destination": "https://kbmin.is-a.dev/v1",
           "type": 302
         }
       ]
@@ -82,7 +101,7 @@
           "headers": [
             {
               "key": "Access-Control-Allow-Origin",
-              "value": "https://portfolio-kbmin.web.app"
+              "value": "*"
             },
             {
               "key": "Access-Control-Allow-Methods",
@@ -98,7 +117,7 @@
       "redirects": [
         {
           "source": "/",
-          "destination": "https://portfolio-kbmin.web.app/v2",
+          "destination": "https://kbmin.is-a.dev/v2",
           "type": 302
         }
       ]
@@ -126,7 +145,7 @@
           "headers": [
             {
               "key": "Access-Control-Allow-Origin",
-              "value": "https://portfolio-kbmin.web.app"
+              "value": "*"
             },
             {
               "key": "Access-Control-Allow-Methods",
@@ -142,7 +161,7 @@
       "redirects": [
         {
           "source": "/",
-          "destination": "https://portfolio-kbmin.web.app/v3",
+          "destination": "https://kbmin.is-a.dev/v3",
           "type": 302
         }
       ]
@@ -170,7 +189,7 @@
           "headers": [
             {
               "key": "Access-Control-Allow-Origin",
-              "value": "https://portfolio-kbmin.web.app"
+              "value": "*"
             },
             {
               "key": "Access-Control-Allow-Methods",
@@ -186,7 +205,7 @@
       "redirects": [
         {
           "source": "/",
-          "destination": "https://portfolio-kbmin.web.app/v4",
+          "destination": "https://kbmin.is-a.dev/v4",
           "type": 302
         }
       ]
