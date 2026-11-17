@@ -8,16 +8,11 @@
     },
     "copy-assets": {
       "dependsOn": ["@packages/data#build"],
-      "outputs": [
-        "public/images/logo/**",
-        "public/images/projects/**",
-        "public/images/stackIcon/**"
-      ],
+      "outputs": ["public/shared/**"],
       "cache": true
     },
     "dev": {
       "outputs": [],
-      "dependsOn": ["copy-assets"],
       "persistent": true,
       "inputs": ["apps/**"]
     },

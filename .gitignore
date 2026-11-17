@@ -61,3 +61,6 @@ dist-ssr
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Copies of packages/data/assets generated for standalone apps
+/apps/*/public/shared/

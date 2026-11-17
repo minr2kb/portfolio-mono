@@ -1,4 +1,9 @@
-import { KeyboardArrowDown, KeyboardArrowUp, Link } from '@mui/icons-material';
+import {
+  GitHub,
+  KeyboardArrowDown,
+  KeyboardArrowUp,
+  Link,
+} from '@mui/icons-material';
 import {
   Box,
   Button,
@@ -22,6 +27,7 @@ function ProjectBlock({
   details,
   image,
   link = '',
+  githubUrl,
   skills,
   cateTag = '',
   isMobile = false,
@@ -31,6 +37,7 @@ function ProjectBlock({
   details: { content: string; children?: { content: string }[] }[];
   image: string;
   link?: string;
+  githubUrl?: string;
   skills: string[];
   cateTag?: string;
   isMobile?: boolean;
@@ -68,8 +75,26 @@ function ProjectBlock({
         <Box display='flex' alignItems='center'>
           <Typography variant='h3'>{title}</Typography>
           {link !== '' && (
-            <IconButton size='small' href={link} target='_blank'>
+            <IconButton
+              size='small'
+              href={link}
+              target='_blank'
+              aria-label={`${title} 서비스 보기`}
+            >
               <Link htmlColor='#999' fontSize={isMobile ? 'small' : 'medium'} />
+            </IconButton>
+          )}
+          {githubUrl && (
+            <IconButton
+              size='small'
+              href={githubUrl}
+              target='_blank'
+              aria-label={`${title} GitHub 보기`}
+            >
+              <GitHub
+                htmlColor='#999'
+                fontSize={isMobile ? 'small' : 'medium'}
+              />
             </IconButton>
           )}
         </Box>
@@ -153,6 +178,7 @@ function ProjectSection() {
           image={project.image}
           skills={project.skills}
           link={project.link}
+          githubUrl={project.githubUrl}
           cateTag={project.cateTag}
           isMobile={isMobile}
         />
@@ -173,6 +199,7 @@ function ProjectSection() {
             image={project.image}
             skills={project.skills}
             link={project.link}
+            githubUrl={project.githubUrl}
             cateTag={project.cateTag}
             isMobile={isMobile}
           />

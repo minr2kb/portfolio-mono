@@ -52,7 +52,7 @@ function TagSphere() {
       for (let i = 0; i < items.length; i++) {
         if (!items[i].innerHTML.includes('img')) {
           items[i].innerHTML =
-            `<img src="${getAssetsUrl(`/images/stackIcon/${items[i].innerHTML}.webp`)}" style="width: ${
+            `<img src="${getAssetsUrl(`/shared/images/stackIcon/${items[i].innerHTML}.webp`)}" style="width: ${
               isMobile ? '40px' : '50px'
             };"/>`;
         }

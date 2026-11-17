@@ -147,7 +147,7 @@ pnpm create-app
 
 ### 주의사항
 
-1. 이미지 에셋은 `packages/data/assets/images/`에 중앙관리하며, 빌드 시 `copy-assets` 스크립트로 각 앱의 `public/images/`에 복사됩니다.
+1. 공용 에셋은 `packages/data/assets/`에서 관리하며, `prebuild`의 `copy-assets`가 하위 폴더 전체를 각 앱의 `public/shared/`에 복사합니다. 앱 전용 이미지는 `public/images/`에 둡니다.
 2. 에셋 경로는 반드시 `@packages/utils`의 `getAssetsUrl()`로 감싸서 사용합니다. (host 앱 제외)
 3. host 앱 구동 시에는 각 remote 앱의 빌드 결과물(`dist/assets/remoteEntry.js`)이 필요하므로 `pnpm start`는 `build:dev` → `dev:host` + `preview:remotes` 순으로 동작합니다.
 4. 각 remote 앱은 `pnpm dev:{name}`으로 독립 실행 가능합니다.

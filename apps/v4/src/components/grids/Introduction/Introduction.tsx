@@ -22,11 +22,11 @@ const Chip = ({ children }: { children: React.ReactNode }) => {
 
 const tags = [
   '빠른 속도',
-  'UI/UX',
+  '제로투원',
   '스타트업',
   '디자인시스템',
-  '프론트엔드',
-  '호기심',
+  '디발자',
+  '적극적 협업',
 ];
 
 const Introduction = () => {

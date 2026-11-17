@@ -1,4 +1,4 @@
-import { Link } from '@mui/icons-material';
+import { GitHub, Link } from '@mui/icons-material';
 import {
   Box,
   Chip,
@@ -24,6 +24,7 @@ function ProjectItem({
   details,
   image,
   link = '',
+  githubUrl,
   skills,
   cateTag = '',
   isMobile = false,
@@ -109,8 +110,26 @@ function ProjectItem({
                 <Box display='flex' alignItems='center'>
                   <Typography variant='h3'>{title}</Typography>
                   {link !== '' && (
-                    <IconButton size='small' href={link} target='_blank'>
+                    <IconButton
+                      size='small'
+                      href={link}
+                      target='_blank'
+                      aria-label={`${title} 서비스 보기`}
+                    >
                       <Link
+                        htmlColor='#999'
+                        fontSize={isMobile ? 'small' : 'medium'}
+                      />
+                    </IconButton>
+                  )}
+                  {githubUrl && (
+                    <IconButton
+                      size='small'
+                      href={githubUrl}
+                      target='_blank'
+                      aria-label={`${title} GitHub 보기`}
+                    >
+                      <GitHub
                         htmlColor='#999'
                         fontSize={isMobile ? 'small' : 'medium'}
                       />

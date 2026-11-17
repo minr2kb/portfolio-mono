@@ -2,6 +2,186 @@ import { ProjectItemType } from '../types';
 
 export const projectsData: ProjectItemType[] = [
   {
+    id: 'contiroom',
+    title: '콘티룸',
+    description: `찬양팀의 콘티 편성과 예배 라이브 화면을 잇는 웹 서비스`,
+    details: [
+      {
+        content: '편집 가능한 악보 데이터로 연결',
+        children: [
+          {
+            content:
+              '악보 사진 분석 결과를 완성된 곡으로 저장하지 않고, 가사 줄·코드 위치·섹션을 수정할 수 있는 초안으로 연결',
+          },
+          {
+            content:
+              '곡의 원본 섹션은 유지하고 콘티별 곡 순서·키·송폼을 따로 다뤄, 한 곡을 여러 예배 흐름에 재사용',
+          },
+        ],
+      },
+      {
+        content: '편성 결과를 현장에서 재사용',
+        children: [
+          {
+            content:
+              '편집한 콘티를 라이브 화면과 인쇄에 연결해, 현장에서는 키보드로 넘기고 표시 줄 수·코드·다음 가사를 조절',
+          },
+          {
+            content:
+              'A4 미리보기에서 확인한 편성을 PDF로 내보내 인쇄 결과를 미리 조정',
+          },
+        ],
+      },
+      {
+        content: '공개 범위와 접근 통제',
+        children: [
+          {
+            content:
+              '새 곡과 콘티를 기본 비공개로 두고, 공개 곡의 참조 저장과 독립적으로 편집할 비공개 복제를 구분',
+          },
+          {
+            content:
+              '공개 콘티에 콘티 소유자의 비공개 곡이 포함되는 예외를 DB 트리거와 security definer 함수로 한정하고, 곡 소유권과 RLS 정책을 유지',
+          },
+        ],
+      },
+    ],
+    image: '/shared/images/projects/contiroom.webp',
+    link: 'https://cntirm.vercel.app',
+    skills: [
+      'NextJS',
+      'TypeScript',
+      'Supabase',
+      'TanStack Query',
+      'StyleX',
+      'Tailwind CSS',
+      'Zod',
+      'OpenAI',
+    ],
+    cateTag: '사이드',
+  },
+  {
+    id: 'dalant-pay',
+    title: '달란트페이',
+    description: `오프라인 모임을 위한 미션 인증 기반 포인트 결제 서비스 [교회 수련회 실사용]`,
+    details: [
+      {
+        content: '행사 운영과 포인트 정합성',
+        children: [
+          {
+            content:
+              '교회 수련회에서 실물 달란트와 종이 미션표를 대체하도록, 행사별 참여자·미션·잔액·주문을 마켓 단위로 격리',
+          },
+          {
+            content:
+              'QR 자가 인증을 서버에서 막고, 포인트 이전과 양쪽 거래 내역은 DB 단일 트랜잭션으로 처리해 행사 점수의 정합성을 보호',
+          },
+        ],
+      },
+      {
+        content: '느린 첫 화면과 화면 전환의 병목 분리',
+        children: [
+          {
+            content:
+              '독립적인 조회를 Suspense 경계로 분리해 화면 셸을 먼저 보여주고, Proxy의 마켓 참여 조회는 데이터 접근 지점으로 이동',
+          },
+          {
+            content:
+              'Supabase의 미국 리전과 한국 서비스 간 왕복 비용을 확인하고 DB를 이전; 반복 방문 데이터는 TanStack Query 한 곳에서 관리',
+          },
+        ],
+      },
+      {
+        content: '행사 현장의 재방문과 오프라인 대응',
+        children: [
+          {
+            content:
+              '서버 prefetch와 Query 캐시를 이어 초기 데이터를 전달하고, 캐시가 남아 있는 화면은 기존 데이터를 재사용해 반복 로딩을 줄임',
+          },
+          {
+            content:
+              '조회 데이터는 IndexedDB, 화면 문서·자산은 서비스워커에 나눠 보관해 방문했던 화면의 오프라인 새로고침을 지원',
+          },
+        ],
+      },
+    ],
+    image: '/shared/images/projects/dalant-pay.webp',
+    link: 'https://dalant-pay.vercel.app',
+    githubUrl: 'https://github.com/minr2kb/dalant-pay',
+    skills: [
+      'NextJS',
+      'TypeScript',
+      'Tailwind CSS',
+      'Shadcn',
+      'TanStack Query',
+      'Supabase',
+      'Zod',
+      'Sentry',
+      'PWA',
+    ],
+    cateTag: '사이드',
+  },
+  {
+    id: 'routar',
+    title: 'routar',
+    description: `스키마 한 번의 정의로 타입과 런타임 검증을 함께 얻는 HTTP API 클라이언트 오픈소스`,
+    details: [
+      {
+        content: '분산된 API 명세를 한곳에 모으다',
+        children: [
+          {
+            content:
+              '요청·응답 타입이 흩어지고 서버 응답은 검증되지 않던 경험에서 출발해, 엔드포인트 스펙 하나에 타입 추론과 런타임 검증을 모음',
+          },
+          {
+            content:
+              'path·query·body를 분리하고 URL 파라미터 누락을 타입으로 검출해, 호출부에서 요청 값의 위치와 계약 위반을 드러냄',
+          },
+        ],
+      },
+      {
+        content: '명세와 실행 환경의 책임 분리',
+        children: [
+          {
+            content:
+              'CSR·SSR마다 URL과 스키마를 중복 선언하던 문제를 해결하려고 스펙과 executor를 분리해, 같은 정의에 fetch·axios·ky를 교체 적용',
+          },
+          {
+            content:
+              '서버·브라우저 실행기는 따로 두고 요청 시점에 선택해, TanStack Query의 서버 prefetch와 클라이언트 조회가 같은 API 진입점을 사용',
+          },
+        ],
+      },
+      {
+        content: '사용처의 API를 그대로 살린 연동',
+        children: [
+          {
+            content:
+              'TanStack Query 전용 훅을 감싸지 않고 options 팩토리를 제공해 useQuery·useSuspenseQuery·prefetchQuery에 그대로 연결',
+          },
+          {
+            content:
+              '같은 엔드포인트 정의에서 queryKey와 무효화 대상을 얻도록 해, 호출과 캐시 갱신의 기준이 어긋나지 않게 구성',
+          },
+        ],
+      },
+    ],
+    image: '/shared/images/projects/routar.webp',
+    link: 'https://routar.vercel.app',
+    githubUrl: 'https://github.com/minr2kb/routar',
+    skills: [
+      'TypeScript',
+      'Zod',
+      'TanStack Query',
+      'Bun',
+      'tsup',
+      'Biome',
+      'Changesets',
+      'Github Action',
+    ],
+    cateTag: '사이드',
+  },
+  {
     id: 'nationa-design-system',
     title: 'Nation A 디자인 시스템',
     description: `사내 디자인 시스템 구축 프로젝트`,
@@ -58,8 +238,8 @@ export const projectsData: ProjectItemType[] = [
         ],
       },
     ],
-    image: '/images/projects/nationa-design-system.png',
-    link: 'https://github.com/Nation-A/design-system',
+    image: '/shared/images/projects/nationa-design-system.png',
+    githubUrl: 'https://github.com/Nation-A/design-system',
     skills: [
       'TypeScript',
       'PandaCSS',
@@ -121,7 +301,7 @@ export const projectsData: ProjectItemType[] = [
         ],
       },
     ],
-    image: '/images/projects/hey-d.webp',
+    image: '/shared/images/projects/hey-d.webp',
     link: 'https://hey-d.ai',
     skills: [
       'ReactJS',
@@ -180,7 +360,7 @@ export const projectsData: ProjectItemType[] = [
         ],
       },
     ],
-    image: '/images/projects/heyd-admin.png',
+    image: '/shared/images/projects/heyd-admin.png',
     skills: [
       'NextJS',
       'TypeScript',
@@ -241,7 +421,7 @@ export const projectsData: ProjectItemType[] = [
         ],
       },
     ],
-    image: '/images/projects/careerly.webp',
+    image: '/shared/images/projects/careerly.webp',
     link: 'https://careerly.co.kr',
     skills: [
       'ReactJS',
@@ -307,8 +487,8 @@ export const projectsData: ProjectItemType[] = [
         ],
       },
     ],
-    image: '/images/projects/careerly-design-system.webp',
-    link: 'https://github.com/publy-korea/design-tokens',
+    image: '/shared/images/projects/careerly-design-system.webp',
+    githubUrl: 'https://github.com/publy-korea/design-tokens',
     skills: [
       'ReactJS',
       'ReactNative',
@@ -363,7 +543,7 @@ export const projectsData: ProjectItemType[] = [
         ],
       },
     ],
-    image: '/images/projects/taghere.webp',
+    image: '/shared/images/projects/taghere.webp',
     link: 'https://tag-here.info',
     skills: ['ReactJS', 'TypeScript', 'MUI', 'Jotai', 'NX', 'Jira', 'SocketIO'],
     cateTag: 'TMR Founders',
@@ -400,7 +580,7 @@ export const projectsData: ProjectItemType[] = [
         ],
       },
     ],
-    image: '/images/projects/tmr-founders.webp',
+    image: '/shared/images/projects/tmr-founders.webp',
     link: 'https://tmr-founders.com/virtual-store',
     skills: [
       'ReactJS',
@@ -461,8 +641,8 @@ export const projectsData: ProjectItemType[] = [
         ],
       },
     ],
-    image: '/images/projects/portfolio-mono.webp',
-    link: 'https://github.com/minr2kb/portfolio-mono',
+    image: '/shared/images/projects/portfolio-mono.webp',
+    githubUrl: 'https://github.com/minr2kb/portfolio-mono',
     skills: [
       'ReactJS',
       'TypeScript',
@@ -513,7 +693,7 @@ export const projectsData: ProjectItemType[] = [
         ],
       },
     ],
-    image: '/images/projects/moon-cheese.webp',
+    image: '/shared/images/projects/moon-cheese.webp',
     skills: [
       'React.js',
       'TypeScript',
@@ -588,9 +768,9 @@ export const projectsData: ProjectItemType[] = [
         ],
       },
     ],
-    image: '/images/projects/christmas-tree-decor.webp',
+    image: '/shared/images/projects/christmas-tree-decor.webp',
     skills: ['ReactJS', 'TypeScript', 'ChakraUI', 'Supabase'],
-    link: 'https://github.com/minr2kb/christmas-tree-decor',
+    githubUrl: 'https://github.com/minr2kb/christmas-tree-decor',
     cateTag: '사이드',
   },
   {
@@ -611,7 +791,7 @@ export const projectsData: ProjectItemType[] = [
           '디자이너와 Figma로 협력하여 MUI를 활용한 간단한 타이포 위계 및 컴포넌트 디자인 시스템을 구축',
       },
     ],
-    image: '/images/projects/tradeforce.webp',
+    image: '/shared/images/projects/tradeforce.webp',
     link: 'https://tradeforce.co.kr',
     skills: ['ReactJS', 'TypeScript', 'Recoil', 'MUI'],
     cateTag: '외주',
@@ -668,7 +848,7 @@ export const projectsData: ProjectItemType[] = [
         ],
       },
     ],
-    image: '/images/projects/recruit-crawler.webp',
+    image: '/shared/images/projects/recruit-crawler.webp',
     skills: [
       'ReactJS',
       'Electron',
@@ -680,7 +860,7 @@ export const projectsData: ProjectItemType[] = [
       'Tanstack-Query',
       'CloudType',
     ],
-    link: 'https://github.com/minr2kb/recruit-crawler-app',
+    githubUrl: 'https://github.com/minr2kb/recruit-crawler-app',
     cateTag: '사이드',
   },
   {
@@ -696,9 +876,9 @@ export const projectsData: ProjectItemType[] = [
         content: 'Firebase Realtime DB를 활용하여 실시간 요청 기능 구현',
       },
     ],
-    image: '/images/projects/worship-team-live.webp',
+    image: '/shared/images/projects/worship-team-live.webp',
     skills: ['ReactJS', 'TypeScript', 'MUI', 'Firebase'],
-    link: 'https://github.com/minr2kb/worship-team-live',
+    githubUrl: 'https://github.com/minr2kb/worship-team-live',
     cateTag: '사이드',
   },
   {
@@ -750,9 +930,9 @@ export const projectsData: ProjectItemType[] = [
         ],
       },
     ],
-    image: '/images/projects/publy-dinner-worldcup.webp',
+    image: '/shared/images/projects/publy-dinner-worldcup.webp',
     skills: ['ReactJS', 'TypeScript', 'MUI', 'Firebase'],
-    link: 'https://github.com/minr2kb/publy-dinner-worldcup',
+    githubUrl: 'https://github.com/minr2kb/publy-dinner-worldcup',
     cateTag: '사이드',
   },
   {
@@ -778,8 +958,8 @@ export const projectsData: ProjectItemType[] = [
         ],
       },
     ],
-    image: '/images/projects/inf-scroll.webp',
-    link: 'https://github.com/minr2kb/infinite-scroll-practice',
+    image: '/shared/images/projects/inf-scroll.webp',
+    githubUrl: 'https://github.com/minr2kb/infinite-scroll-practice',
     skills: ['React.js', 'TypeScript', 'ChakraUI', 'Jotai', 'React-Virtuoso'],
     cateTag: '사이드',
   },
@@ -797,7 +977,7 @@ export const projectsData: ProjectItemType[] = [
           'Polygon으로 구성된 평면에 대한 충돌시스템을 구현했으며, Suspense를 사용한 렌더링 로드 화면과 유저 액션 history를 구현하여 UX를 향상',
       },
     ],
-    image: '/images/projects/3d-virtual-store.webp',
+    image: '/shared/images/projects/3d-virtual-store.webp',
     skills: ['React.js', 'TypeScript', 'R3F', 'Three.js', 'MUI', 'Recoil'],
     cateTag: 'TMR Founders',
   },
@@ -815,7 +995,7 @@ export const projectsData: ProjectItemType[] = [
           '실시간으로 DB에 들어오는 물류 현황과 수요 예측 모델 데이터를 차트를 활용하여 시각화하는 기능에 중점을 두고 개발',
       },
     ],
-    image: '/images/projects/zcl-admin-dashboard.webp',
+    image: '/shared/images/projects/zcl-admin-dashboard.webp',
     skills: [
       'ReactJS',
       'JavaScript',
@@ -840,7 +1020,7 @@ export const projectsData: ProjectItemType[] = [
           'Webpack의 require.context를 활용하여 NextJS처럼 개발환경의 컴포넌트 디렉토리 구조가 그대로 브라우저에 렌더링 되도록 환경을 구축',
       },
     ],
-    image: '/images/projects/playground.webp',
+    image: '/shared/images/projects/playground.webp',
     skills: ['ReactJS', 'TypeScript', 'Webpack', 'MUI', 'Firebase'],
     link: 'https://playground-adade.web.app',
     cateTag: '사이드',

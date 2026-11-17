@@ -8,7 +8,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { IoLink } from 'react-icons/io5';
+import { IoLink, IoLogoGithub } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { Tooltip } from '@/components/ui/tooltip';
 import { ProjectItemType } from '@/types';
@@ -18,7 +18,7 @@ interface ProjectDetailProps {
 }
 
 const ProjectDetail = ({ project }: ProjectDetailProps) => {
-  const { title, link, description, skills, details } = project;
+  const { title, link, githubUrl, description, skills, details } = project;
 
   return (
     <Box
@@ -44,16 +44,32 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
             <Heading size={'2xl'}>{title}</Heading>
             {link && (
               <Tooltip content={link}>
-                <Link
-                  to={link}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='no-drag'
-                >
-                  <IconButton variant='ghost' rounded='full'>
+                <IconButton variant='ghost' rounded='full' asChild>
+                  <Link
+                    to={link}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    aria-label={`${title} 서비스 보기`}
+                    className='no-drag'
+                  >
                     <IoLink />
-                  </IconButton>
-                </Link>
+                  </Link>
+                </IconButton>
+              </Tooltip>
+            )}
+            {githubUrl && (
+              <Tooltip content={githubUrl}>
+                <IconButton variant='ghost' rounded='full' asChild>
+                  <Link
+                    to={githubUrl}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='no-drag'
+                    aria-label={`${title} GitHub 보기`}
+                  >
+                    <IoLogoGithub />
+                  </Link>
+                </IconButton>
               </Tooltip>
             )}
           </Flex>
