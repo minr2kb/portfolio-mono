@@ -18,6 +18,7 @@ export type ProjectItemType = {
   details: DetailType[];
   image: string;
   link?: string;
+  githubUrl?: string;
   skills: string[];
   cateTag?: string;
 };

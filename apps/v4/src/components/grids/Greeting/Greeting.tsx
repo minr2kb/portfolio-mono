@@ -35,7 +35,7 @@ const Greeting = () => {
         whiteSpace={'pre-wrap'}
         textAlign={'right'}
       >
-        {'팀과 함께 성장하는\nFE 개발자, 민경배입니다.'}
+        {'탐구를 통해 성장하는\nFE 개발자, 민경배입니다.'}
       </Text>
     </Box>
   );

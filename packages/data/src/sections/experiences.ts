@@ -4,7 +4,7 @@ export const experiencesData: ExperienceItemType[] = [
   {
     title: '네이션에이',
     subtitle: '사회복무요원 복무로 퇴사, 2025.01 - 2025.11',
-    logoSrc: '/images/logo/nation-a.png',
+    logoSrc: '/shared/images/logo/nation-a.png',
     descs: [
       '3D 모션 기반의 AI 채팅 서비스 "Hey.D" 프론트 개발',
       'Hey.D 2.0 메이저 업데이트 FE 리드',
@@ -17,7 +17,7 @@ export const experiencesData: ExperienceItemType[] = [
   {
     title: '퍼블리',
     subtitle: '경영악화로 퇴사, 2023.07 - 2024.04',
-    logoSrc: '/images/logo/publy.png',
+    logoSrc: '/shared/images/logo/publy.png',
     descs: [
       '개발자 커리어 플랫폼 "커리어리" 서비스 웹 및 앱 프론트 개발',
       '지표 단위 조직(Squad)으로 3주 단위 스프린트 업무 진행',
@@ -29,7 +29,7 @@ export const experiencesData: ExperienceItemType[] = [
   {
     title: '티엠알파운더스',
     subtitle: '전 제로클래스랩, 2022.07 - 2023.07',
-    logoSrc: '/images/logo/tmrfounders.png',
+    logoSrc: '/shared/images/logo/tmrfounders.png',
     descs: [
       '원스톱 창업 플랫폼 "내일의창업" 웹 개발 및 런칭',
       'NFC 기반 스마트 오더 솔루션 "태그히어" 서비스 제작',
@@ -40,7 +40,7 @@ export const experiencesData: ExperienceItemType[] = [
   {
     title: '제로클래스랩',
     subtitle: '피봇팅 이전 법인, 2021.07 - 2022.07',
-    logoSrc: '/images/logo/zeroclasslab.png',
+    logoSrc: '/shared/images/logo/zeroclasslab.png',
     descs: [
       'Computer vision 기반 물류 관리 시스템 관리자 대시보드 풀스텍 제작',
       '무인 계산 솔루션 "버키" 앱 개발 및 유지보수',

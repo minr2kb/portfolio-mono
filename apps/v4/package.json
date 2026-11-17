@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "copy-assets": "cp -r ../../packages/data/assets/images/. ./public/images/",
+    "copy-assets": "mkdir -p ./public/shared && cp -r ../../packages/data/assets/. ./public/shared/",
     "prebuild": "pnpm type-gen && pnpm copy-assets",
     "build": "tsc -b && vite build",
     "build:dev": "tsc -b && vite build --mode development",

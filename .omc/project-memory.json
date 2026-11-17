@@ -1,0 +1,116 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1789351104798,
+  "projectRoot": "/Users/kbmin/dev/projects/portfolio-mono",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": ">=18.18.0",
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      }
+    ],
+    "frameworks": [],
+    "packageManager": "pnpm",
+    "runtime": "Node.js 18.18.0"
+  },
+  "build": {
+    "buildCommand": "pnpm build",
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": "pnpm dev",
+    "scripts": {
+      "prebuild": "turbo run prebuild --filter=@apps/*",
+      "build": "turbo run build --filter=@apps/*",
+      "build:dev": "turbo run build:dev --filter=@apps/*",
+      "dev": "turbo run dev --filter=@apps/*",
+      "dev:host": "turbo run @apps/host#dev",
+      "dev:v1": "turbo run @apps/v1#dev",
+      "dev:v2": "turbo run @apps/v2#dev",
+      "dev:v3": "turbo run @apps/v3#dev",
+      "dev:v4": "turbo run @apps/v4#dev",
+      "preview": "turbo run preview",
+      "preview:remotes": "turbo run preview --filter=@apps/* --filter=!@apps/host --parallel",
+      "start": "pnpm build:dev && concurrently \"pnpm run dev:host\" \"pnpm run preview:remotes\"",
+      "check": "biome check .",
+      "check:fix": "biome check --write .",
+      "format": "biome format --write .",
+      "clean": "turbo run clean && rm -rf node_modules",
+      "create-app": "create-app",
+      "deploy:all": "pnpm build && firebase deploy",
+      "deploy:host": "turbo run @apps/host#build && firebase deploy --only hosting:host",
+      "deploy:v1": "turbo run @apps/v1#build && firebase deploy --only hosting:v1",
+      "deploy:v2": "turbo run @apps/v2#build && firebase deploy --only hosting:v2",
+      "deploy:v3": "turbo run @apps/v3#build && firebase deploy --only hosting:v3",
+      "deploy:v4": "turbo run @apps/v4#build && firebase deploy --only hosting:v4",
+      "dev:v5": "turbo run @apps/v5#dev",
+      "deploy:v5": "turbo run @apps/v5#build && firebase deploy --only hosting:v5"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": true,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "apps": {
+      "path": "apps",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1789351104526,
+      "keyFiles": []
+    },
+    "packages": {
+      "path": "packages",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1789351104531,
+      "keyFiles": []
+    },
+    "templates": {
+      "path": "templates",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1789351104651,
+      "keyFiles": []
+    },
+    "packages/data": {
+      "path": "packages/data",
+      "purpose": "Data files",
+      "fileCount": 3,
+      "lastAccessed": 1789351104695,
+      "keyFiles": [
+        "package.json",
+        "tsconfig.json",
+        "tsup.config.ts"
+      ]
+    },
+    "packages/utils": {
+      "path": "packages/utils",
+      "purpose": "Utility functions",
+      "fileCount": 5,
+      "lastAccessed": 1789351104696,
+      "keyFiles": [
+        "README.md",
+        "package.json",
+        "tsconfig.json"
+      ]
+    }
+  },
+  "hotPaths": [],
+  "userDirectives": []
+}
