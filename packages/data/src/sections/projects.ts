@@ -845,4 +845,212 @@ export const projectsData: ProjectItemType[] = [
     link: 'https://playground-adade.web.app',
     cateTag: '사이드',
   },
+  {
+    id: 'routar',
+    title: 'routar',
+    description: `스키마 한 번의 정의로 타입과 런타임 검증을 함께 얻는 HTTP API 클라이언트 오픈소스`,
+    details: [
+      {
+        content: '엔드포인트 정의에서 타입과 검증을 동시에 확보',
+        children: [
+          {
+            content:
+              'Zod, Valibot, Yup 등 Standard Schema 호환 검증기를 request와 response 양쪽에 연결해, 코드 생성 없이 타입 추론과 런타임 검증을 함께 얻는 구조 설계',
+          },
+          {
+            content:
+              "path, query, body를 각각의 검증기 맵으로 정의하고 path: '/:id'에 id가 빠지면 컴파일 에러가 나도록 타입으로 강제",
+          },
+          {
+            content:
+              "validate: 'warn'과 onValidationError 훅으로 스키마 드리프트를 장애로 번지지 않게 관측",
+          },
+        ],
+      },
+      {
+        content: '전송 계층에 종속되지 않는 실행기 구조',
+        children: [
+          {
+            content:
+              'fetch, axios, ky 실행기를 패키지로 분리해 같은 엔드포인트 정의를 클라이언트만 바꿔 재사용 (@routar/core, @routar/axios, @routar/ky)',
+          },
+          {
+            content:
+              'request, response, error 훅을 가진 플러그인 시스템과 retry, timeout 기본 옵션을 조합 가능하게 구성',
+          },
+          {
+            content: '중첩 라우터로 URL 구조를 타입 시스템에 그대로 반영',
+          },
+        ],
+      },
+      {
+        content: '패키지 배포와 사용 환경',
+        children: [
+          {
+            content:
+              'Changesets 기반 버전 관리와 GitHub Actions CI, Codecov 커버리지로 @routar/core를 npm에 배포',
+          },
+          {
+            content:
+              'TanStack Query 바인딩(@routar/react-query)으로 queryOptions, mutationOptions 팩토리와 invalidates 선언형 무효화 제공',
+          },
+          {
+            content:
+              'llms.txt, AGENTS.md 문서와 Context7 인덱싱, JSDoc 예제로 AI 코딩 도구가 최신 API를 참조하도록 지원',
+          },
+        ],
+      },
+    ],
+    image: '/images/projects/routar.webp',
+    link: 'https://routar.vercel.app',
+    skills: [
+      'TypeScript',
+      'Zod',
+      'TanStack Query',
+      'Bun',
+      'tsup',
+      'Biome',
+      'Changesets',
+      'Github Action',
+    ],
+    cateTag: '사이드',
+  },
+  {
+    id: 'dalant-pay',
+    title: '달란트페이',
+    description: `오프라인 모임을 위한 미션 인증 기반 포인트 결제 서비스 [교회 수련회 실사용]`,
+    details: [
+      {
+        content: '행사 단위로 격리된 마켓 구조',
+        children: [
+          {
+            content:
+              '수련회, MT 단위의 마켓마다 참여자, 미션, 달란트 내역, 주문을 분리해 실물 달란트와 종이 미션표 없이 스마트폰 하나로 행사를 운영',
+          },
+          {
+            content:
+              'owner, admin, user 역할과 참여자 그룹을 두고, 관리자도 참여자로 미션을 수행하되 자기 QR을 스캔하는 것은 서버에서 차단',
+          },
+          {
+            content:
+              '플랜 테이블로 마켓 개수, 참가자 정원, 그룹 기능 사용 여부를 제한하고 마켓마다 포인트 단위 이름을 커스텀',
+          },
+        ],
+      },
+      {
+        content: 'QR 기반 미션 인증과 결제',
+        children: [
+          {
+            content:
+              'HMAC-SHA256 서명과 5분 유효시간을 가진 미션 QR을 발급하고, 이미 처리된 QR의 재사용을 서버에서 차단',
+          },
+          {
+            content:
+              'user_qr, upload, admin_qr, manual 네 가지 인증 타입과 단체 미션 일괄 적립, 관리자 수동 인증을 함께 지원',
+          },
+          {
+            content:
+              '결제 QR(dalant:p:<marketId>:<userId>) 하나를 POS 결제와 달란트 전송 수신자 식별에 재사용',
+          },
+          {
+            content:
+              'Supabase RPC(transfer_points)로 잔액 이전과 내역 두 건 삽입을 단일 트랜잭션으로 처리',
+          },
+        ],
+      },
+      {
+        content: '서버 상태 중심의 데이터 흐름과 PWA',
+        children: [
+          {
+            content:
+              '서버 컴포넌트 prefetch, HydrationBoundary, useSuspenseQuery로 이어지는 캐시 흐름에 @routar/react-query의 invalidates 선언을 붙여 Mutation 무효화 처리',
+          },
+          {
+            content:
+              'Serwist 서비스워커와 Web Push로 설치형 PWA와 알림을 제공하고, browser-image-compression과 heic2any로 업로드 사진 압축과 변환 처리',
+          },
+          {
+            content: 'Supabase RLS 기반 마켓 단위 접근 제어와 Sentry 에러 수집',
+          },
+        ],
+      },
+    ],
+    image: '/images/projects/dalant-pay.webp',
+    link: 'https://dalant-pay.vercel.app',
+    skills: [
+      'NextJS',
+      'TypeScript',
+      'Tailwind CSS',
+      'Shadcn',
+      'TanStack Query',
+      'Supabase',
+      'Zod',
+      'Sentry',
+      'PWA',
+    ],
+    cateTag: '사이드',
+  },
+  {
+    id: 'contiroom',
+    title: '콘티룸',
+    description: `찬양팀의 콘티 편성과 예배 라이브 화면을 잇는 웹 서비스`,
+    details: [
+      {
+        content: '곡과 콘티 편집',
+        children: [
+          {
+            content:
+              '가사 줄과 코드 위치, 섹션 순서를 편집하는 에디터를 만들고, 악보 사진을 OpenAI로 분석해 편집 가능한 초안으로 변환',
+          },
+          {
+            content:
+              '곡 순서, 키, 송폼을 담은 콘티에 YouTube 플레이리스트를 연결하고 @dnd-kit 드래그로 곡과 섹션 정렬',
+          },
+        ],
+      },
+      {
+        content: '라이브 화면과 인쇄',
+        children: [
+          {
+            content:
+              '콘티 가사를 전체화면으로 띄우고 키보드로 이동하는 라이브 화면에 표시 줄 수, 코드, 다음 가사 노출 옵션 제공',
+          },
+          {
+            content:
+              'A4 미리보기에서 조정한 결과를 pdf-lib로 PDF 파일로 바로 다운로드',
+          },
+        ],
+      },
+      {
+        content: '공개 범위와 접근 통제',
+        children: [
+          {
+            content:
+              '새 곡과 콘티는 기본 비공개로 두고, 공개 곡은 원곡을 가리키는 저장과 편집 가능한 비공개 복제로 나누어 제공',
+          },
+          {
+            content:
+              '공개 콘티가 소유자의 비공개 곡을 담을 수 있는 범위를 DB 트리거와 security definer 함수로 통제해, RLS를 우회해야 하는 예외를 함수 단위로 좁힘',
+          },
+          {
+            content:
+              'node --experimental-strip-types 테스트와 tsc --noEmit 타입체크, Biome 검사로 도메인 로직 관리',
+          },
+        ],
+      },
+    ],
+    image: '/images/projects/contiroom.webp',
+    link: 'https://cntirm.vercel.app',
+    skills: [
+      'NextJS',
+      'TypeScript',
+      'Supabase',
+      'TanStack Query',
+      'StyleX',
+      'Tailwind CSS',
+      'Zod',
+      'OpenAI',
+    ],
+    cateTag: '사이드',
+  },
 ];

@@ -3,7 +3,7 @@ import { ExperienceItemType } from '../types';
 export const experiencesData: ExperienceItemType[] = [
   {
     title: '네이션에이',
-    subtitle: '재직중, 2025.01 - 현재',
+    subtitle: '사회복무요원 복무로 퇴사, 2025.01 - 2025.11',
     logoSrc: '/images/logo/nation-a.png',
     descs: [
       '3D 모션 기반의 AI 채팅 서비스 "Hey.D" 프론트 개발',
