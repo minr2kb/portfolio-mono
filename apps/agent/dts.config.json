@@ -1,5 +1,5 @@
 {
-  "name": "v5",
+  "name": "agent",
   "exposesPath": "./exposes.json",
   "outDir": "../host/src/remote-types",
   "tsConfigPath": "./tsconfig.app.json"

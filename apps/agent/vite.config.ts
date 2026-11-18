@@ -1,4 +1,5 @@
 import federation from '@originjs/vite-plugin-federation';
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
@@ -12,9 +13,10 @@ export default defineConfig(({ mode }) => {
   const env = { ...rootEnv, ...localEnv };
 
   return {
-    base: env.VITE_V5_URL,
+    base: env.VITE_AGENT_URL,
     plugins: [
       react(),
+      tailwindcss(),
       federation({
         name: dtsConfig.name,
         filename: 'remoteEntry.js',

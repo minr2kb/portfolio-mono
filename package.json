@@ -26,6 +26,7 @@
     "dev:v2": "turbo run @apps/v2#dev",
     "dev:v3": "turbo run @apps/v3#dev",
     "dev:v4": "turbo run @apps/v4#dev",
+    "dev:agent": "turbo run @apps/agent#dev",
     "preview": "turbo run preview",
     "preview:remotes": "turbo run preview --filter=@apps/* --filter=!@apps/host --parallel",
     "start": "pnpm build:dev && concurrently \"pnpm run dev:host\" \"pnpm run preview:remotes\"",
@@ -40,8 +41,7 @@
     "deploy:v2": "turbo run @apps/v2#build && firebase deploy --only hosting:v2",
     "deploy:v3": "turbo run @apps/v3#build && firebase deploy --only hosting:v3",
     "deploy:v4": "turbo run @apps/v4#build && firebase deploy --only hosting:v4",
-    "dev:v5": "turbo run @apps/v5#dev",
-    "deploy:v5": "turbo run @apps/v5#build && firebase deploy --only hosting:v5"
+    "deploy:agent": "turbo run @apps/agent#build && firebase deploy --only hosting:agent"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.14",

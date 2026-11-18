@@ -20,8 +20,8 @@
         "v4": [
           "portfolio-kbmin-v4"
         ],
-        "v5": [
-          "portfolio-kbmin-v5"
+        "agent": [
+          "portfolio-kbmin-agent"
         ]
       }
     }

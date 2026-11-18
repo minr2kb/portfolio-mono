@@ -46,7 +46,7 @@
 │   ├── v2/          # v2 리모트 앱 (포트 5002)
 │   ├── v3/          # v3 리모트 앱 (포트 5003)
 │   ├── v4/          # v4 리모트 앱 (포트 5004)
-│   └── v5/          # v5 리모트 앱 (포트 5005)
+│   └── agent/       # Portfolio 2.0 리모트 앱 (포트 5005)
 ├── packages/
 │   ├── data/        # 포트폴리오 콘텐츠 데이터 및 이미지 에셋
 │   ├── utils/       # 공통 유틸리티 (getAssetsUrl, logger 등)
@@ -95,7 +95,7 @@ pnpm dev:v1
 pnpm dev:v2
 pnpm dev:v3
 pnpm dev:v4
-pnpm dev:v5
+pnpm dev:agent
 
 # host + 모든 remote 동시 구동
 pnpm start
@@ -120,11 +120,13 @@ pnpm deploy:v1
 pnpm deploy:v2
 pnpm deploy:v3
 pnpm deploy:v4
-pnpm deploy:v5
+pnpm deploy:agent
 
 # 전체 빌드 후 일괄 배포
 pnpm deploy:all
 ```
+
+`agent` 배포 설정은 Firebase Hosting 사이트 `portfolio-kbmin-agent`를 대상으로 하고, 프로덕션 리모트 주소는 `https://portfolio-kbmin-agent.web.app`으로 지정합니다.
 
 ## ☕️ 개발 가이드
 
@@ -151,6 +153,8 @@ pnpm create-app
 2. 에셋 경로는 반드시 `@packages/utils`의 `getAssetsUrl()`로 감싸서 사용합니다. (host 앱 제외)
 3. host 앱 구동 시에는 각 remote 앱의 빌드 결과물(`dist/assets/remoteEntry.js`)이 필요하므로 `pnpm start`는 `build:dev` → `dev:host` + `preview:remotes` 순으로 동작합니다.
 4. 각 remote 앱은 `pnpm dev:{name}`으로 독립 실행 가능합니다.
+
+`agent`의 빛 효과는 [Aceternity Aurora Background](https://ui.aceternity.com/components/aurora-background)를 디자인 참고 자료로 살펴보고 자체 CSS로 구현했습니다. 외부 컴포넌트 원본 소스는 포함하지 않았습니다.
 
 ## 👨‍💻 개발자
 

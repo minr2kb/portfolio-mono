@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => {
           v2: `${env.VITE_V2_URL}/assets/remoteEntry.js`,
           v3: `${env.VITE_V3_URL}/assets/remoteEntry.js`,
           v4: `${env.VITE_V4_URL}/assets/remoteEntry.js`,
-          v5: `${env.VITE_V5_URL}/assets/remoteEntry.js`,
+          agent: `${env.VITE_AGENT_URL}/assets/remoteEntry.js`,
         },
         shared: ['react', 'react-dom', 'react-router-dom'],
       }),

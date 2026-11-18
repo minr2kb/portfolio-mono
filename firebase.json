@@ -211,8 +211,8 @@
       ]
     },
     {
-      "target": "v5",
-      "public": "apps/v5/dist",
+      "target": "agent",
+      "public": "apps/agent/dist",
       "ignore": [
         "firebase.json",
         "**/.*",
@@ -233,15 +233,11 @@
           "headers": [
             {
               "key": "Access-Control-Allow-Origin",
-              "value": "https://portfolio-kbmin.web.app"
+              "value": "*"
             },
             {
               "key": "Access-Control-Allow-Methods",
-              "value": "GET,PUT,POST,DELETE,OPTIONS"
-            },
-            {
-              "key": "Access-Control-Allow-Headers",
-              "value": "Content-Type, Authorization"
+              "value": "GET,OPTIONS"
             }
           ]
         }
@@ -249,7 +245,7 @@
       "redirects": [
         {
           "source": "/",
-          "destination": "https://portfolio-kbmin.web.app/v5",
+          "destination": "https://kbmin.is-a.dev/agent",
           "type": 302
         }
       ]

@@ -30,7 +30,7 @@ function App() {
   const v2Routes = LazyRouteLoader(() => import('v2/AppRoutes'));
   const v3Routes = LazyRouteLoader(() => import('v3/AppRoutes'));
   const v4Routes = LazyRouteLoader(() => import('v4/AppRoutes'));
-  const v5Routes = LazyRouteLoader(() => import('v5/AppRoutes'));
+  const agentRoutes = LazyRouteLoader(() => import('agent/AppRoutes'));
 
   useEffect(() => {
     logger.info('App initialized', {
@@ -53,7 +53,7 @@ function App() {
         <Route path='/v2/*' element={v2Routes} />
         <Route path='/v3/*' element={v3Routes} />
         <Route path='/v4/*' element={v4Routes} />
-        <Route path='/v5/*' element={v5Routes} />
+        <Route path='/agent/*' element={agentRoutes} />
         <Route
           path='*'
           element={<ErrorPage error={new Error('404 | Page Not Found')} />}
